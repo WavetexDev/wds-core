@@ -1,38 +1,46 @@
 {
-  "name": "@waveclass/wds-core",
-  "version": "0.0.1",
-  "description": "Waveclass Design System core components",
-  "main": "main.ts",
-  "scripts": {
-    "test": "jest --coverage",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "keywords": [
-    "waveclass",
-    "frontend"
-  ],
-  "author": "Leonardo Zuin <leonardosoareszuin@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.22.4",
-    "@babel/preset-react": "^7.22.3",
-    "@babel/preset-typescript": "^7.21.5",
-    "@storybook/addon-essentials": "^7.0.18",
-    "@storybook/addon-interactions": "^7.0.18",
-    "@storybook/addon-links": "^7.0.18",
-    "@storybook/blocks": "^7.0.18",
-    "@storybook/react": "^7.0.18",
-    "@storybook/react-webpack5": "^7.0.18",
-    "@storybook/testing-library": "^0.0.14-next.2",
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "prop-types": "^15.8.1",
-    "storybook": "^7.0.18",
-    "typescript": "^5.0.2"
-  }
+	"name": "@waveclass/wds-core",
+	"version": "0.0.2",
+	"description": "Waveclass Design System core components",
+	"main": "main.ts",
+	"scripts": {
+		"test": "jest --env=jsdom",
+		"sb": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"format": "prettier --config .prettierrc \"**/**/**/*.(tsx|ts)\" --write"
+	},
+	"keywords": [
+		"waveclass",
+		"frontend"
+	],
+	"author": "Leonardo Zuin <leonardosoareszuin@gmail.com>",
+	"license": "ISC",
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"styled-components": "6.0.0-rc.3"
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.22.4",
+		"@babel/preset-react": "^7.22.3",
+		"@babel/preset-typescript": "^7.21.5",
+		"@storybook/addon-essentials": "^7.0.18",
+		"@storybook/addon-interactions": "^7.0.18",
+		"@storybook/addon-links": "^7.0.18",
+		"@storybook/blocks": "^7.0.18",
+		"@storybook/react": "^7.0.18",
+		"@storybook/react-webpack5": "^7.0.18",
+		"@storybook/testing-library": "^0.0.14-next.2",
+		"@types/react": "^18.0.37",
+		"@types/react-dom": "^18.0.11",
+		"eslint": "8.42.0",
+		"eslint-config-next": "13.4.4",
+		"eslint-config-prettier": "^8.6.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"husky": "^8.0.3",
+		"prettier": "^2.8.3",
+		"prop-types": "^15.8.1",
+		"storybook": "^7.0.18",
+		"typescript": "^5.0.2"
+	}
 }
