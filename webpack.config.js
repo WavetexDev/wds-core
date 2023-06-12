@@ -2,35 +2,34 @@ const path = require('path');
 
 module.exports = {
 	entry: './src/main.ts',
+	output: {
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'bundle.js',
+	},
+	resolve: {
+		extensions: ['.tsx', '.ts', '.js', '.json'],
+	},
 	module: {
 		rules: [
 			{
-				test: /\.ts?$/,
-				use: 'ts-loader',
+				test: /\.(ts|tsx)$/,
 				exclude: /node_modules/,
+				use: {
+					loader: 'ts-loader',
+				},
 			},
 			{
-				test: /\.tsx?$/,
-				use: 'ts-loader',
+				test: /\.(css)$/,
 				exclude: /node_modules/,
-			},
-			{
-				test: /\.css?$/,
-				use: 'css-loader',
-				exclude: /node_modules/,
+				use: {
+					loader: 'css-loader',
+				},
 			},
 		],
 	},
-	resolve: {
-		extensions: ['.tsx', '.ts', '.js'],
-	},
-	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist'),
-	},
 	devServer: {
-		static: path.join(__dirname, 'dist'),
+		contentBase: path.join(__dirname, 'dist'),
 		compress: true,
-		port: 4000,
+		port: 3000,
 	},
 };

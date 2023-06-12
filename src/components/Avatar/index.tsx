@@ -1,4 +1,5 @@
-import React from 'react';
+/// <reference path="../../../wds-core.d.ts" />
+
 import { AvatarProps } from './avatar.props';
 import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
