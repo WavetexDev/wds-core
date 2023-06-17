@@ -1,15 +1,13 @@
-/// <reference path="../../../wds-core.d.ts" />
-
-import { AvatarProps } from './avatar.props';
 import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
+import React from 'react';
 
 export const Avatar = ({
     size,
     img,
     name,
     online,
-}: AvatarProps): JSX.Element => {
+}: any): JSX.Element => {
     return (
         <>
             <WaveclassTheme>

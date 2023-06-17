@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { AvatarSize } from './avatar.props';
-import { Theme } from '../../theme';
+// import { AvatarSize } from './avatar';
+// import { Theme } from '../../theme';
 import { getThemeMode } from '../../utils/get-theme-mode';
 
 const currentThemeMode = getThemeMode();
 
-const getWidth = (size: AvatarSize): number => {
+const getWidth = (size: string): number => {
 	switch (size) {
 		case 'sm':
 			return 30;
@@ -15,10 +15,12 @@ const getWidth = (size: AvatarSize): number => {
 			return 70;
 		case 'xl':
 			return 90;
+		default:
+			return 30;
 	}
 };
 
-const getHeight = (size: AvatarSize): number => {
+const getHeight = (size: string): number => {
 	switch (size) {
 		case 'sm':
 			return 30;
@@ -28,13 +30,12 @@ const getHeight = (size: AvatarSize): number => {
 			return 70;
 		case 'xl':
 			return 90;
+		default:
+			return 30;
 	}
 };
 
-const getFontSize = (
-	size: AvatarSize,
-	theme: Theme
-): string => {
+const getFontSize = (size: string, theme: any): string => {
 	const fontSizes = theme[currentThemeMode].fontSizes;
 	switch (size) {
 		case 'sm':
@@ -45,13 +46,15 @@ const getFontSize = (
 			return fontSizes.fs32;
 		case 'xl':
 			return fontSizes.fs40;
+		default:
+			return fontSizes.fs20;
 	}
 };
 
 export const Container = styled.span<{
-	size: AvatarSize;
+	size: string;
 	img?: string;
-	theme?: Theme;
+	theme?: any;
 }>`
 	display: block;
 	position: relative;
@@ -94,8 +97,8 @@ export const Container = styled.span<{
 `;
 
 export const OnlineBadge = styled.span<{
-	size: AvatarSize;
-	theme?: Theme;
+	size: string;
+	theme?: any;
 }>`
 	width: ${({ size }) => getWidth(size) * 0.2}px;
 	min-width: ${({ size }) => getWidth(size) * 0.2}px;
