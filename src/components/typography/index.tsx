@@ -1,10 +1,19 @@
 import React from 'react'
 import * as s from './styles'
+import { WaveclassTheme } from '@/layout'
+import { TypographyProps } from './types'
 
-export function Typography({ variant, content }) {
+export const Typography = ({
+    variant,
+    content 
+}: TypographyProps): JSX.Element => {
     return (
-        <s.Typography variant={variant}>
-            {content}
-        </s.Typography>
+        <>
+            <WaveclassTheme>
+                <s.Typography variant={variant}>
+                    {content}
+                </s.Typography>
+            </WaveclassTheme>
+        </>
     )
 }

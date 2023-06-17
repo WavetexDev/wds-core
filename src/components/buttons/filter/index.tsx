@@ -1,16 +1,23 @@
 import React from 'react'
 import * as s from './styles'
+import { WaveclassTheme } from '@/layout';
 
-import { BiUser } from 'react-icons/bi'
 import { Typography } from '../../typography'
 
 import { ButtonProps } from '../types'
 
-export function FilterButton({ content }: ButtonProps) {
+export const FilterButton = ({
+    content,
+    icon,
+}: ButtonProps): JSX.Element => {
     return (
-        <s.FilterButton>
-            <BiUser size={13} />
-            <Typography variant={'paragraph-bold'} content={content} />
-        </s.FilterButton>
+        <>
+            <WaveclassTheme>
+                <s.FilterButton>
+                    {icon}
+                    <Typography variant={'paragraph-bold'} content={content} />
+                </s.FilterButton>
+            </WaveclassTheme>
+        </>
     )
 }

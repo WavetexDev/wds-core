@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import { TypographyProps } from "./types";
+import { TypographyStylingProps } from "./types";
 
-export const Typography = styled.p<TypographyProps>` // TODO Pick a better tag
+export const Typography = styled.p<TypographyStylingProps>` // TODO Pick a better tag
     font-weight: ${({ variant }) => 
         variant.includes('bold') ? 'bold' : 'regular'
     };

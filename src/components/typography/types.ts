@@ -1,4 +1,4 @@
-export interface TypographyProps {
+export interface TypographyStylingProps {
     variant: 
         'h1-bold' | 
         'h2-bold' |
@@ -26,4 +26,8 @@ export interface TypographyProps {
         'h6-italic' |
         'small-italic' | 
         'paragraph-italic' 
+}
+
+export interface TypographyProps extends TypographyStylingProps {
+    content: string
 }

@@ -1,16 +1,23 @@
 import React from 'react'
 import * as s from './styles'
+import { WaveclassTheme } from '@/layout'
 
-import { BiUser } from 'react-icons/bi'
 import { Typography } from '../../typography'
 
 import { ButtonProps } from '../types'
 
-export function OptionButton({ content }: ButtonProps) {
+export const OptionButton = ({
+    content, 
+    icon 
+}: ButtonProps): JSX.Element => {
     return (
-        <s.OptionButton>
-            <BiUser size={13} />
-            <Typography variant={'paragraph-bold'} content={content} />
-        </s.OptionButton>
+        <>
+            <WaveclassTheme>
+                <s.OptionButton>
+                    {icon}
+                    <Typography variant={'paragraph-bold'} content={content} />
+                </s.OptionButton>
+            </WaveclassTheme>
+        </>
     )
 }
