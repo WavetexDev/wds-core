@@ -1,13 +1,14 @@
 import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
 import React from 'react';
+import { AvatarProps } from './avatar.props';
 
 export const Avatar = ({
     size,
     img,
     name,
     online,
-}: any): JSX.Element => {
+}: AvatarProps): JSX.Element => {
     return (
         <>
             <WaveclassTheme>
