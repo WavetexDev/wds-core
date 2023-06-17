@@ -1,0 +1,3 @@
+interface NumberBadgeProps {
+    value: number
+}

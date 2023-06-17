@@ -1,4 +1,5 @@
-import { Avatar } from './components/Avatar/avatar';
+import { Avatar } from './components/avatar';
+import { NumberBadge } from './components/number-badge';
 import { theme } from './theme';
 
-export { Avatar, theme };
+export { Avatar, NumberBadge, theme };

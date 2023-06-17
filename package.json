@@ -21,6 +21,7 @@
 		"access": "public"
 	},
 	"dependencies": {
+		"react-icons": "^4.9.0",
 		"styled-components": "6.0.0-rc.3"
 	},
 	"peerDependencies": {

@@ -5,4 +5,4 @@ export interface AvatarProps {
 	online?: boolean;
 }
 
-type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';
+export type AvatarSize = 'sm' | 'md' | 'lg' | 'xl';

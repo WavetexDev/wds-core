@@ -12,7 +12,7 @@ gulp.task('compile', function () {
 			'src/**/*.ts',
 			'src/**/*.tsx',
 			'!src/**/*.d.ts',
-			'!src/**/*.props.ts',
+			'!src/**/types.ts',
 		])
 		.pipe(sourcemaps.init())
 		.pipe(tsProject())
@@ -37,7 +37,7 @@ gulp.task('copy', function () {
 				'src/**/*.d.ts',
 				'!src/**/*.d.ts',
 				'!*.d.ts',
-				'!src/**/*.props.ts',
+				'!src/**/types.ts',
 			],
 			{
 				base: 'src',

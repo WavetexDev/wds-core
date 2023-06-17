@@ -1,7 +1,7 @@
 import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
 import React from 'react';
-import { AvatarProps } from './avatar.props';
+import { AvatarProps } from './types';
 
 export const Avatar = ({
     size,
