@@ -1,6 +1,6 @@
 import React from 'react'
 import * as s from './styles'
-import { WaveclassTheme } from '@/layout';
+import { WaveclassTheme } from '../../../layout';
 
 import { Typography } from '../../typography'
 
@@ -17,6 +17,6 @@ export const RegularButton = ({
                     <Typography variant={'paragraph-bold'} content={content} />
                 </s.RegularButton>
             </WaveclassTheme>
-        </>    
+        </>
     )
 }

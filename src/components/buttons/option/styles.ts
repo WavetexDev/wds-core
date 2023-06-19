@@ -1,22 +1,32 @@
-import { styled } from 'styled-components'
+import { styled } from 'styled-components';
+import { getThemeMode } from '../../../utils/get-theme-mode';
+import { Theme } from '../../../theme';
 
-export const OptionButton = styled.button`
-    width: 134px;
-    height: 30px;
+const currentMode = getThemeMode();
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: ${({ theme }) => theme.spacing.sp8};
+export const OptionButton = styled.button<{
+	theme?: Theme;
+}>`
+	width: 100%;
+	height: 30px;
 
-    color: ${(props) => props.theme.secondary};
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
 
-    border: 1px solid ${(props) => props.theme.secondary};
-    box-shadow: ${(props) => props.theme.box_shadow.dark};
-    border-radius: 20px;
+	color: ${(props) =>
+		props.theme[currentMode].colors.black};
 
-    &:hover {
-        cursor: pointer;
-        opacity: 0.9;
-    }
-`
+	border: 1px solid
+		${(props) =>
+			props.theme[currentMode].colors.gray300};
+	box-shadow: ${(props) =>
+		props.theme[currentMode].shadows.dark};
+	border-radius: 20px;
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.9;
+	}
+`;

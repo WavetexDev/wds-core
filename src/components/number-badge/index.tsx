@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from '../typography'
 import * as s from './styles'
-import { WaveclassTheme } from '@/layout'
+import { WaveclassTheme } from '../../layout'
 
 export const NumberBadge = ({
     value
@@ -10,7 +10,7 @@ export const NumberBadge = ({
         <>
             <WaveclassTheme>
                 <s.NumberBadgeContainer>
-                    <Typography variant={'small-regular'} content={value} />
+                    <Typography variant={'small-regular'} content={value.toString()} />
                 </s.NumberBadgeContainer>
             </WaveclassTheme>
         </>

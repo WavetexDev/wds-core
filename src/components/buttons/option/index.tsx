@@ -1,6 +1,6 @@
 import React from 'react'
 import * as s from './styles'
-import { WaveclassTheme } from '@/layout';
+import { WaveclassTheme } from '../../../layout';
 
 import { Typography } from '../../typography'
 
@@ -8,7 +8,7 @@ import { ButtonProps } from '../types'
 
 export const OptionButton = ({
     content,
-    icon 
+    icon
 }: ButtonProps): JSX.Element => {
     return (
         <>

@@ -1,14 +1,17 @@
-export interface RegularButtonStylingProps {
-    variant: 
-        'primary-contained' | 
-        'primary-ghost' | 
-        'primary-text' |
+import { Theme } from '../../../theme';
 
-        'secondary-contained' | 
-        'secondary-ghost' | 
-        'secondary-text'
+export interface RegularButtonStylingProps {
+	variant:
+		| 'primary-contained'
+		| 'primary-ghost'
+		| 'primary-text'
+		| 'secondary-contained'
+		| 'secondary-ghost'
+		| 'secondary-text';
+	theme?: Theme;
 }
 
-export interface RegularButtonProps extends RegularButtonStylingProps {
-    content: string
+export interface RegularButtonProps
+	extends RegularButtonStylingProps {
+	content: string;
 }
