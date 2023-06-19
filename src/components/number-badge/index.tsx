@@ -3,12 +3,16 @@ import { Typography } from '../typography'
 import * as s from './styles'
 import { WaveclassTheme } from '@/layout'
 
-export function NumberBadge({ value }: NumberBadgeProps) {
+export const NumberBadge = ({
+    value
+}: NumberBadgeProps): JSX.Element => {
     return (
-        <WaveclassTheme>
-            <s.NumberBadgeContainer>
-                <Typography variant={'small-regular'} content={value} />
-            </s.NumberBadgeContainer>
-        </WaveclassTheme>
+        <>
+            <WaveclassTheme>
+                <s.NumberBadgeContainer>
+                    <Typography variant={'small-regular'} content={value} />
+                </s.NumberBadgeContainer>
+            </WaveclassTheme>
+        </>
     )
 }

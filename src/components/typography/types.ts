@@ -1,4 +1,5 @@
 export interface TypographyProps {
+    content?: string
     variant: 
         'h1-bold' | 
         'h2-bold' |
