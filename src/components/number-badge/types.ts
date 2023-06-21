@@ -1,3 +1,3 @@
 interface NumberBadgeProps {
-    value: number
+	value: number;
 }
