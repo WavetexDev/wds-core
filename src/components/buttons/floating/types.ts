@@ -1,3 +1,12 @@
+import { Theme } from '../../../theme';
+import { ReactNode } from 'react';
+
 export interface FloatingButtonProps {
-    variant: 'primary' | 'secondary'
+	icon?: ReactNode;
+	variant: 'primary' | 'secondary';
+}
+
+export interface FloatingButtonStylesProps
+	extends FloatingButtonProps {
+	theme?: Theme;
 }

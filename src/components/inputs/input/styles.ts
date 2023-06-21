@@ -1,28 +1,28 @@
-import { styled } from 'styled-components';
-import { getThemeMode } from '../../../utils/get-theme-mode';
+import styled from 'styled-components';
 import { Theme } from '../../../theme';
+import { getThemeMode } from '../../../utils/get-theme-mode';
 
 const currentMode = getThemeMode();
 
-export const SearchInputContainer = styled.div<{
+export const InputContainer = styled.div<{
 	theme: Theme;
 }>`
 	display: flex;
 	flex-direction: column;
-	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
+	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
 `;
 
-export const SearchInputWrapper = styled.div<{
+export const InputWrapper = styled.div<{
 	theme: Theme;
 }>`
 	width: 100%;
 	height: 40px;
 	background: ${({ theme }) =>
 		theme[currentMode].colors.white};
-	color: ${({ theme }) =>
-		theme[currentMode].colors.gray500};
-	border-bottom: 1px solid
+	border: 1px solid
 		${({ theme }) => theme[currentMode].colors.gray500};
+	border-radius: ${({ theme }) =>
+		theme[currentMode].spacing.sp8};
 	padding-left: ${({ theme }) =>
 		theme[currentMode].spacing.sp12};
 
@@ -31,7 +31,7 @@ export const SearchInputWrapper = styled.div<{
 	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
 `;
 
-export const SearchInput = styled.input<{
+export const Input = styled.input<{
 	theme: Theme;
 }>`
 	width: 100%;

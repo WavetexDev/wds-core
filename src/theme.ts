@@ -1,9 +1,15 @@
+import { getSchoolColors } from './utils/get-school-colors';
+import { isColorDark } from './utils/check-color-brigthness';
+
 export const theme = {
 	light: {
 		colors: {
-			primary: '#F91064',
-			secondary: '#071834',
+			primary: getSchoolColors().primaryColor,
+			secondary: getSchoolColors().secondaryColor,
+			dynamicTextColor: (bgColor: string): string =>
+				isColorDark(bgColor) ? '#FFF' : '#000',
 			black: '#000',
+			white: '#FFF',
 			gray700: '#6E6E6E',
 			gray500: '#868686',
 			gray300: '#C4C4C4',
@@ -58,9 +64,12 @@ export const theme = {
 	},
 	dark: {
 		colors: {
-			primary: '#F91064',
-			secondary: '#071834',
+			primary: getSchoolColors().primaryColor,
+			secondary: getSchoolColors().secondaryColor,
+			dynamicTextColor: (bgColor: string): string =>
+				isColorDark(bgColor) ? '#FFF' : '#000',
 			black: '#000',
+			white: '#FFF',
 			gray700: '#6E6E6E',
 			gray500: '#868686',
 			gray300: '#C4C4C4',
