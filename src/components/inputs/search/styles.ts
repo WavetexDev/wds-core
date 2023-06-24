@@ -35,7 +35,6 @@ export const SearchInput = styled.input<{
 	theme: Theme;
 }>`
 	width: 100%;
-	height: 100%;
 	border: 0;
 	outline: 0;
 

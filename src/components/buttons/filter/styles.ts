@@ -7,7 +7,7 @@ const currentTheme = getThemeMode();
 export const FilterButton = styled.button<{
 	theme?: Theme;
 }>`
-	width: 134px;
+	width: 100%;
 	height: 30px;
 
 	display: flex;
