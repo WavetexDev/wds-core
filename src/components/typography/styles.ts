@@ -17,7 +17,7 @@ export const Typography = styled.div<TypographyStylesProps>`
 		(tag === 'h5' && '14px') ||
 		(tag === 'h6' && '12px') ||
 		(tag === 'small' && '10px') ||
-		(tag === 'paragraph' && '12px') ||
+		(tag === 'p' && '12px') ||
 		'1rem'};
 
 	margin: 0 0 0 0;

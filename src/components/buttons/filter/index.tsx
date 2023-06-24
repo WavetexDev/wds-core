@@ -18,6 +18,9 @@ export const FilterButton = ({
 					<Typography
 						variant={'paragraph-bold'}
 						content={content}
+						customStyles={{
+							textTransform: 'uppercase',
+						}}
 					/>
 				</s.FilterButton>
 			</WaveclassTheme>

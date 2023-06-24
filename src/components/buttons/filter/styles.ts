@@ -7,7 +7,7 @@ const currentTheme = getThemeMode();
 export const FilterButton = styled.button<{
 	theme?: Theme;
 }>`
-	width: 134px;
+	width: 100%;
 	height: 30px;
 
 	display: flex;
@@ -22,11 +22,17 @@ export const FilterButton = styled.button<{
 		${(props) =>
 			props.theme[currentTheme].colors.gray300};
 	box-shadow: ${(props) =>
-		props.theme[currentTheme].shadows.dark};
+		props.theme[currentTheme].shadows.medium};
 	border-radius: 20px;
 
 	&:hover {
 		cursor: pointer;
 		opacity: 0.9;
+		transition: 0.4s ease;
+	}
+
+	& svg {
+		max-width: 18px;
+		max-height: 18px;
 	}
 `;

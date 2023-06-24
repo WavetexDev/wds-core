@@ -6,9 +6,11 @@ import { TypographyProps } from './types';
 export const Typography = ({
 	variant,
 	content,
+	customStyles
 }: TypographyProps): JSX.Element => {
 	const cutIdx = variant.indexOf('-');
-	const tagVariant = variant.substring(0, cutIdx);
+	let tagVariant = variant.substring(0, cutIdx);
+	if (tagVariant === 'paragraph') tagVariant = 'p';
 
 	return (
 		<>
@@ -17,6 +19,7 @@ export const Typography = ({
 					variant={variant}
 					tag={tagVariant}
 					as={tagVariant}
+					style={customStyles ?? {}}
 				>
 					{content}
 				</s.Typography>
