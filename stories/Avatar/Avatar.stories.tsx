@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from '../../src';
 
 const meta: Meta<typeof Avatar> = {
+	title: 'Avatar',
 	component: Avatar,
 	argTypes: {
 		size: {

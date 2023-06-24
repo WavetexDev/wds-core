@@ -5,6 +5,7 @@ import { Input } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof Input> = {
+	title: 'Input',
 	component: Input,
 };
 

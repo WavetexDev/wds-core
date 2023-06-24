@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RegularButton } from '../../src';
 
 const meta: Meta<typeof RegularButton> = {
+	title: 'Regular Button',
 	component: RegularButton,
 	argTypes: {
 		variant: {

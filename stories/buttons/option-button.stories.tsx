@@ -5,6 +5,7 @@ import { OptionButton } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof OptionButton> = {
+	title: 'Option Button',
 	component: OptionButton,
 };
 
