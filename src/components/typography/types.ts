@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { Theme } from '../../theme';
 
 export interface TypographyProps {
@@ -35,4 +36,6 @@ export interface TypographyStylesProps {
 	variant: Variant;
 	theme?: Theme;
 	tag: string;
+	as: string;
+	children: ReactNode;
 }

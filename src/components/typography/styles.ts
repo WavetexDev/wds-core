@@ -4,7 +4,7 @@ import { TypographyStylesProps } from './types';
 
 export const Typography = styled.div<TypographyStylesProps>`
 	font-weight: ${({ variant }) =>
-		variant.includes('bold') ? 'bold' : 'regular'};
+		variant.includes('bold') ? 'bold' : 'normal'};
 
 	font-style: ${({ variant }) =>
 		variant.includes('italic') ? 'italic' : 'normal'};
@@ -19,4 +19,6 @@ export const Typography = styled.div<TypographyStylesProps>`
 		(tag === 'small' && '10px') ||
 		(tag === 'paragraph' && '12px') ||
 		'1rem'};
+
+	margin: 0 0 0 0;
 `;

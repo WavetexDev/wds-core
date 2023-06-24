@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { NumberBadge } from '../../src';
 
 const meta: Meta<typeof NumberBadge> = {
+	title: 'Number Badge',
 	component: NumberBadge,
 	argTypes: {
 		value: {
