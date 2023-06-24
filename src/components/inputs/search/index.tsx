@@ -29,7 +29,7 @@ export const SearchInput = ({
 				<s.SearchInputContainer>
 					<s.SearchInputWrapper>
 						{getDefaultIcon() ?? icon}
-						<s.SearchInput {...props} />
+						<s.SearchInput {...props} type='search' />
 					</s.SearchInputWrapper>
 
 					{showError && (

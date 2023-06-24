@@ -4,20 +4,21 @@ import { WaveclassTheme } from '../../../layout';
 
 import { Typography } from '../../typography';
 
-import { ButtonProps } from '../types';
+import { OptionButtonProps } from './types';
 
 export const OptionButton = ({
-	content,
+	text,
 	icon,
-}: ButtonProps): JSX.Element => {
+	...props
+}: OptionButtonProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
-				<s.OptionButton>
+				<s.OptionButton {...props}>
 					{icon}
 					<Typography
 						variant={'paragraph-bold'}
-						content={content}
+						content={text}
 					/>
 				</s.OptionButton>
 			</WaveclassTheme>

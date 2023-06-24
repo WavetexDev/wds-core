@@ -22,7 +22,8 @@ const getColor = (
 	variant: string,
 	theme: Theme
 ): string => {
-	return ['ghost', 'text'].includes(variant)
+	return variant.includes('ghost') ||
+		variant.includes('text')
 		? `black`
 		: theme[currentTheme].colors.dynamicTextColor(
 				getBGColor(variant, theme)
@@ -57,5 +58,10 @@ export const RegularButton = styled.button<RegularButtonStylingProps>`
 
 	&:hover {
 		opacity: 0.9;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.4;
 	}
 `;

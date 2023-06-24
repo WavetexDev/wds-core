@@ -8,15 +8,19 @@ import { RegularButtonProps } from './types';
 
 export const RegularButton = ({
 	variant,
-	content,
+	text,
+	...props
 }: RegularButtonProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
-				<s.RegularButton variant={variant}>
+				<s.RegularButton
+					variant={variant}
+					{...props}
+				>
 					<Typography
 						variant={'paragraph-bold'}
-						content={content}
+						content={text}
 					/>
 				</s.RegularButton>
 			</WaveclassTheme>

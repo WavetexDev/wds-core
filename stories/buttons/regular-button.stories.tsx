@@ -16,6 +16,12 @@ const meta: Meta<typeof RegularButton> = {
 				'secondary-text',
 			],
 		},
+		disabled: {
+			control: { type: 'boolean' },
+		},
+		onClick: {
+			table: { disable: true },
+		},
 	},
 };
 
@@ -25,41 +31,41 @@ type Story = StoryObj<typeof RegularButton>;
 export const PrimaryContained: Story = {
 	args: {
 		variant: 'primary-contained',
-		content: 'Click me!',
+		text: 'Click me!',
 	},
 };
 
 export const PrimaryGhost: Story = {
 	args: {
 		variant: 'primary-ghost',
-		content: 'Click me!',
+		text: 'Click me!',
 	},
 };
 
 export const PrimaryText: Story = {
 	args: {
 		variant: 'primary-text',
-		content: 'Click me!',
+		text: 'Click me!',
 	},
 };
 
 export const SecondaryContained: Story = {
 	args: {
 		variant: 'secondary-contained',
-		content: 'Click me!',
+		text: 'Click me!',
 	},
 };
 
 export const SecondaryGhost: Story = {
 	args: {
 		variant: 'secondary-ghost',
-		content: 'Click me!',
+		text: 'Click me!',
 	},
 };
 
 export const SecondaryText: Story = {
 	args: {
 		variant: 'secondary-text',
-		content: 'Click me!',
+		text: 'Click me!',
 	},
 };

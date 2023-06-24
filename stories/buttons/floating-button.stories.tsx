@@ -7,6 +7,20 @@ import { TfiUser } from 'react-icons/tfi';
 const meta: Meta<typeof FloatingButton> = {
 	title: 'Floating Button',
 	component: FloatingButton,
+	argTypes: {
+		disabled: {
+			control: { type: 'boolean' },
+		},
+		text: {
+			table: { disable: true },
+		},
+		onClick: {
+			table: { disable: true },
+		},
+		icon: {
+			table: { disable: true },
+		},
+	},
 };
 
 export default meta;
