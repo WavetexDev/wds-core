@@ -35,4 +35,9 @@ export const FilterButton = styled.button<{
 		max-width: 18px;
 		max-height: 18px;
 	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.4;
+	}
 `;
