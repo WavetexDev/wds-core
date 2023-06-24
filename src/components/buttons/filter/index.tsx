@@ -4,20 +4,21 @@ import { WaveclassTheme } from '../../../layout';
 
 import { Typography } from '../../typography';
 
-import { ButtonProps } from '../types';
+import { FilterButtonProps } from './types';
 
 export const FilterButton = ({
-	content,
+	text,
 	icon,
-}: ButtonProps): JSX.Element => {
+	...props
+}: FilterButtonProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
-				<s.FilterButton>
+				<s.FilterButton {...props}>
 					{icon}
 					<Typography
 						variant={'paragraph-bold'}
-						content={content}
+						content={text}
 						customStyles={{
 							textTransform: 'uppercase',
 						}}

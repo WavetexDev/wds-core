@@ -1,7 +1,6 @@
-import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
-export interface ButtonProps {
-	icon?: ReactNode;
-	variant?: string;
-	content: string;
+export interface ButtonProps
+	extends ButtonHTMLAttributes<HTMLButtonElement> {
+	text: string;
 }
