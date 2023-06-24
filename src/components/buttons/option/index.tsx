@@ -1,23 +1,27 @@
-import React from 'react'
-import * as s from './styles'
+import React from 'react';
+import * as s from './styles';
 import { WaveclassTheme } from '../../../layout';
 
-import { Typography } from '../../typography'
+import { Typography } from '../../typography';
 
-import { ButtonProps } from '../types'
+import { OptionButtonProps } from './types';
 
 export const OptionButton = ({
-    content,
-    icon
-}: ButtonProps): JSX.Element => {
-    return (
-        <>
-            <WaveclassTheme>
-                <s.OptionButton>
-                    {icon}
-                    <Typography variant={'paragraph-bold'} content={content} />
-                </s.OptionButton>
-            </WaveclassTheme>
-        </>
-    )
-}
+	text,
+	icon,
+	...props
+}: OptionButtonProps): JSX.Element => {
+	return (
+		<>
+			<WaveclassTheme>
+				<s.OptionButton {...props}>
+					{icon}
+					<Typography
+						variant={'paragraph-bold'}
+						content={text}
+					/>
+				</s.OptionButton>
+			</WaveclassTheme>
+		</>
+	);
+};

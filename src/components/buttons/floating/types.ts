@@ -1,7 +1,8 @@
 import { Theme } from '../../../theme';
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-export interface FloatingButtonProps {
+export interface FloatingButtonProps
+	extends ButtonHTMLAttributes<HTMLButtonElement> {
 	icon?: ReactNode;
 	variant: 'primary' | 'secondary';
 }

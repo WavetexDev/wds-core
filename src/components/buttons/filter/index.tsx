@@ -1,23 +1,30 @@
-import React from 'react'
-import * as s from './styles'
+import React from 'react';
+import * as s from './styles';
 import { WaveclassTheme } from '../../../layout';
 
-import { Typography } from '../../typography'
+import { Typography } from '../../typography';
 
-import { ButtonProps } from '../types'
+import { FilterButtonProps } from './types';
 
 export const FilterButton = ({
-    content,
-    icon
-}: ButtonProps): JSX.Element => {
-    return (
-        <>
-            <WaveclassTheme>
-                <s.FilterButton>
-                    {icon}
-                    <Typography variant={'paragraph-bold'} content={content} />
-                </s.FilterButton>
-            </WaveclassTheme>
-        </>
-    )
-}
+	text,
+	icon,
+	...props
+}: FilterButtonProps): JSX.Element => {
+	return (
+		<>
+			<WaveclassTheme>
+				<s.FilterButton {...props}>
+					{icon}
+					<Typography
+						variant={'paragraph-bold'}
+						content={text}
+						customStyles={{
+							textTransform: 'uppercase',
+						}}
+					/>
+				</s.FilterButton>
+			</WaveclassTheme>
+		</>
+	);
+};

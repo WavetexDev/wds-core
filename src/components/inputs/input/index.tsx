@@ -1,28 +1,56 @@
-import React from 'react'
-import * as s from './styles'
+import React from 'react';
+import * as s from './styles';
 import { WaveclassTheme } from '../../../layout';
 
-import { InputProps } from '../types'
-import { Typography } from '../../typography'
+import { InputProps } from '../types';
+import { Typography } from '../../typography';
+import { theme } from '../../../theme';
+import { getThemeMode } from '../../../utils/get-theme-mode';
 
-export const Input = (props: InputProps): JSX.Element => {
-    return (
-        <>
-            <WaveclassTheme>
-                <s.InputContainer>
-                    <s.InputWrapper>
-                        {props.icon}
-                        <s.Input type={props.type} placeholder={props.placeholder} required={props.required} />
-                    </s.InputWrapper>
+import { TfiEmail, TfiLock } from 'react-icons/tfi';
 
-                    {
-                        props.showError &&
-                        <s.ErrorMessage>
-                            <Typography variant={'small-regular'} content={props.errorMessage} />
-                        </s.ErrorMessage>
-                    }
-                </s.InputContainer>
-            </WaveclassTheme>
-        </>
-    )
-}
+const currentTheme = getThemeMode();
+
+export const Input = ({
+	icon,
+	showError,
+	errorMessage,
+	hideDefaultIcon,
+	...props
+}: InputProps): JSX.Element => {
+	const getDefaultIcon = () => {
+		if (hideDefaultIcon) return null;
+		switch (props.type) {
+			case 'email':
+				return <TfiEmail size={18} />;
+			case 'password':
+				return <TfiLock size={18} />;
+			default:
+				return null;
+		}
+	};
+
+	return (
+		<>
+			<WaveclassTheme>
+				<s.InputContainer>
+					<s.InputWrapper>
+						{getDefaultIcon() ?? icon}
+						<s.Input {...props} />
+					</s.InputWrapper>
+
+					{showError && (
+						<Typography
+							variant={'small-regular'}
+							content={errorMessage}
+							customStyles={{
+								color: theme[currentTheme]
+									.colors.error,
+							}}
+						/>
+					)}
+				</s.InputContainer>
+			</WaveclassTheme>
+		</>
+	);
+};

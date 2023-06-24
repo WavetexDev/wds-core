@@ -1,22 +1,29 @@
-import React from 'react'
-import * as s from './styles'
+import React from 'react';
+import * as s from './styles';
 import { WaveclassTheme } from '../../../layout';
 
-import { Typography } from '../../typography'
+import { Typography } from '../../typography';
 
-import { RegularButtonProps } from './types'
+import { RegularButtonProps } from './types';
 
 export const RegularButton = ({
-    variant,
-    content
+	variant,
+	text,
+	...props
 }: RegularButtonProps): JSX.Element => {
-    return (
-        <>
-            <WaveclassTheme>
-                <s.RegularButton variant={variant}>
-                    <Typography variant={'paragraph-bold'} content={content} />
-                </s.RegularButton>
-            </WaveclassTheme>
-        </>
-    )
-}
+	return (
+		<>
+			<WaveclassTheme>
+				<s.RegularButton
+					variant={variant}
+					{...props}
+				>
+					<Typography
+						variant={'paragraph-bold'}
+						content={text}
+					/>
+				</s.RegularButton>
+			</WaveclassTheme>
+		</>
+	);
+};

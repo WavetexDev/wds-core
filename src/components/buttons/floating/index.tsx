@@ -1,20 +1,24 @@
-import React from 'react'
-import * as s from './styles'
-import { WaveclassTheme } from '../../../layout'
+import React from 'react';
+import * as s from './styles';
+import { WaveclassTheme } from '../../../layout';
 
-import { FloatingButtonProps } from './types'
+import { FloatingButtonProps } from './types';
 
 export const FloatingButton = ({
-    variant,
-    icon
+	variant,
+	icon,
+	...props
 }: FloatingButtonProps): JSX.Element => {
-    return (
-        <>
-            <WaveclassTheme>
-                <s.FloatingButton variant={variant}>
-                    {icon}
-                </s.FloatingButton>
-            </WaveclassTheme>
-        </>
-    )
-}
+	return (
+		<>
+			<WaveclassTheme>
+				<s.FloatingButton
+					variant={variant}
+					{...props}
+				>
+					{icon}
+				</s.FloatingButton>
+			</WaveclassTheme>
+		</>
+	);
+};

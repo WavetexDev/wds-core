@@ -1,18 +1,29 @@
-import React, { ReactNode } from 'react'
-import * as s from './styles'
-import { WaveclassTheme } from '../../layout'
-import { TypographyProps } from './types'
+import React from 'react';
+import * as s from './styles';
+import { WaveclassTheme } from '../../layout';
+import { TypographyProps } from './types';
 
 export const Typography = ({
-    variant,
-    content
+	variant,
+	content,
+	customStyles
 }: TypographyProps): JSX.Element => {
-    const Wrapper = (props: { children: ReactNode }): JSX.Element => <WaveclassTheme>{props.children}</WaveclassTheme>
-    switch (variant) {
-        case 'h1-bold':
-            return <Wrapper><h1></h1></Wrapper>
-        // ...outras variants
-        default:
-            return <Wrapper><h1></h1></Wrapper>
-    }
-}
+	const cutIdx = variant.indexOf('-');
+	let tagVariant = variant.substring(0, cutIdx);
+	if (tagVariant === 'paragraph') tagVariant = 'p';
+
+	return (
+		<>
+			<WaveclassTheme>
+				<s.Typography
+					variant={variant}
+					tag={tagVariant}
+					as={tagVariant}
+					style={customStyles ?? {}}
+				>
+					{content}
+				</s.Typography>
+			</WaveclassTheme>
+		</>
+	);
+};

@@ -1,47 +1,45 @@
 import styled from 'styled-components';
-import { Theme } from '../../../theme';
 import { getThemeMode } from '../../../utils/get-theme-mode';
+import { InputStylingProps } from '../types';
 
 const currentMode = getThemeMode();
 
-export const InputContainer = styled.div<{
-	theme: Theme;
-}>`
+export const InputContainer = styled.div<InputStylingProps>`
 	display: flex;
 	flex-direction: column;
-	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
+	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
 `;
 
-export const InputWrapper = styled.div<{
-	theme: Theme;
-}>`
+export const InputWrapper = styled.div<InputStylingProps>`
 	width: 100%;
 	height: 40px;
 	background: ${({ theme }) =>
 		theme[currentMode].colors.white};
 	border: 1px solid
-		${({ theme }) => theme[currentMode].colors.gray500};
+		${({ theme }) => theme[currentMode].colors.gray300};
 	border-radius: ${({ theme }) =>
 		theme[currentMode].spacing.sp8};
-	padding-left: ${({ theme }) =>
-		theme[currentMode].spacing.sp12};
+	padding: 0
+		${({ theme }) => theme[currentMode].spacing.sp12};
 
 	display: flex;
 	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
+
+	& svg {
+		max-width: 18px;
+		max-height: 18px;
+	}
 `;
 
-export const Input = styled.input<{
-	theme: Theme;
-}>`
+export const Input = styled.input<InputStylingProps>`
 	width: 100%;
-	height: 100%;
 	border: 0;
 	outline: 0;
 
 	&::placeholder {
 		color: ${({ theme }) =>
-			theme[currentMode].colors.gray700};
+			theme[currentMode].colors.gray300};
 	}
 
 	&:focus {
@@ -53,9 +51,7 @@ export const Input = styled.input<{
 	}
 `;
 
-export const ErrorMessage = styled.span<{
-	theme: Theme;
-}>`
+export const ErrorMessage = styled.span<InputStylingProps>`
 	color: ${({ theme }) =>
 		theme[currentMode].colors.error};
 `;
