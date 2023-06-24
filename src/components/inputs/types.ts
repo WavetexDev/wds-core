@@ -5,4 +5,5 @@ export interface InputProps
 	showError?: boolean;
 	errorMessage?: string;
 	icon?: ReactNode;
+	hideDefaultIcon?: boolean;
 }

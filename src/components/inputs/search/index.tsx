@@ -5,30 +5,42 @@ import { WaveclassTheme } from '../../../layout';
 import { InputProps } from '../types';
 
 import { Typography } from '../../typography';
+import { theme } from '../../../theme';
+import { getThemeMode } from '../../../utils/get-theme-mode';
+import { TfiSearch } from 'react-icons/tfi';
 
-export const SearchInput = (
-	props: InputProps
-): JSX.Element => {
+const currentTheme = getThemeMode();
+
+export const SearchInput = ({
+	hideDefaultIcon,
+	icon,
+	showError,
+	errorMessage,
+	...props
+}: InputProps): JSX.Element => {
+	const getDefaultIcon = () => {
+		if (hideDefaultIcon) return null;
+		else return <TfiSearch size={18} />;
+	};
+
 	return (
 		<>
 			<WaveclassTheme>
 				<s.SearchInputContainer>
 					<s.SearchInputWrapper>
-						{props.icon}
-						<s.SearchInput
-							type={props.type}
-							placeholder={props.placeholder}
-							required={props.required}
-						/>
+						{getDefaultIcon() ?? icon}
+						<s.SearchInput {...props} />
 					</s.SearchInputWrapper>
 
-					{props.showError && (
-						<s.ErrorMessage>
-							<Typography
-								variant={'small-regular'}
-								content={props.errorMessage}
-							/>
-						</s.ErrorMessage>
+					{showError && (
+						<Typography
+							variant={'small-regular'}
+							content={errorMessage}
+							customStyles={{
+								color: theme[currentTheme]
+									.colors.error,
+							}}
+						/>
 					)}
 				</s.SearchInputContainer>
 			</WaveclassTheme>

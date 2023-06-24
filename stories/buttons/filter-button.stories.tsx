@@ -24,10 +24,19 @@ export default meta;
 
 type Story = StoryObj<typeof FilterButton>;
 
-export const filterButton: Story = {
+export const standart: Story = {
 	args: {
 		text: 'Click me!',
 		icon: <TfiUser size={18} />,
 		onClick: () => alert('I was clicked!'),
+	},
+};
+
+export const disabled: Story = {
+	args: {
+		text: 'Click me!',
+		icon: <TfiUser size={18} />,
+		onClick: () => alert('I was clicked!'),
+		disabled: true,
 	},
 };

@@ -7,19 +7,64 @@ import { TfiUser } from 'react-icons/tfi';
 const meta: Meta<typeof Input> = {
 	title: 'Input',
 	component: Input,
+	argTypes: {
+		icon: {
+			table: { disable: true }
+		},
+		required: {
+			table: { disable: true }
+		},
+		type: {
+			options: ['text', 'email', 'number', 'password'],
+			control: {
+				type: 'select'
+			}
+		},
+		disabled: {
+			control: {
+				type: 'boolean'
+			}
+		}
+	}
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Input>;
 
-export const input: Story = {
+export const standart: Story = {
 	args: {
 		icon: <TfiUser size={18} />,
 		showError: false,
-		errorMessage: 'Error message',
+		errorMessage: '',
 		type: 'text',
-		placeholder: 'Placeholder',
-		required: true,
+		placeholder: 'Insira seu nome',
+	},
+};
+
+export const withDefaultEmailIcon: Story = {
+	args: {
+		showError: false,
+		errorMessage: '',
+		type: 'email',
+		placeholder: 'Insira seu e-mail',
+	},
+};
+
+export const withDefaultPasswordIcon: Story = {
+	args: {
+		showError: false,
+		errorMessage: '',
+		type: 'password',
+		placeholder: 'Insira sua senha',
+	},
+};
+
+export const withError: Story = {
+	args: {
+		showError: true,
+		errorMessage: 'Senha inválida',
+		type: 'password',
+		placeholder: 'Insira sua senha',
 	},
 };

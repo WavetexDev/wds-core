@@ -5,34 +5,39 @@ import { getThemeMode } from '../../../utils/get-theme-mode';
 const currentMode = getThemeMode();
 
 export const InputContainer = styled.div<{
-	theme: Theme;
+	theme?: Theme;
 }>`
 	display: flex;
 	flex-direction: column;
-	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
+	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
 `;
 
 export const InputWrapper = styled.div<{
-	theme: Theme;
+	theme?: Theme;
 }>`
 	width: 100%;
 	height: 40px;
 	background: ${({ theme }) =>
 		theme[currentMode].colors.white};
 	border: 1px solid
-		${({ theme }) => theme[currentMode].colors.gray500};
+		${({ theme }) => theme[currentMode].colors.gray300};
 	border-radius: ${({ theme }) =>
 		theme[currentMode].spacing.sp8};
-	padding-left: ${({ theme }) =>
-		theme[currentMode].spacing.sp12};
+	padding: 0
+		${({ theme }) => theme[currentMode].spacing.sp12};
 
 	display: flex;
 	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
+
+	& svg {
+		max-width: 18px;
+		max-height: 18px;
+	}
 `;
 
 export const Input = styled.input<{
-	theme: Theme;
+	theme?: Theme;
 }>`
 	width: 100%;
 	border: 0;
@@ -40,7 +45,7 @@ export const Input = styled.input<{
 
 	&::placeholder {
 		color: ${({ theme }) =>
-			theme[currentMode].colors.gray700};
+			theme[currentMode].colors.gray300};
 	}
 
 	&:focus {
@@ -50,11 +55,9 @@ export const Input = styled.input<{
 					theme[currentMode].shadows.light},
 			inset 0px 0px 5px -1px ${({ theme }) => theme[currentMode].colors.gray500};
 	}
-`;
 
-export const ErrorMessage = styled.span<{
-	theme: Theme;
-}>`
-	color: ${({ theme }) =>
-		theme[currentMode].colors.error};
+	&:disabled {
+		background: ${({ theme }) =>
+			theme[currentMode].colors.gray100};
+	}
 `;

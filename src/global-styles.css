@@ -5,6 +5,7 @@
 }
 
 body,
-button {
+button,
+input {
 	font-family: Poppins !important;
 }

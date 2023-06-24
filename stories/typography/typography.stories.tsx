@@ -4,6 +4,11 @@ import { Typography } from '../../src';
 const meta: Meta<typeof Typography> = {
 	title: 'Typography',
 	component: Typography,
+	argTypes: {
+		customStyles: {
+			table: { disable: true }
+		}
+	}
 };
 
 export default meta;
