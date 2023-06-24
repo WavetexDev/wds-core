@@ -24,7 +24,7 @@ export default meta;
 
 type Story = StoryObj<typeof OptionButton>;
 
-export const optionButton: Story = {
+export const standart: Story = {
 	args: {
 		text: 'Click me!',
 		icon: <TfiUser size={18} />,
