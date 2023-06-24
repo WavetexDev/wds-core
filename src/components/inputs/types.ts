@@ -1,3 +1,4 @@
+import { Theme } from '@/theme';
 import { InputHTMLAttributes, ReactNode } from 'react';
 
 export interface InputProps
@@ -5,4 +6,8 @@ export interface InputProps
 	showError?: boolean;
 	errorMessage?: string;
 	icon?: ReactNode;
+}
+
+export interface InputStylingProps {
+	theme?: Theme;
 }

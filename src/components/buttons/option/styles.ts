@@ -29,4 +29,9 @@ export const OptionButton = styled.button<{
 		cursor: pointer;
 		opacity: 0.9;
 	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.4;
+	}
 `;

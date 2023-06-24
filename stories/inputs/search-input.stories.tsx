@@ -7,6 +7,18 @@ import { TfiUser } from 'react-icons/tfi';
 const meta: Meta<typeof SearchInput> = {
 	title: 'Search Input',
 	component: SearchInput,
+	argTypes: {
+		icon: {
+			table: {
+				disable: true,
+			},
+		},
+		type: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 };
 
 export default meta;

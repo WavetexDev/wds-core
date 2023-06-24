@@ -59,4 +59,9 @@ export const RegularButton = styled.button<RegularButtonStylingProps>`
 	&:hover {
 		opacity: 0.9;
 	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.4;
+	}
 `;

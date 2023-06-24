@@ -6,27 +6,30 @@ import { InputProps } from '../types';
 
 import { Typography } from '../../typography';
 
-export const SearchInput = (
-	props: InputProps
-): JSX.Element => {
+export const SearchInput = ({
+	icon,
+	showError,
+	errorMessage,
+	...props
+}: InputProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
 				<s.SearchInputContainer>
 					<s.SearchInputWrapper>
-						{props.icon}
+						{icon}
 						<s.SearchInput
-							type={props.type}
+							type="search"
 							placeholder={props.placeholder}
 							required={props.required}
 						/>
 					</s.SearchInputWrapper>
 
-					{props.showError && (
+					{showError && (
 						<s.ErrorMessage>
 							<Typography
 								variant={'small-regular'}
-								content={props.errorMessage}
+								content={errorMessage}
 							/>
 						</s.ErrorMessage>
 					)}

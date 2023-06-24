@@ -9,9 +9,7 @@ export const Input = ({
 	icon,
 	showError,
 	errorMessage,
-	type,
-	placeholder,
-	required,
+	...props
 }: InputProps): JSX.Element => {
 	return (
 		<>
@@ -20,9 +18,9 @@ export const Input = ({
 					<s.InputWrapper>
 						{icon}
 						<s.Input
-							type={type}
-							placeholder={placeholder}
-							required={required}
+							type="text"
+							placeholder={props.placeholder}
+							required={props.required}
 						/>
 					</s.InputWrapper>
 

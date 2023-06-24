@@ -1,20 +1,16 @@
 import { styled } from 'styled-components';
 import { getThemeMode } from '../../../utils/get-theme-mode';
-import { Theme } from '../../../theme';
+import { InputStylingProps } from '../types';
 
 const currentMode = getThemeMode();
 
-export const SearchInputContainer = styled.div<{
-	theme: Theme;
-}>`
+export const SearchInputContainer = styled.div<InputStylingProps>`
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
 `;
 
-export const SearchInputWrapper = styled.div<{
-	theme: Theme;
-}>`
+export const SearchInputWrapper = styled.div<InputStylingProps>`
 	width: 100%;
 	height: 40px;
 	background: ${({ theme }) =>
@@ -31,9 +27,7 @@ export const SearchInputWrapper = styled.div<{
 	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
 `;
 
-export const SearchInput = styled.input<{
-	theme: Theme;
-}>`
+export const SearchInput = styled.input<InputStylingProps>`
 	width: 100%;
 	border: 0;
 	outline: 0;
@@ -52,9 +46,7 @@ export const SearchInput = styled.input<{
 	}
 `;
 
-export const ErrorMessage = styled.span<{
-	theme: Theme;
-}>`
+export const ErrorMessage = styled.span<InputStylingProps>`
 	color: ${({ theme }) =>
 		theme[currentMode].colors.error};
 `;

@@ -38,4 +38,9 @@ export const FloatingButton = styled.button<FloatingButtonStylesProps>`
 		cursor: pointer;
 		opacity: 0.9;
 	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.4;
+	}
 `;
