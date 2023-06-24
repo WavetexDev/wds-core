@@ -5,6 +5,7 @@ import { FilterButton } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof FilterButton> = {
+	title: 'Filter Button',
 	component: FilterButton,
 };
 

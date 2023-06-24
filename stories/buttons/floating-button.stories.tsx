@@ -5,6 +5,7 @@ import { FloatingButton } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof FloatingButton> = {
+	title: 'Floating Button',
 	component: FloatingButton,
 };
 
