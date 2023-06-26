@@ -2,6 +2,23 @@
 
 Este repositório pertence à organização Wavetex e tem o objetivo de reunir os componentes padronizados da grade de estilos da plataforma Waveclass para Web.
 
+## Sumário
+
+-   [Tecnologias utilizadas](#tecnologias-utilizadas)
+-   [Storybook](#storybook)
+-   [Instalação](#instalação)
+-   [Utilitários](#utilitários)
+-   [Componentes](#componentes)
+    -   [Avatar](#avatar)
+    -   [Filter Button](#filter-button)
+    -   [Floating Button](#floating-button)
+    -   [Option Button](#option-button)
+    -   [Regular Button](#regular-button)
+    -   [Input](#input)
+    -   [Search Input](#search-input)
+    -   [Number Badge](#number-badge)
+    -   [Typography](#typography)
+
 ## Tecnologias utilizadas
 
 -   [React 18](https://react.dev/reference/react);
