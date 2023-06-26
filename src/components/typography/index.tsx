@@ -5,7 +5,7 @@ import { TypographyProps } from './types';
 
 export const Typography = ({
 	variant,
-	content,
+	text,
 	customStyles
 }: TypographyProps): JSX.Element => {
 	const cutIdx = variant.indexOf('-');
@@ -21,7 +21,7 @@ export const Typography = ({
 					as={tagVariant}
 					style={customStyles ?? {}}
 				>
-					{content}
+					{text}
 				</s.Typography>
 			</WaveclassTheme>
 		</>

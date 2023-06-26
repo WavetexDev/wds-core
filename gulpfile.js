@@ -37,23 +37,10 @@ gulp.task('copy', function () {
 
 gulp.task('copyTypeDeclarations', function () {
 	return gulp
-		.src(['./wds-core.d.ts'], {
+		.src(['./index.d.ts'], {
 			base: './',
 		})
 		.pipe(gulp.dest('dist'));
 });
 
-// gulp.task('copyDependencies', function () {
-// 	const pattern = dependencies.map(
-// 		(dep) => `node_modules/${dep}/**/*`
-// 	);
-
-// 	return gulp
-// 		.src(pattern, { base: 'node_modules' })
-// 		.pipe(copy('dist/node_modules', { prefix: 1 }));
-// });
-
-gulp.task(
-	'default',
-	gulp.series('compile', 'copy', 'copyTypeDeclarations')
-);
+gulp.task('default', gulp.series('compile', 'copy'));

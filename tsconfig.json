@@ -32,8 +32,7 @@
 		"src/*.ts",
 		"src/*.tsx",
 		"src/**/*.tsx",
-		"src/**/*.ts",
-		"global.d.ts"
+		"src/**/*.ts"
 	],
-	"exclude": ["node_modules", "global.d.ts"]
+	"exclude": ["node_modules"]
 }

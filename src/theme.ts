@@ -124,4 +124,67 @@ export const theme = {
 	},
 };
 
-export type Theme = typeof theme;
+interface ThemeOptions {
+	colors: {
+		primary: string;
+		secondary: string;
+		dynamicTextColor: (bgColor: string) => string;
+		black: string;
+		white: string;
+		gray700: string;
+		gray500: string;
+		gray300: string;
+		gray100: string;
+		error: string;
+		warning: string;
+		info: string;
+		success: string;
+	};
+	fontSizes: {
+		fs8: string;
+		fs10: string;
+		fs12: string;
+		fs14: string;
+		fs16: string;
+		fs18: string;
+		fs20: string;
+		fs22: string;
+		fs24: string;
+		fs26: string;
+		fs28: string;
+		fs30: string;
+		fs32: string;
+		fs34: string;
+		fs36: string;
+		fs38: string;
+		fs40: string;
+	};
+	spacing: {
+		sp2: string;
+		sp4: string;
+		sp6: string;
+		sp8: string;
+		sp10: string;
+		sp12: string;
+		sp14: string;
+		sp16: string;
+		sp18: string;
+		sp20: string;
+		sp22: string;
+		sp24: string;
+		sp26: string;
+		sp28: string;
+		sp30: string;
+		sp32: string;
+	};
+	shadows: {
+		light: string;
+		medium: string;
+		dark: string;
+	};
+}
+
+export interface Theme {
+	light: ThemeOptions;
+	dark: ThemeOptions;
+}

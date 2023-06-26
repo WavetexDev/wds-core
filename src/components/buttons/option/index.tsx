@@ -18,7 +18,7 @@ export const OptionButton = ({
 					{icon}
 					<Typography
 						variant={'paragraph-bold'}
-						content={text}
+						text={text}
 					/>
 				</s.OptionButton>
 			</WaveclassTheme>

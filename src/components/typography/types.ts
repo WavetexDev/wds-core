@@ -2,7 +2,7 @@ import { CSSProperties, ReactNode } from 'react';
 import { Theme } from '../../theme';
 
 export interface TypographyProps {
-	content?: string;
+	text: string;
 	variant: Variant;
 	customStyles?: CSSProperties;
 }

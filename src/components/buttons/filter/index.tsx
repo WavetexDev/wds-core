@@ -18,7 +18,7 @@ export const FilterButton = ({
 					{icon}
 					<Typography
 						variant={'paragraph-bold'}
-						content={text}
+						text={text}
 						customStyles={{
 							textTransform: 'uppercase',
 						}}

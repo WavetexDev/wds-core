@@ -1,10 +1,10 @@
 {
 	"name": "@waveclass/wds-core",
-	"version": "0.0.39",
+	"version": "0.0.43",
 	"description": "Waveclass Design System core components",
 	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
 	"scripts": {
-		"test": "jest --env=jsdom",
 		"sb": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
 		"format": "prettier --config .prettierrc \"**/**/**/*.(tsx|ts)\" --write",

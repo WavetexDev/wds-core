@@ -11,7 +11,7 @@ export const NumberBadge = ({
         <>
             <WaveclassTheme>
                 <s.NumberBadgeContainer>
-                    <Typography variant={'small-regular'} content={value.toString()} />
+                    <Typography variant={'small-regular'} text={value.toString()} />
                 </s.NumberBadgeContainer>
             </WaveclassTheme>
         </>

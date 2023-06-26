@@ -42,7 +42,7 @@ export const Input = ({
 					{showError && (
 						<Typography
 							variant={'small-regular'}
-							content={errorMessage}
+							text={errorMessage}
 							customStyles={{
 								color: theme[currentTheme]
 									.colors.error,

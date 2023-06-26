@@ -5,3 +5,5 @@ coverage
 dist
 
 .vscode/launch.json
+
+.DS_STORE

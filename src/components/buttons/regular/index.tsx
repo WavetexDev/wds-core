@@ -20,7 +20,7 @@ export const RegularButton = ({
 				>
 					<Typography
 						variant={'paragraph-bold'}
-						content={text}
+						text={text}
 					/>
 				</s.RegularButton>
 			</WaveclassTheme>

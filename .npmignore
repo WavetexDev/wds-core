@@ -9,7 +9,6 @@ webpack.config.js
 .vscode
 src
 stories
-main.ts
 tsconfig.json
-webpack.config.js
 gulpfile.js
+.DS_STORE
