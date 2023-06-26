@@ -1,6 +1,6 @@
 {
 	"name": "@waveclass/wds-core",
-	"version": "0.0.34",
+	"version": "0.0.39",
 	"description": "Waveclass Design System core components",
 	"main": "./dist/index.js",
 	"scripts": {
@@ -20,26 +20,24 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"dependencies": {
-		"react-icons": "^4.9.0",
-		"styled-components": "6.0.0-rc.3"
-	},
 	"peerDependencies": {
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-icons": "^4.9.0",
+		"styled-components": "6.0.0-rc.3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.22.5",
 		"@babel/preset-env": "^7.22.4",
 		"@babel/preset-react": "^7.22.3",
 		"@babel/preset-typescript": "^7.21.5",
-		"@storybook/addon-essentials": "^7.0.18",
-		"@storybook/addon-interactions": "^7.0.18",
-		"@storybook/addon-links": "^7.0.18",
-		"@storybook/blocks": "^7.0.18",
-		"@storybook/react": "^7.0.18",
-		"@storybook/react-webpack5": "^7.0.18",
-		"@storybook/testing-library": "^0.0.14-next.2",
+		"@storybook/addon-essentials": "^7.0.23",
+		"@storybook/addon-interactions": "^7.0.23",
+		"@storybook/addon-links": "^7.0.23",
+		"@storybook/blocks": "^7.0.23",
+		"@storybook/react": "^7.0.23",
+		"@storybook/react-webpack5": "^7.0.23",
+		"@storybook/testing-library": "^0.2.0",
 		"@types/react": "^18.0.37",
 		"@types/react-dom": "^18.0.11",
 		"babel-loader": "^9.1.2",
@@ -48,7 +46,9 @@
 		"eslint-config-next": "13.4.4",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-storybook": "^0.6.12",
 		"gulp": "^4.0.2",
+		"gulp-copy": "^4.0.1",
 		"gulp-sourcemaps": "^3.0.0",
 		"gulp-typescript": "6.0.0-alpha.1",
 		"husky": "^8.0.3",
@@ -56,7 +56,9 @@
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"storybook": "^7.0.18",
+		"react-icons": "^4.9.0",
+		"storybook": "^7.0.23",
+		"styled-components": "6.0.0-rc.3",
 		"ts-loader": "^9.4.3",
 		"typescript": "^5.0.2"
 	},

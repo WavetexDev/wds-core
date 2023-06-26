@@ -1,11 +1,9 @@
 const gulp = require('gulp');
+const copy = require('gulp-copy');
 const ts = require('gulp-typescript');
 const sourcemaps = require('gulp-sourcemaps');
-
-// Configure TypeScript compiler
 const tsProject = ts.createProject('tsconfig.json');
 
-// Define the task to compile TypeScript files
 gulp.task('compile', function () {
 	return gulp
 		.src([
@@ -19,15 +17,6 @@ gulp.task('compile', function () {
 		.js.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('dist'));
 });
-
-// gulp.task('compile', function () {
-// 	return tsProject
-// 		.src()
-// 		.pipe(sourcemaps.init())
-// 		.pipe(tsProject())
-// 		.js.pipe(sourcemaps.write('.'))
-// 		.pipe(gulp.dest('dist'));
-// });
 
 gulp.task('copy', function () {
 	return gulp
@@ -46,5 +35,25 @@ gulp.task('copy', function () {
 		.pipe(gulp.dest('dist'));
 });
 
-// Define the default task
-gulp.task('default', gulp.series('compile', 'copy'));
+gulp.task('copyTypeDeclarations', function () {
+	return gulp
+		.src(['./wds-core.d.ts'], {
+			base: './',
+		})
+		.pipe(gulp.dest('dist'));
+});
+
+// gulp.task('copyDependencies', function () {
+// 	const pattern = dependencies.map(
+// 		(dep) => `node_modules/${dep}/**/*`
+// 	);
+
+// 	return gulp
+// 		.src(pattern, { base: 'node_modules' })
+// 		.pipe(copy('dist/node_modules', { prefix: 1 }));
+// });
+
+gulp.task(
+	'default',
+	gulp.series('compile', 'copy', 'copyTypeDeclarations')
+);

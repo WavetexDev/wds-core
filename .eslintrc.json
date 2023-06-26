@@ -3,14 +3,19 @@
     "browser": true,
     "es2021": true
   },
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaVersion": "latest"
   },
   "rules": {
     "prettier/prettier": 2
   },
-  "extends": ["plugin:prettier/recommended"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
+  ],
   "prettier/prettier": [
     "error",
     {

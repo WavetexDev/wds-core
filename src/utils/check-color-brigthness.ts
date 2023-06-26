@@ -1,45 +1,20 @@
 export function isColorDark(color: string): boolean {
-	const elem = document.createElement('div');
-	elem.style.backgroundColor = color;
+	// Remove any leading '#' character from the color
+	const cleanedColor = color.replace('#', '');
 
-	document.body.appendChild(elem);
+	// Convert the color to RGB format
+	const hexToRgb = (hex: string) => {
+		const bigint = parseInt(hex, 16);
+		const r = (bigint >> 16) & 255;
+		const g = (bigint >> 8) & 255;
+		const b = bigint & 255;
+		return { r, g, b };
+	};
 
-	const computedStyle = window.getComputedStyle(elem);
+	// Calculate the brightness of the color
+	const { r, g, b } = hexToRgb(cleanedColor);
+	const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
-	const rgb =
-		computedStyle.backgroundColor!.match(/\d+/g);
-	let r = parseInt(rgb![0]);
-	let g = parseInt(rgb![1]);
-	let b = parseInt(rgb![2]);
-
-	let h: number = 0,
-		s: number = 0,
-		l: number = 0;
-	(r /= 255), (g /= 255), (b /= 255);
-	const max = Math.max(r, g, b),
-		min = Math.min(r, g, b);
-	l = (max + min) / 2;
-
-	if (max === min) {
-		h = s = 0; // achromatic
-	} else {
-		const d = max - min;
-		s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-		switch (max) {
-			case r:
-				h = (g - b) / d + (g < b ? 6 : 0);
-				break;
-			case g:
-				h = (b - r) / d + 2;
-				break;
-			case b:
-				h = (r - g) / d + 4;
-				break;
-		}
-		h /= 6;
-	}
-
-	document.body.removeChild(elem);
-
-	return l < 0.6;
+	// Return 'light' or 'dark' based on the brightness threshold
+	return brightness < 128;
 }
