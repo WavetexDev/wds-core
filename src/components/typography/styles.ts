@@ -1,32 +1,24 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { TypographyProps } from "./types";
+import { TypographyStylesProps } from './types';
 
-export const Typography = styled.p<TypographyProps>` // TODO Pick a better tag
-    font-weight: ${({ variant }) => 
-        variant.includes('bold') ? 'bold' : 'regular'
-    };
+export const Typography = styled.div<TypographyStylesProps>`
+	font-weight: ${({ variant }) =>
+		variant.includes('bold') ? 'bold' : 'normal'};
 
-    font-style: ${({ variant }) => variant.includes('italic') ? 'italic' : 'normal'};
+	font-style: ${({ variant }) =>
+		variant.includes('italic') ? 'italic' : 'normal'};
 
-    font-size: ${({ variant }) => 
-        (variant.includes('h1') && '32px') ||
+	font-size: ${({ tag }) =>
+		(tag === 'h1' && '32px') ||
+		(tag === 'h2' && '26px') ||
+		(tag === 'h3' && '20px') ||
+		(tag === 'h4' && '16px') ||
+		(tag === 'h5' && '14px') ||
+		(tag === 'h6' && '12px') ||
+		(tag === 'small' && '10px') ||
+		(tag === 'p' && '12px') ||
+		'1rem'};
 
-        (variant.includes('h2') && '26px') ||
-
-        (variant.includes('h3') && '20px') ||
-
-        (variant.includes('h4') && '16px') ||
-
-        (variant.includes('h5') && '14px') ||
-
-        (variant.includes('h6') && '12px') ||
-
-        (variant.includes('small') && '10px') ||
-
-        (variant.includes('paragraph') && '12px') ||
-
-
-        '1rem'
-    };
-`
+	margin: 0 0 0 0;
+`;

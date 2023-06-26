@@ -3,15 +3,15 @@ import { theme } from './theme';
 import React from 'react';
 
 interface Props {
-    children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 export const WaveclassTheme = ({
-    children,
+	children,
 }: Props): JSX.Element => {
-    return (
-        <ThemeProvider theme={theme}>
-            {children}
-        </ThemeProvider>
-    );
+	return (
+		<ThemeProvider theme={theme}>
+			{children}
+		</ThemeProvider>
+	);
 };

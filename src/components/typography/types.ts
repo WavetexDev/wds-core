@@ -1,8 +1,10 @@
+import { CSSProperties, ReactNode } from 'react';
 import { Theme } from '../../theme';
 
 export interface TypographyProps {
 	content?: string;
 	variant: Variant;
+	customStyles?: CSSProperties;
 }
 
 type Variant =
@@ -34,4 +36,8 @@ type Variant =
 export interface TypographyStylesProps {
 	variant: Variant;
 	theme?: Theme;
+	tag: string;
+	as: string;
+	children: ReactNode;
+	style: CSSProperties;
 }

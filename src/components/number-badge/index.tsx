@@ -1,6 +1,7 @@
 import React from 'react'
-import { Typography } from '../typography'
 import * as s from './styles'
+
+import { Typography } from '../typography'
 import { WaveclassTheme } from '../../layout'
 
 export const NumberBadge = ({

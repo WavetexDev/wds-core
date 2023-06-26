@@ -18,8 +18,20 @@ const getBGColor = (
 		: `${theme[currentTheme].colors.secondary}`;
 };
 
+const getColor = (
+	variant: string,
+	theme: Theme
+): string => {
+	return variant.includes('ghost') ||
+		variant.includes('text')
+		? `black`
+		: theme[currentTheme].colors.dynamicTextColor(
+				getBGColor(variant, theme)
+		  );
+};
+
 export const RegularButton = styled.button<RegularButtonStylingProps>`
-	width: 183px;
+	width: 100%;
 	height: 36px;
 	background: ${(props) =>
 		getBGColor(props.variant, props.theme)};
@@ -30,9 +42,7 @@ export const RegularButton = styled.button<RegularButtonStylingProps>`
 			: 'none'};
 	border-radius: 8px;
 	color: ${({ theme, variant }) =>
-		theme[currentTheme].colors.dynamicTextColor(
-			getBGColor(variant, theme)
-		)};
+		getColor(variant, theme)};
 
 	cursor: pointer;
 	border: ${(props) =>
@@ -48,5 +58,10 @@ export const RegularButton = styled.button<RegularButtonStylingProps>`
 
 	&:hover {
 		opacity: 0.9;
+	}
+
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.4;
 	}
 `;
