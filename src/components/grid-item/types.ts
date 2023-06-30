@@ -1,9 +1,10 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 export interface GridItemProps {
 	id?: string;
 	variant: Variant;
 	customStyles?: CSSProperties;
+	children: ReactNode;
 }
 
 export type Variant =

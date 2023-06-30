@@ -8,6 +8,7 @@ export const GridItem = ({
 	variant,
 	id,
 	customStyles,
+	children,
 }: GridItemProps): JSX.Element => {
 	return (
 		<>
@@ -16,7 +17,9 @@ export const GridItem = ({
 					id={id}
 					variant={variant}
 					style={customStyles ?? {}}
-				></s.GridItem>
+				>
+					{children}
+				</s.GridItem>
 			</WaveclassTheme>
 		</>
 	);

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Theme } from '@/theme';
-import { getThemeMode } from '../../utils/get-theme-mode';
+import { Theme } from '../../theme';
+import { getThemeMode } from '@waveclass/wds-core';
 import { Variant } from './types';
 
 const currentMode = getThemeMode();
@@ -13,10 +13,6 @@ export const GridItem = styled.div<{
 	justify-content: flex-start;
 	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
-
-	background-color: ${({ theme }) =>
-		theme[currentMode].colors
-			.black}; // TODO Remove this
 
 	width: ${({ variant }) =>
 		(variant === 'col-1' && '8.3%') ||
@@ -33,6 +29,4 @@ export const GridItem = styled.div<{
 		(variant === 'col-12' && '99.6%') ||
 		(variant === 'row' && '100%') ||
 		'100%'};
-
-	height: 50px;
 `;

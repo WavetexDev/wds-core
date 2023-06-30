@@ -66,5 +66,8 @@
 		">0.2%",
 		"not dead",
 		"not op_mini all"
-	]
+	],
+	"dependencies": {
+		"@waveclass/wds-core": "^0.0.43"
+	}
 }
