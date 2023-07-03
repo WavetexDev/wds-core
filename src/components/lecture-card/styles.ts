@@ -1,9 +1,14 @@
 import styled from 'styled-components';
-import { getThemeMode } from '../../utils/get-theme-mode';
+import { getThemeMode } from '@waveclass/wds-core';
+
+import {
+	LectureCardStyleProps,
+	LectureCardThumbnailProps,
+} from './types';
 
 const currentMode = getThemeMode();
 
-export const CardContainer = styled.article`
+export const CardContainer = styled.article<LectureCardStyleProps>`
 	display: flex;
 	flex-direction: column-reverse;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp16};
@@ -17,18 +22,45 @@ export const CardContainer = styled.article`
 	box-shadow: ${({ theme }) =>
 		theme[currentMode].shadows.medium};
 
+	background: ${({ theme, variant }) =>
+		variant === 'primary'
+			? theme[currentMode].colors.white
+			: `#45465F`};
+
 	@media (min-width: 650px) {
 		flex-direction: row;
 	}
 `;
 
-export const ImageContainer = styled.section`
+export const ImageContainer = styled.section<LectureCardThumbnailProps>`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
 	width: 100%;
 	height: 100px;
+	padding: ${({ theme }) =>
+		theme[currentMode].spacing.sp6};
 
-	img {
-		width: 100%;
-		max-height: 100%;
+	color: ${({ theme }) =>
+		theme[currentMode].colors.white};
+
+	background: ${({ thumbnail, theme }) =>
+		thumbnail !== ''
+			? `url(${thumbnail})`
+			: `${theme[currentMode].colors.secondary}`};
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	svg {
+		position: absolute;
+	}
+
+	div {
+		margin-top: auto;
+		align-self: flex-end;
 	}
 
 	@media (min-width: 650px) {
@@ -48,9 +80,13 @@ export const LectureDetails = styled.section`
 	}
 `;
 
-export const LectureTitle = styled.main`
+export const LectureTitle = styled.main<LectureCardStyleProps>`
 	display: flex;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp16};
+	color: ${({ variant, theme }) =>
+		variant === 'primary'
+			? theme[currentMode].colors.black
+			: theme[currentMode].colors.white};
 `;
 
 export const LectureFooter = styled.footer`

@@ -5,14 +5,24 @@ import { Typography } from '../typography';
 
 import { LectureCardProps } from './types';
 
-import { TfiTime } from 'react-icons/tfi';
+import {
+	TfiControlPlay,
+	TfiHeadphone,
+	TfiBookmarkAlt,
+	TfiAgenda,
+	TfiTime,
+} from 'react-icons/tfi';
+import { Pill } from '../pill';
 
 export const LectureCard = ({
-	icon,
+	cardVariant,
+	lectureType,
 	title,
 	thumbnail,
 	author,
 	duration,
+	pillVariant,
+	pillText,
 }: LectureCardProps): JSX.Element => {
 	function formatClassDuration(duration: number) {
 		const minutes = Math.floor(duration / 60);
@@ -29,16 +39,37 @@ export const LectureCard = ({
 		return formattedDuration;
 	}
 
+	function determineLectureTypeIcon(lectureType: string) {
+		switch (lectureType) {
+			case 'video':
+				return <TfiControlPlay size={24} />;
+
+			case 'audio':
+				return <TfiHeadphone size={24} />;
+
+			case 'material':
+				return <TfiBookmarkAlt size={24} />;
+
+			case 'text':
+				return <TfiAgenda size={24} />;
+		}
+	}
+
 	const formattedClassDuration =
 		formatClassDuration(duration);
+
+	const lectureTypeIcon =
+		determineLectureTypeIcon(lectureType);
 
 	return (
 		<>
 			<WaveclassTheme>
-				<s.CardContainer>
+				<s.CardContainer variant={cardVariant}>
 					<s.LectureDetails>
-						<s.LectureTitle>
-							{icon}
+						<s.LectureTitle
+							variant={cardVariant}
+						>
+							{lectureTypeIcon}
 							<Typography
 								variant="h4-bold"
 								text={title}
@@ -63,8 +94,15 @@ export const LectureCard = ({
 						</s.LectureFooter>
 					</s.LectureDetails>
 
-					<s.ImageContainer>
-						<img src={thumbnail} alt="" />
+					<s.ImageContainer thumbnail={thumbnail}>
+						{thumbnail !== ''
+							? ''
+							: lectureTypeIcon}
+
+						<Pill
+							variant={pillVariant}
+							text={pillText}
+						/>
 					</s.ImageContainer>
 				</s.CardContainer>
 			</WaveclassTheme>
