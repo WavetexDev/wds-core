@@ -20,28 +20,28 @@ declare module '@waveclass/wds-core' {
 			| 'secondary-contained'
 			| 'secondary-ghost'
 			| 'secondary-text';
-		customStyles: Record<string, string>;
+		customStyles?: Record<string, string>;
 	}): JSX.Element;
 	export function FilterButton(props: {
 		onClick: () => void;
 		disabled?: boolean;
 		text: string;
 		icon?: any;
-		customStyles: Record<string, string>;
+		customStyles?: Record<string, string>;
 	}): JSX.Element;
 	export function FloatingButton(props: {
 		onClick: () => void;
 		disabled?: boolean;
 		variant: 'primary' | 'secondary';
 		icon?: any;
-		customStyles: Record<string, string>;
+		customStyles?: Record<string, string>;
 	}): JSX.Element;
 	export function OptionButton(props: {
 		onClick: () => void;
 		disabled?: boolean;
 		text: string;
 		icon?: any;
-		customStyles: Record<string, string>;
+		customStyles?: Record<string, string>;
 	}): JSX.Element;
 	export function SearchInput(props: {
 		onChange: (e: {
