@@ -1,4 +1,4 @@
-import { Avatar } from './components/avatar';
+import { Avatar } from './components/Avatar';
 import { NumberBadge } from './components/number-badge';
 import { FilterButton } from './components/buttons/filter';
 import { FloatingButton } from './components/buttons/floating';
@@ -7,7 +7,10 @@ import { RegularButton } from './components/buttons/regular';
 import { SearchInput } from './components/inputs/search';
 import { Input } from './components/inputs/input';
 import { Typography } from './components/typography';
+import { Modal } from './components/Modal';
+
 import { theme } from './theme';
+
 import { getThemeMode } from './utils/get-theme-mode';
 import { getSchoolColors } from './utils/get-school-colors';
 import { isColorDark } from './utils/check-color-brigthness';
@@ -22,6 +25,7 @@ export {
 	SearchInput,
 	Input,
 	Typography,
+	Modal,
 	theme,
 	getThemeMode,
 	getSchoolColors,
