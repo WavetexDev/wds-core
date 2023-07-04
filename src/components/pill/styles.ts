@@ -10,21 +10,24 @@ const getBGColor = (
 	variant: string,
 	theme: Theme
 ): string => {
-	return variant.includes('outline')
-		? `transparent`
-		: (variant === 'success' &&
-				theme[currentMode].colors.success) ||
-				(variant === 'warning' &&
-					theme[currentMode].colors.warning) ||
-				(variant === 'error' &&
-					theme[currentMode].colors.error) ||
-				(variant === 'info' &&
-					theme[currentMode].colors.info) ||
-				(variant === 'primary' &&
-					theme[currentMode].colors.primary) ||
-				(variant === 'secondary' &&
-					theme[currentMode].colors.secondary) ||
-				'white';
+	if (variant.includes('outline')) return `transparent`;
+	switch (variant) {
+		case 'success':
+			return theme[currentMode].colors.success;
+		case 'warning':
+			return theme[currentMode].colors.warning;
+		case 'error':
+			return theme[currentMode].colors.error;
+		case 'info':
+			return theme[currentMode].colors.info;
+		case 'primary':
+			return theme[currentMode].colors.primary;
+		case 'secondary':
+			return theme[currentMode].colors.secondary;
+
+		default:
+			return theme[currentMode].colors.white;
+	}
 };
 
 const getColor = (
@@ -32,7 +35,7 @@ const getColor = (
 	theme: Theme
 ): string => {
 	return variant.includes('outline')
-		? `black`
+		? `theme[currentMode].colors.white`
 		: theme[currentMode].colors.dynamicTextColor(
 				getBGColor(variant, theme)
 		  );

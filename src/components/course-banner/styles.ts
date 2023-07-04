@@ -8,16 +8,15 @@ const currentMode = getThemeMode();
 export const BannerContainer = styled.div<CourseBannerStyleProps>`
 	width: 250px;
 	height: 320px;
-	border-radius: 10px;
+	border-radius: ${({ theme }) =>
+		theme[currentMode].spacing.sp10};
 
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	color: ${({ theme }) =>
 		theme[currentMode].colors.white};
-	padding: 0
-		${({ theme }) => theme[currentMode].spacing.sp18};
-	padding-bottom: ${({ theme }) =>
+	padding: ${({ theme }) =>
 		theme[currentMode].spacing.sp14};
 
 	background: ${({ banner }) =>
@@ -27,7 +26,7 @@ export const BannerContainer = styled.div<CourseBannerStyleProps>`
 				rgb(28, 18, 36) 100%
 			)
 			0% 0% / cover,
-		url(${banner})`
+		url('${banner}')`
 			: `linear-gradient(180deg, #071834 0%, rgba(23, 54, 105, 0.79) 100%)`};
 	background-repeat: no-repeat;
 	background-size: cover;

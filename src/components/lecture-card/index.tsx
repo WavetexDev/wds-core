@@ -14,72 +14,58 @@ import {
 } from 'react-icons/tfi';
 import { Pill } from '../pill';
 
+import { secondsToFriendlyString } from '../../utils/format-seconds';
+
 export const LectureCard = ({
-	cardVariant,
-	lectureType,
-	title,
+	variant,
+	type,
+	name,
 	thumbnail,
-	author,
+	teacher,
 	duration,
-	pillVariant,
-	pillText,
 }: LectureCardProps): JSX.Element => {
-	function formatClassDuration(duration: number) {
-		const minutes = Math.floor(duration / 60);
-		const seconds = duration % 60;
-
-		let formattedDuration = '';
-		if (minutes > 0) {
-			formattedDuration += `${minutes}min `;
-		}
-		if (seconds > 0) {
-			formattedDuration += `${seconds}seg`;
-		}
-
-		return formattedDuration;
-	}
-
-	function determineLectureTypeIcon(lectureType: string) {
-		switch (lectureType) {
-			case 'video':
+	function determineLectureTypeIcon() {
+		switch (type) {
+			case 'VIDEO':
 				return <TfiControlPlay size={24} />;
 
-			case 'audio':
+			case 'AUD':
 				return <TfiHeadphone size={24} />;
 
-			case 'material':
+			case 'MAT':
 				return <TfiBookmarkAlt size={24} />;
 
-			case 'text':
+			case 'TEXT':
 				return <TfiAgenda size={24} />;
 		}
 	}
 
 	const formattedClassDuration =
-		formatClassDuration(duration);
+		secondsToFriendlyString(duration);
 
-	const lectureTypeIcon =
-		determineLectureTypeIcon(lectureType);
+	const lectureTypeIcon = determineLectureTypeIcon();
 
 	return (
 		<>
 			<WaveclassTheme>
-				<s.CardContainer variant={cardVariant}>
+				<s.CardContainer
+					variant={variant ?? 'secondary'}
+				>
 					<s.LectureDetails>
 						<s.LectureTitle
-							variant={cardVariant}
+							variant={variant ?? 'secondary'}
 						>
 							{lectureTypeIcon}
 							<Typography
 								variant="h4-bold"
-								text={title}
+								text={name}
 							/>
 						</s.LectureTitle>
 
 						<s.LectureFooter>
 							<Typography
 								variant="paragraph-regular"
-								text={author}
+								text={teacher}
 							/>
 
 							<s.LectureDuration>
@@ -100,8 +86,8 @@ export const LectureCard = ({
 							: lectureTypeIcon}
 
 						<Pill
-							variant={pillVariant}
-							text={pillText}
+							variant="success"
+							text="Texto"
 						/>
 					</s.ImageContainer>
 				</s.CardContainer>

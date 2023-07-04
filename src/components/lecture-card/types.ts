@@ -1,19 +1,20 @@
-import { PillVariant } from '../pill/types';
-
 export interface LectureCardProps {
-	cardVariant: CardVariant;
-	lectureType: Lecture;
-	title: string;
+	variant?: CardVariant;
+	type: Lecture;
+	name: string;
 	thumbnail: string;
-	author: string;
+	teacher: string;
 	duration: number;
-	pillVariant: PillVariant;
-	pillText: string;
+	finished?: boolean;
+	progress?: number;
+	onClick: () => void;
+	avaliable: boolean;
+	favorite?: boolean;
 }
 
 type CardVariant = 'primary' | 'secondary';
 
-type Lecture = 'video' | 'audio' | 'material' | 'text';
+type Lecture = 'VIDEO' | 'AUD' | 'MAT' | 'TEXT';
 
 export interface LectureCardStyleProps {
 	variant: CardVariant;

@@ -16,13 +16,11 @@ type Story = StoryObj<typeof LectureCard>;
 
 export const lectureCard: Story = {
 	args: {
-		lectureType: 'video',
-		title: 'Postando depoimentos em áudios nos stories',
+		type: 'VIDEO',
+		name: 'Postando depoimentos em áudios nos stories',
 		thumbnail:
 			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
-		author: 'Ana Tex',
+		teacher: 'Ana Tex',
 		duration: 605,
-		pillVariant: 'success',
-		pillText: 'Concluída',
 	},
 };

@@ -17,7 +17,8 @@ export const CardContainer = styled.article<LectureCardStyleProps>`
 		theme[currentMode].spacing.sp16};
 	border: 1px solid
 		${({ theme }) => theme[currentMode].colors.gray100};
-	border-radius: 8px;
+	border-radius: ${({ theme }) =>
+		theme[currentMode].spacing.sp8};
 
 	box-shadow: ${({ theme }) =>
 		theme[currentMode].shadows.medium};
@@ -48,7 +49,7 @@ export const ImageContainer = styled.section<LectureCardThumbnailProps>`
 
 	background: ${({ thumbnail, theme }) =>
 		thumbnail !== ''
-			? `url(${thumbnail})`
+			? `url('${thumbnail}')`
 			: `${theme[currentMode].colors.secondary}`};
 	background-repeat: no-repeat;
 	background-position: center;
@@ -80,7 +81,7 @@ export const LectureDetails = styled.section`
 	}
 `;
 
-export const LectureTitle = styled.main<LectureCardStyleProps>`
+export const LectureTitle = styled.header<LectureCardStyleProps>`
 	display: flex;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp16};
 	color: ${({ variant, theme }) =>

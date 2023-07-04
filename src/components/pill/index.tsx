@@ -2,7 +2,7 @@ import React from 'react';
 import { WaveclassTheme } from '../../layout';
 import { PillProps } from './types';
 import * as s from './styles';
-import { Typography } from '@waveclass/wds-core';
+import { Typography } from '../typography';
 
 export const Pill = ({
 	variant,

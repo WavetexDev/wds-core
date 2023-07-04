@@ -19,6 +19,7 @@ export const Empty: Story = {
 	args: {
 		courseName: 'Nome do curso',
 		bannerImageUrl: '',
+		courseId: '0',
 	},
 };
 
@@ -28,5 +29,6 @@ export const Filled: Story = {
 		courseName: 'Nome do curso',
 		bannerImageUrl:
 			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
+		courseId: '0',
 	},
 };
