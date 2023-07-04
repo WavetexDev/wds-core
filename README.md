@@ -311,3 +311,112 @@ Por gentileza, a fim de reduzir o tamanho desta documentação, cheque a tipagem
     	    <Typography text='Some valueble text' variant='paragraph-bold' />
         );
     };
+
+### Grid Item
+
+**Props**
+
+| Nome         | Tipo            | Descrição                                   | Obrigatório |
+| ------------ | --------------- | ------------------------------------------- | ----------- |
+| id           | `string`        | Identificador do elemento                   | Não         |
+| variant      | `string`        | Variante de tamanho                         | Sim         |
+| customStyles | `CSSProperties` | Propriedades CSS customizadas               | Não         |
+| children     | `ReactNode`     | Conteúdo a ser exibido dentro do componente | Sim         |
+
+**Exemplo de uso**
+
+```
+import { GridItem } from "@waveclass/wds-core";
+
+const MyComponent = () => {
+  return (
+    <GridItem
+      id="0"
+      variant="row"
+      customStyles={{
+        background: red;
+      }}
+      children="Texto"
+    />
+  );
+};
+```
+
+### Pill
+
+**Props**
+
+| Nome    | Tipo     | Descrição                        | Obrigatório |
+| ------- | -------- | -------------------------------- | ----------- |
+| text    | `string` | Texto a ser exibido              | Sim         |
+| variant | `string` | Variante de cor de fundo e borda | Sim         |
+
+**Exemplo de uso**
+
+```
+import { Pill } from "@waveclass/wds-core";
+
+const MyComponent = () => {
+  return (
+  	<Pill variant="success" text="Texto"/>
+  );
+};
+```
+
+### Lecture Card
+
+**Props**
+
+| Nome        | Tipo     | Descrição                        | Obrigatório |
+| ----------- | -------- | -------------------------------- | ----------- |
+| lectureType | `string` | Tipo de aula (Vídeo, Áudio, etc) | Sim         |
+| title       | `string` | Título da aula                   | Sim         |
+| thumbnail   | `string` | URL da thumbnail da aula         | Sim         |
+| author      | `string` | Autor da aula                    | Sim         |
+| duration    | `number` | Duração da aula, em segundos     | Sim         |
+| pillVariant | `string` | Variante da pílula               | Sim         |
+| pillText    | `string` | Texto da pílula                  | Sim         |
+
+**Exemplo de uso**
+
+```
+import { LectureCard } from "@waveclass/wds-core";
+
+const MyComponent = () => {
+  return (
+    <LectureCard
+      lectureType="video"
+      title="Título"
+      thumbnail="url-da-imagem"
+      author="Nome do autor"
+      duration=605
+      pillVariant="success"
+      pillText="Texto"
+    />
+  );
+};
+```
+
+### Course Banner
+
+**Props**
+
+| Nome           | Tipo     | Descrição     | Obrigatório |
+| -------------- | -------- | ------------- | ----------- |
+| courseName     | `string` | Nome do curso | Sim         |
+| bannerImageUrl | `string` | URL do Banner | Sim         |
+
+**Exemplo de uso**
+
+```
+import { CourseBanner } from "@waveclass/wds-core";
+
+const MyComponent = () => {
+  return (
+    <CourseBanner
+      courseName="Nome do curso"
+      bannerImageUrl="url-do-banner"
+    />
+  );
+};
+```
