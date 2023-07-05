@@ -27,7 +27,8 @@ export const LectureCard = ({
 	avaliableMessage,
 	finished,
 	remainingSeconds,
-	toggleFavorite, // TODO Favorite icon logic
+	onClick,
+	toggleFavorite,
 }: LectureCardProps): JSX.Element => {
 	function determineLectureTypeIcon() {
 		switch (type) {
@@ -47,7 +48,7 @@ export const LectureCard = ({
 
 	function handleOnClick() {
 		if (avaliable) {
-			console.log('A aula está disponível!'); // TODO
+			onClick();
 		} else {
 			return;
 		}
@@ -123,9 +124,7 @@ export const LectureCard = ({
 									remainingSeconds
 								)}
 							/>
-						) : (
-							''
-						)}
+						) : null}
 					</s.ImageContainer>
 				</s.CardContainer>
 			</WaveclassTheme>
