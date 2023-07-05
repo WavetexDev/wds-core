@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { getThemeMode } from '@waveclass/wds-core';
+import { getThemeMode } from '../../utils/get-theme-mode';
 
 import {
 	LectureCardStyleProps,
@@ -70,13 +70,14 @@ export const ImageContainer = styled.section<LectureCardThumbnailProps>`
 `;
 
 export const LectureDetails = styled.section`
-	width: calc(100% - 180px);
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp16};
 
 	@media (min-width: 650px) {
+		width: calc(100% - 180px);
 		gap: 0;
 	}
 `;
@@ -88,6 +89,13 @@ export const LectureTitle = styled.header<LectureCardStyleProps>`
 		variant === 'primary'
 			? theme[currentMode].colors.black
 			: theme[currentMode].colors.white};
+`;
+
+export const Avaliable = styled.span`
+	display: flex;
+	justify-content: flex-end;
+	color: ${({ theme }) =>
+		theme[currentMode].colors.gray300};
 `;
 
 export const LectureFooter = styled.footer`

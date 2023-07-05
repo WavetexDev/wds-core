@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { PillStyleProps } from './types';
 
-import { getThemeMode } from '@waveclass/wds-core';
+import { getThemeMode } from '../../utils/get-theme-mode';
 import { Theme } from '../../theme';
 
 const currentMode = getThemeMode();
@@ -35,7 +35,7 @@ const getColor = (
 	theme: Theme
 ): string => {
 	return variant.includes('outline')
-		? `theme[currentMode].colors.white`
+		? `theme[currentMode].colors.black`
 		: theme[currentMode].colors.dynamicTextColor(
 				getBGColor(variant, theme)
 		  );

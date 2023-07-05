@@ -9,7 +9,10 @@ export interface LectureCardProps {
 	progress?: number;
 	onClick: () => void;
 	avaliable: boolean;
+	avaliableMessage?: string;
+	toggleFavorite: () => void;
 	favorite?: boolean;
+	remainingSeconds?: number;
 }
 
 type CardVariant = 'primary' | 'secondary';

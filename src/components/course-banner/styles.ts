@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { CourseBannerStyleProps } from './types';
 
-import { getThemeMode } from '@waveclass/wds-core';
+import { getThemeMode } from '../../utils/get-theme-mode';
 
 const currentMode = getThemeMode();
 

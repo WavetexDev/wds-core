@@ -23,6 +23,11 @@ export const LectureCard = ({
 	thumbnail,
 	teacher,
 	duration,
+	avaliable,
+	avaliableMessage,
+	finished,
+	remainingSeconds,
+	toggleFavorite, // TODO Favorite icon logic
 }: LectureCardProps): JSX.Element => {
 	function determineLectureTypeIcon() {
 		switch (type) {
@@ -40,6 +45,14 @@ export const LectureCard = ({
 		}
 	}
 
+	function handleOnClick() {
+		if (avaliable) {
+			console.log('A aula está disponível!'); // TODO
+		} else {
+			return;
+		}
+	}
+
 	const formattedClassDuration =
 		secondsToFriendlyString(duration);
 
@@ -53,6 +66,7 @@ export const LectureCard = ({
 				>
 					<s.LectureDetails>
 						<s.LectureTitle
+							onClick={handleOnClick}
 							variant={variant ?? 'secondary'}
 						>
 							{lectureTypeIcon}
@@ -61,6 +75,15 @@ export const LectureCard = ({
 								text={name}
 							/>
 						</s.LectureTitle>
+
+						<s.Avaliable>
+							<Typography
+								variant="small-regular"
+								text={
+									avaliableMessage ?? ''
+								}
+							/>
+						</s.Avaliable>
 
 						<s.LectureFooter>
 							<Typography
@@ -80,15 +103,29 @@ export const LectureCard = ({
 						</s.LectureFooter>
 					</s.LectureDetails>
 
-					<s.ImageContainer thumbnail={thumbnail}>
+					<s.ImageContainer
+						onClick={handleOnClick}
+						thumbnail={thumbnail}
+					>
 						{thumbnail !== ''
 							? ''
 							: lectureTypeIcon}
 
-						<Pill
-							variant="success"
-							text="Texto"
-						/>
+						{finished ? (
+							<Pill
+								variant="success"
+								text="Concluído"
+							/>
+						) : remainingSeconds ? (
+							<Pill
+								variant="primary"
+								text={secondsToFriendlyString(
+									remainingSeconds
+								)}
+							/>
+						) : (
+							''
+						)}
 					</s.ImageContainer>
 				</s.CardContainer>
 			</WaveclassTheme>
