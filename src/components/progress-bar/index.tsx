@@ -11,9 +11,7 @@ export const ProgressBar = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.ProgressBarContainer
-					percentProgress={percentProgress}
-				>
+				<s.ProgressBarContainer>
 					<s.ProgressBar
 						percentProgress={percentProgress}
 					>
