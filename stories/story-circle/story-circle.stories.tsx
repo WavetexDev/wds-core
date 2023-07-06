@@ -26,3 +26,22 @@ export const Filled: Story = {
 			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
 	},
 };
+
+export const EmptyHighlight: Story = {
+	name: 'Empty Highlight',
+	args: {
+		username: 'User',
+		profilePictureUrl: '',
+		highlight: true,
+	},
+};
+
+export const FilledHighlight: Story = {
+	name: 'Filled Highlight',
+	args: {
+		username: '',
+		profilePictureUrl:
+			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
+		highlight: true,
+	},
+};

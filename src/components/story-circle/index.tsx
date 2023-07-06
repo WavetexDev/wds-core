@@ -3,31 +3,29 @@ import * as s from './styles';
 import { WaveclassTheme } from '../../layout';
 
 import { StoryCircleProps } from './types';
-import { Typography } from '../typography';
+import { Avatar } from '../avatar';
 
 export const StoryCircle = ({
 	profilePictureUrl,
 	username,
+	highlight,
 }: StoryCircleProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
-				<s.StoryCircleContainer>
-					{profilePictureUrl ? (
-						<img
-							src={profilePictureUrl}
-							alt=""
-						/>
-					) : (
-						<s.UndefinedImageContainer>
-							<Typography
-								variant="h3-bold"
-								text={`${username
-									.substring(0, 1)
-									.toUpperCase()}`}
-							/>
-						</s.UndefinedImageContainer>
-					)}
+				<s.StoryCircleContainer
+					highlight={highlight ?? false}
+				>
+					<Avatar
+						size="md"
+						name={username}
+						img={profilePictureUrl}
+						customStyles={{
+							border: 0,
+							width: '55px',
+							height: '55px',
+						}}
+					/>
 				</s.StoryCircleContainer>
 			</WaveclassTheme>
 		</>
