@@ -1,3 +1,5 @@
+import { Theme } from '../../theme';
+
 export interface LectureCardProps {
 	variant?: CardVariant;
 	type: Lecture;
@@ -20,9 +22,20 @@ type CardVariant = 'primary' | 'secondary';
 type Lecture = 'VIDEO' | 'AUD' | 'MAT' | 'TEXT';
 
 export interface LectureCardStyleProps {
+	theme?: Theme;
+}
+
+export interface CardVariantProps
+	extends LectureCardStyleProps {
 	variant: CardVariant;
 }
 
-export interface LectureCardThumbnailProps {
+export interface FavoriteProps
+	extends LectureCardStyleProps {
+	isFavorite?: boolean;
+}
+
+export interface LectureCardThumbnailProps
+	extends LectureCardStyleProps {
 	thumbnail: string;
 }

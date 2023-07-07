@@ -2,13 +2,14 @@ import styled from 'styled-components';
 import { getThemeMode } from '../../utils/get-theme-mode';
 
 import {
-	LectureCardStyleProps,
+	CardVariantProps,
+	FavoriteProps,
 	LectureCardThumbnailProps,
 } from './types';
 
 const currentMode = getThemeMode();
 
-export const CardContainer = styled.article<LectureCardStyleProps>`
+export const CardContainer = styled.article<CardVariantProps>`
 	display: flex;
 	flex-direction: column-reverse;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp16};
@@ -82,7 +83,7 @@ export const LectureDetails = styled.section`
 	}
 `;
 
-export const LectureTitle = styled.header<LectureCardStyleProps>`
+export const LectureTitle = styled.header<CardVariantProps>`
 	display: flex;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp16};
 	color: ${({ variant, theme }) =>
@@ -100,8 +101,15 @@ export const Avaliable = styled.span`
 
 export const LectureFooter = styled.footer`
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	color: ${({ theme }) =>
 		theme[currentMode].colors.gray300};
+`;
+
+export const LectureFineDetails = styled.span`
+	display: flex;
+	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp22};
 `;
 
@@ -109,4 +117,14 @@ export const LectureDuration = styled.span`
 	display: flex;
 	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
+`;
+
+export const FavoriteIconContainer = styled.span<FavoriteProps>`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: ${({ theme, isFavorite }) =>
+		isFavorite
+			? theme[currentMode].colors.warning
+			: theme[currentMode].colors.gray300};
 `;

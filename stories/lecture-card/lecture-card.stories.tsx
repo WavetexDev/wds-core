@@ -4,11 +4,6 @@ import { LectureCard } from '../../src/components/lecture-card';
 const meta: Meta<typeof LectureCard> = {
 	title: 'Lecture Card',
 	component: LectureCard,
-	argTypes: {
-		thumbnail: {
-			table: { disable: false }, // * Toggle this to test thumbnail icon
-		},
-	},
 };
 
 export default meta;

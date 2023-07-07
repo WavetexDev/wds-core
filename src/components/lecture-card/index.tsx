@@ -12,6 +12,9 @@ import {
 	TfiAgenda,
 	TfiTime,
 } from 'react-icons/tfi';
+
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
+
 import { Pill } from '../pill';
 
 import { secondsToFriendlyString } from '../../utils/format-seconds';
@@ -28,6 +31,7 @@ export const LectureCard = ({
 	finished,
 	remainingSeconds,
 	onClick,
+	favorite,
 	toggleFavorite,
 }: LectureCardProps): JSX.Element => {
 	function determineLectureTypeIcon() {
@@ -87,20 +91,37 @@ export const LectureCard = ({
 						</s.Avaliable>
 
 						<s.LectureFooter>
-							<Typography
-								variant="paragraph-regular"
-								text={teacher}
-							/>
-
-							<s.LectureDuration>
-								<TfiTime size={12} />
+							<s.LectureFineDetails>
 								<Typography
 									variant="paragraph-regular"
-									text={
-										formattedClassDuration
-									}
+									text={teacher}
 								/>
-							</s.LectureDuration>
+
+								<s.LectureDuration>
+									<TfiTime size={12} />
+									<Typography
+										variant="paragraph-regular"
+										text={
+											formattedClassDuration
+										}
+									/>
+								</s.LectureDuration>
+							</s.LectureFineDetails>
+
+							<s.FavoriteIconContainer
+								onClick={toggleFavorite}
+								isFavorite={
+									favorite ?? false
+								}
+							>
+								{favorite ? (
+									<AiFillStar size={24} />
+								) : (
+									<AiOutlineStar
+										size={24}
+									/>
+								)}
+							</s.FavoriteIconContainer>
 						</s.LectureFooter>
 					</s.LectureDetails>
 
