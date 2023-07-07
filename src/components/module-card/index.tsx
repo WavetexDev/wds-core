@@ -8,6 +8,7 @@ import { Typography } from '../typography';
 
 import {
 	TfiAngleDown,
+	TfiAngleUp,
 	TfiLock,
 	TfiTime,
 } from 'react-icons/tfi';
@@ -21,12 +22,13 @@ export const ModuleCard = ({
 	percentProgress,
 	available,
 	availableMessage,
+	expanded,
 }: ModuleCardProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
 				<s.ModuleCardContainer
-					isComplete={percentProgress === 100}
+					isComplete={percentProgress >= 100}
 				>
 					<s.ModuleMainDetails>
 						<s.ModulePositionContainer>
@@ -51,24 +53,25 @@ export const ModuleCard = ({
 									/>
 								</s.ModuleDurationDisplay>
 
-								<GridItem
-									variant="col-8"
-									children={
-										<ProgressBar
-											percentProgress={
-												percentProgress
-											}
-										/>
-									}
-								/>
+								<GridItem variant="col-8">
+									<ProgressBar
+										percentProgress={
+											percentProgress
+										}
+									/>
+								</GridItem>
 							</s.ModuleDetailsFooter>
 						</s.ModuleDetailsContainer>
 					</s.ModuleMainDetails>
 
 					<s.ExpanderContainer>
-						{available ? (
+						{available || !expanded ? (
 							<s.ExpanderIconContainer>
 								<TfiAngleDown size={16} />
+							</s.ExpanderIconContainer>
+						) : available || expanded ? (
+							<s.ExpanderIconContainer>
+								<TfiAngleUp size={16} />
 							</s.ExpanderIconContainer>
 						) : (
 							<s.ExpanderIconContainer>
