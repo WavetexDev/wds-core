@@ -13,25 +13,24 @@ type Story = StoryObj<typeof StoryCircle>;
 export const Empty: Story = {
 	name: 'Empty',
 	args: {
-		username: 'User',
-		profilePictureUrl: '',
+		name: 'User',
+		img: '',
 	},
 };
 
 export const Filled: Story = {
 	name: 'Filled',
 	args: {
-		username: '',
-		profilePictureUrl:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
+		name: '',
+		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
 	},
 };
 
 export const EmptyHighlight: Story = {
 	name: 'Empty Highlight',
 	args: {
-		username: 'User',
-		profilePictureUrl: '',
+		name: 'User',
+		img: '',
 		highlight: true,
 	},
 };
@@ -39,9 +38,8 @@ export const EmptyHighlight: Story = {
 export const FilledHighlight: Story = {
 	name: 'Filled Highlight',
 	args: {
-		username: '',
-		profilePictureUrl:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
+		name: '',
+		img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnWR3VYAjPhTwAXgJ7-DuANYixP2OE_8bLsw&usqp=CAU',
 		highlight: true,
 	},
 };

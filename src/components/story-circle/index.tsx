@@ -6,20 +6,22 @@ import { StoryCircleProps } from './types';
 import { Avatar } from '../avatar';
 
 export const StoryCircle = ({
-	profilePictureUrl,
-	username,
+	img,
+	name,
 	highlight,
+	onClick,
 }: StoryCircleProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
 				<s.StoryCircleContainer
+					onClick={onClick}
 					highlight={highlight ?? false}
 				>
 					<Avatar
 						size="md"
-						name={username}
-						img={profilePictureUrl}
+						name={name}
+						img={img}
 						customStyles={{
 							border: 0,
 							width: '55px',
