@@ -14,6 +14,7 @@ import { theme } from './theme';
 import { getThemeMode } from './utils/get-theme-mode';
 import { getSchoolColors } from './utils/get-school-colors';
 import { isColorDark } from './utils/check-color-brigthness';
+import { toStyledComponent } from './utils/css-properties-to-styled-component';
 
 export {
 	Avatar,
@@ -30,4 +31,5 @@ export {
 	getThemeMode,
 	getSchoolColors,
 	isColorDark,
+	toStyledComponent,
 };

@@ -1,60 +1,166 @@
 import React from 'react';
-import { FiX } from 'react-icons/fi';
+import { TfiClose } from 'react-icons/tfi';
 
 import { WaveclassTheme } from '../../layout';
+import { Typography } from '../typography';
+import { RegularButton } from '../buttons/regular';
+
+import { getThemeMode } from '../../utils/get-theme-mode';
 
 import * as S from './styles';
 
-import { PropsT } from './types';
+import { Props } from './types';
+import { theme } from '../../theme';
 
-export const Modal: React.FC<PropsT> = ({
+export const Modal: React.FC<Props> = ({
+	isShowing = false,
+	position = 'center',
 	children,
-	position,
-	isShowing,
+	onClose,
+	size = 'sm',
 	title,
 	subtitle,
-	onClose,
-	customStyle,
+	confirmButton = {
+		show: false,
+		disabled: false,
+		text: '',
+	},
+	cancelButton = {
+		show: false,
+		disabled: false,
+		text: '',
+	},
+	dangerButton = {
+		show: false,
+		disabled: false,
+		text: '',
+	},
+	customStyles,
 }): JSX.Element => {
+	const currentThemeMode = getThemeMode();
+
 	return (
 		<WaveclassTheme>
 			<S.Overlay
 				isShowing={isShowing}
 				position={position}
-				customStyle={customStyle?.overlay}
+				customStyles={customStyles?.overlay}
 			>
 				<S.Modal
+					size={size}
 					position={position}
-					customStyle={customStyle?.modal}
+					customStyles={customStyles?.modal}
 				>
 					<S.CloseButton onClick={onClose}>
-						<FiX size={24} color="#8C97AA" />
+						<TfiClose
+							size={
+								theme[currentThemeMode]
+									.fontSizes.fs18
+							}
+							color={
+								theme[currentThemeMode]
+									.colors.gray500
+							}
+						/>
 					</S.CloseButton>
 
 					{(title || subtitle) && (
 						<S.Header>
 							{title && (
-								<S.Title
-									customStyle={
-										customStyle?.title
+								<Typography
+									text={title}
+									variant="h3-bold"
+									customStyles={
+										customStyles?.title
 									}
-								>
-									{title}
-								</S.Title>
+								/>
 							)}
+
 							{subtitle && (
-								<S.Subtitle
-									customStyle={
-										customStyle?.subtitle
+								<Typography
+									text={subtitle}
+									variant="h4-regular"
+									customStyles={
+										customStyles?.subtitle
 									}
-								>
-									{subtitle}
-								</S.Subtitle>
+								/>
 							)}
 						</S.Header>
 					)}
 
-					{children}
+					<S.ChildrenContainer
+						customStyles={
+							customStyles?.childrenContainer
+						}
+					>
+						{children}
+					</S.ChildrenContainer>
+
+					{(confirmButton.show ||
+						cancelButton.show ||
+						dangerButton.show) && (
+						<S.ButtonWrapper>
+							{cancelButton.show && (
+								<RegularButton
+									text={
+										cancelButton.text ??
+										'Cancelar'
+									}
+									variant="primary-ghost"
+									onClick={
+										cancelButton.action
+									}
+									disabled={
+										cancelButton.disabled
+									}
+									customStyles={{
+										...S.CancelButtonStyles,
+										...customStyles?.cancelButton,
+									}}
+								/>
+							)}
+
+							{dangerButton.show && (
+								<RegularButton
+									text={
+										dangerButton.text ??
+										'Excluír'
+									}
+									variant="danger-contained"
+									onClick={
+										dangerButton.action
+									}
+									disabled={
+										dangerButton.disabled
+									}
+									customStyles={{
+										...S.ActionButtonStyles,
+										...customStyles?.dangerButton,
+									}}
+								/>
+							)}
+
+							{confirmButton.show && (
+								<RegularButton
+									text={
+										confirmButton.text ??
+										'OK'
+									}
+									variant="primary-contained"
+									onClick={
+										confirmButton.action
+									}
+									disabled={
+										confirmButton.disabled
+									}
+									customStyles={{
+										...S.ActionButtonStyles,
+										...customStyles?.confirmButton,
+									}}
+								/>
+							)}
+						</S.ButtonWrapper>
+					)}
 				</S.Modal>
 			</S.Overlay>
 		</WaveclassTheme>

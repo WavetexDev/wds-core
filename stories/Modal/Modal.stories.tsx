@@ -1,15 +1,15 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Modal, Input, RegularButton } from '../../src';
+import { Modal, Input } from '../../src';
 
 const meta: Meta<typeof Modal> = {
 	title: 'Modal',
 	component: Modal,
 	args: {
 		isShowing: true,
-		title: 'Título',
 		onClose: () => alert('fechando...'),
+		title: 'Título',
 	},
 };
 
@@ -19,21 +19,19 @@ type Story = StoryObj<typeof Modal>;
 
 const CenterModalContent = () => {
 	return (
-		<>
-			<div style={{ marginBottom: '30px' }}>
-				<span>Link:</span>
+		<div>
+			<span>Link:</span>
 
-				<input
-					type="text"
-					placeholder="https://www.youtube.com/watch?v=jfKfPfyJRdk"
-					disabled
-					style={{
-						padding: '5px 10px',
-						width: '100%',
-					}}
-				/>
-			</div>
-		</>
+			<input
+				type="text"
+				placeholder="https://www.youtube.com/watch?v=jfKfPfyJRdk"
+				disabled
+				style={{
+					padding: '5px 10px',
+					width: '100%',
+				}}
+			/>
+		</div>
 	);
 };
 
@@ -60,11 +58,6 @@ const RightSideModalContent = () => {
 				</span>
 				<Input type="text" />
 			</label>
-
-			<RegularButton
-				text="salvar"
-				variant="primary-contained"
-			/>
 		</>
 	);
 };
@@ -92,17 +85,6 @@ const CustomizedModalContent = () => {
 				</span>
 				<Input type="text" />
 			</label>
-
-			<div style={{ display: 'flex', gap: '10px' }}>
-				<RegularButton
-					text="salvar"
-					variant="primary-contained"
-				/>
-				<RegularButton
-					text="cancelar"
-					variant="primary-ghost"
-				/>
-			</div>
 		</>
 	);
 };
@@ -111,12 +93,8 @@ export const CenterModal: Story = {
 	args: {
 		children: <CenterModalContent />,
 		position: 'center',
+		size: 'sm',
 		subtitle: 'subtítulo...',
-		customStyle: {
-			modal: {
-				width: '450px',
-			},
-		},
 	},
 };
 
@@ -124,6 +102,20 @@ export const RightSideModal: Story = {
 	args: {
 		children: <RightSideModalContent />,
 		position: 'right',
+		size: 'sm',
+		confirmButton: {
+			show: true,
+			text: 'Salvar',
+			action: () => alert('salvando...'),
+		},
+		cancelButton: {
+			show: true,
+			action: () => alert('cancelando...'),
+		},
+		dangerButton: {
+			show: true,
+			action: () => confirm('Tem certeza?'),
+		},
 	},
 };
 
@@ -131,10 +123,19 @@ export const CustomizedModal: Story = {
 	args: {
 		children: <CustomizedModalContent />,
 		position: 'right',
-		customStyle: {
+		size: 'sm',
+		confirmButton: {
+			show: true,
+			action: () => alert('salvando...'),
+		},
+		dangerButton: {
+			show: true,
+			action: () => confirm('tem certeza?'),
+		},
+		customStyles: {
 			modal: {
 				borderRadius: '10px 0 0 10px',
-				width: '300px',
+				width: '350px',
 				backgroundColor: 'beige',
 			},
 		},
