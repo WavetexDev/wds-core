@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { Theme } from '../../../theme';
 import { ButtonProps } from '../types';
 
@@ -12,7 +13,10 @@ type Variant =
 	| 'primary-text'
 	| 'secondary-contained'
 	| 'secondary-ghost'
-	| 'secondary-text';
+	| 'secondary-text'
+	| 'danger-contained'
+	| 'danger-ghost'
+	| 'danger-text';
 
 export interface RegularButtonProps extends ButtonProps {
 	text: string;

@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 
-import { RegularButtonStylingProps } from './types';
 import { getThemeMode } from '../../../utils/get-theme-mode';
+
+import { RegularButtonStylingProps } from './types';
 import { Theme } from '../../../theme';
 
 const currentTheme = getThemeMode();
@@ -10,24 +11,54 @@ const getBGColor = (
 	variant: string,
 	theme: Theme
 ): string => {
-	return variant.includes('ghost') ||
+	if (
+		variant.includes('ghost') ||
 		variant.includes('text')
-		? `transparent`
-		: variant.includes('primary')
-		? `${theme[currentTheme].colors.primary}`
-		: `${theme[currentTheme].colors.secondary}`;
+	) {
+		return 'transparent';
+	} else if (variant.includes('danger')) {
+		return '#FF0000';
+	} else if (variant.includes('primary')) {
+		return `${theme[currentTheme].colors.primary}`;
+	} else {
+		return `${theme[currentTheme].colors.secondary}`;
+	}
 };
 
 const getColor = (
 	variant: string,
 	theme: Theme
 ): string => {
-	return variant.includes('ghost') ||
-		variant.includes('text')
-		? `black`
-		: theme[currentTheme].colors.dynamicTextColor(
-				getBGColor(variant, theme)
-		  );
+	if (
+		(variant.includes('ghost') ||
+			variant.includes('text')) &&
+		!variant.includes('danger')
+	) {
+		return '#000';
+	} else if (
+		(variant.includes('ghost') ||
+			variant.includes('text')) &&
+		variant.includes('danger')
+	) {
+		return '#FF0000';
+	} else {
+		return theme[currentTheme].colors.dynamicTextColor(
+			getBGColor(variant, theme)
+		);
+	}
+};
+
+const getBorderColor = (
+	variant: string,
+	theme: Theme
+): string => {
+	if (variant.includes('primary')) {
+		return theme[currentTheme].colors.primary;
+	} else if (variant.includes('danger')) {
+		return '#FF0000';
+	} else {
+		return theme[currentTheme].colors.secondary;
+	}
 };
 
 export const RegularButton = styled.button<RegularButtonStylingProps>`
@@ -48,9 +79,7 @@ export const RegularButton = styled.button<RegularButtonStylingProps>`
 	border: ${(props) =>
 		props.variant.includes('ghost') ? `2px solid` : 0};
 	border-color: ${(props) =>
-		props.variant.includes('primary')
-			? `${props.theme[currentTheme].colors.primary}`
-			: `${props.theme[currentTheme].colors.secondary}`};
+		getBorderColor(props.variant, props.theme)};
 
 	display: flex;
 	align-items: center;
