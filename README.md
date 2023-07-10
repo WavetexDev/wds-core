@@ -10,6 +10,7 @@ Este repositório pertence à organização Wavetex e tem o objetivo de reunir o
 -   [Utilitários](#utilitários)
 -   [Componentes](#componentes)
     -   [Avatar](#avatar)
+    -   [Modal](#modal)
     -   [Filter Button](#filter-button)
     -   [Floating Button](#floating-button)
     -   [Option Button](#option-button)
@@ -103,6 +104,19 @@ Por gentileza, a fim de reduzir o tamanho desta documentação, cheque a tipagem
 
     src -> theme.ts
 
+### toStyledComponent
+
+Esta _utility function_ recebe como argumento um objeto do tipo `CSSProperties` e o transforma em `string` para inserção de estilos customizados em componentes feitos com StyledComponents.
+
+    import styled from 'styled-components';
+    import { toStyledComponent } from '@waveclass/wds-core';
+
+    export const MyStyledComponent = styled.div<{ customStyles?: CSSProperties }>`
+        // ... some styles
+
+        ${({ customStyles }) => customStyles && toStyledComponent(customStyles)}
+    `;
+
 ## Componentes
 
 ### Avatar
@@ -122,6 +136,43 @@ Por gentileza, a fim de reduzir o tamanho desta documentação, cheque a tipagem
     const MyComponent = () => {
         return (
     	    <Avatar size='sm' name='Fulano da Silva' />
+        );
+    };
+
+### Modal
+
+**Props**
+| Nome | Tipo | Descrição | Padrão | Obrigatório |
+|--|--|--|--|--|
+| isShowing | `boolean` | Se o modal está sendo exibido | `false` | Sim |
+| position | `string` | Posições do modal: 'center' e 'right' | `'center'` | Sim |
+| children | `ReactNode` | Conteúdo a ser exibido dentro do componente | `-` | Sim |
+| onClose | `function => void` | _Handler_ para fechar o modal | `-` | Sim |
+| size | `string` | Tamanhos do modal: 'sm', 'md' e 'lg | `'sm'` | Não |
+| title | `string` | Título do modal | `-` | Não |
+| subtitle | `string` | Subtítulo do modal | `-` | Não |
+| confirmButton | `ButtonpropsT` | Propriedades do botão 'confirm': vide [types.ts](src/components/Modal/types.ts#L23) | `-` | Não
+| cancelButton | `ButtonpropsT` | Propriedades do botão 'cancel': vide [types.ts](src/components/Modal/types.ts#L23) | `-` | Não
+| dangerButton | `ButtonpropsT` | Propriedades do botão 'danger': vide [types.ts](src/components/Modal/types.ts#L23) | `-` | Não
+| customStyles | `CustomStylesPropsT` | Estilos customizados: vide [types.ts](src/components/Modal/types.ts#L30) | `-` | Não |
+
+**Exemplo de uso**
+
+    import { Modal } from '@waveclass/wds-core';
+
+    const MyComponent = () => {
+        const [isShowing, setIsShowing] = useState(false);
+
+        return (
+    	    <Modal
+                isShowing={isShowing}
+                position='center'
+                onClose={() => setIsShowing(false)}
+            >
+                <label>
+                    Nome: <input type="text">
+                </label>
+            </Modal>
         );
     };
 
