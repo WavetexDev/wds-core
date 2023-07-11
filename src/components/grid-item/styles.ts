@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Theme } from '../../theme';
-import { getThemeMode } from '@waveclass/wds-core';
+import { getThemeMode } from '../../utils/get-theme-mode';
 import { Variant } from './types';
 
 const currentMode = getThemeMode();
