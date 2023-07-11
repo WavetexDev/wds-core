@@ -8,6 +8,7 @@ export const InputContainer = styled.div<InputStylingProps>`
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
+	width: 100%;
 `;
 
 export const InputWrapper = styled.div<InputStylingProps>`

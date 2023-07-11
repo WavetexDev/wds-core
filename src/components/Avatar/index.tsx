@@ -8,6 +8,7 @@ export const Avatar = ({
 	img,
 	name,
 	online,
+	customStyles,
 }: AvatarProps): JSX.Element => {
 	return (
 		<>
@@ -16,6 +17,7 @@ export const Avatar = ({
 					size={size}
 					img={img}
 					title={name}
+					style={customStyles ?? {}}
 				>
 					{img ? (
 						<img src={img} alt={name} />

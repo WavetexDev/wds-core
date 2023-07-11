@@ -37,7 +37,7 @@ const getHeight = (size: AvatarSize): number => {
 
 const getFontSize = (
 	size: AvatarSize,
-	theme: any
+	theme: Theme
 ): string => {
 	const fontSizes = theme[currentThemeMode].fontSizes;
 	switch (size) {

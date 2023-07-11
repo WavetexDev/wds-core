@@ -10,14 +10,18 @@ Este repositório pertence à organização Wavetex e tem o objetivo de reunir o
 -   [Utilitários](#utilitários)
 -   [Componentes](#componentes)
     -   [Avatar](#avatar)
-    -   [Modal](#modal)
+    -   [Course Banner](#course-banner)
     -   [Filter Button](#filter-button)
     -   [Floating Button](#floating-button)
-    -   [Option Button](#option-button)
-    -   [Regular Button](#regular-button)
+    -   [Grid Item](#grid-item)
     -   [Input](#input)
-    -   [Search Input](#search-input)
+    -   [Lecture Card](#lecture-card)
+    -   [Modal](#modal)
     -   [Number Badge](#number-badge)
+    -   [Option Button](#option-button)
+    -   [Pill](#pill)
+    -   [Regular Button](#regular-button)
+    -   [Search Input](#search-input)
     -   [Typography](#typography)
 
 ## Tecnologias utilizadas
@@ -138,6 +142,34 @@ Esta _utility function_ recebe como argumento um objeto do tipo `CSSProperties` 
     	    <Avatar size='sm' name='Fulano da Silva' />
         );
     };
+    
+  
+### Course Banner
+
+**Props**
+
+| Nome           | Tipo     | Descrição     | Obrigatório |
+| -------------- | -------- | ------------- | ----------- |
+| courseName     | `string` | Nome do curso | Sim         |
+| bannerImageUrl | `string` | URL do Banner | Sim         |
+| courseId | `string` | ID do curso | Sim         |
+| onClick | `(courseId: string) => void` | _Handler_ de clique | Sim |
+
+**Exemplo de uso**
+
+```
+import { CourseBanner } from "@waveclass/wds-core";
+
+const MyComponent = () => {
+  return (
+    <CourseBanner
+      courseName="Nome do curso"
+      bannerImageUrl="url-do-banner"
+    />
+  );
+};
+```
+  
 
 ### Modal
 
@@ -217,50 +249,37 @@ Esta _utility function_ recebe como argumento um objeto do tipo `CSSProperties` 
     	    <FloatingButton onClick={() => alert('I was clicked!')} variant='primary' />
         );
     };
-
-### Option Button
+    
+    
+### Grid Item
 
 **Props**
-| Nome | Tipo | Descrição | Obrigatório |
-|--|--|--|--|
-| onClick | `function => void` | _Handler_ de clique | Sim |
-| disabled | `boolean` | Se o botão está desabilitado | Não |
-| text | `string` | Texto do botão | Sim |
-| icon | `ReactNode` | Ícone do botão | Não |
-| customStyles | `CSSProperties` | Estilos customizados | Não |
+
+| Nome         | Tipo            | Descrição                                   | Obrigatório |
+| ------------ | --------------- | ------------------------------------------- | ----------- |
+| id           | `string`        | Identificador do elemento                   | Não         |
+| variant      | `string`        | Variante de tamanho                         | Sim         |
+| customStyles | `CSSProperties` | Propriedades CSS customizadas               | Não         |
+| children     | `ReactNode`     | Conteúdo a ser exibido dentro do componente | Sim         |
 
 **Exemplo de uso**
 
-    import { OptionButton } from '@waveclass/wds-core';
+```
+import { GridItem } from "@waveclass/wds-core";
 
-    const MyComponent = () => {
-        return (
-    	    <OptionButton onClick={() => alert('I was clicked!')} text='Click me' />
-        );
-    };
-
-### Regular Button
-
-**Props**
-| Nome | Tipo | Descrição | Obrigatório |
-|--|--|--|--|
-| onClick | `function => void` | _Handler_ de clique | Sim |
-| disabled | `boolean` | Se o botão está desabilitado | Não |
-| type | `string` | Tipo do botão: 'button', 'submit' ou 'reset' | Não |
-| text | `string` | Texto do botão | Sim |
-| variant | `string` | Variante de estilo: vide **Storybook** | Sim |
-| icon | `ReactNode` | Ícone do botão | Não |
-| customStyles | `CSSProperties` | Estilos customizados | Não |
-
-**Exemplo de uso**
-
-    import { RegularButton } from '@waveclass/wds-core';
-
-    const MyComponent = () => {
-        return (
-    	    <RegularButton onClick={() => alert('I was clicked!')} text='Click me' variant='primary-contained' />
-        );
-    };
+const MyComponent = () => {
+  return (
+    <GridItem
+      id="0"
+      variant="row"
+      customStyles={{
+        background: red;
+      }}
+      children="Texto"
+    />
+  );
+};
+```
 
 ### Input
 
@@ -294,6 +313,133 @@ Esta _utility function_ recebe como argumento um objeto do tipo `CSSProperties` 
     	    <Input value={name} onChange={e => setName(e.target.value)} />
         );
     };
+    
+    
+### Lecture Card
+
+**Props**
+
+| Nome        | Tipo     | Descrição                        | Obrigatório |
+| ----------- | -------- | -------------------------------- | ----------- |
+| type | `string` | Tipo de aula (Vídeo, Áudio, etc) | Sim         |
+| name       | `string` | Título da aula                   | Sim         |
+| thumbnail   | `string` | URL da thumbnail da aula         | Sim         |
+| teacher      | `string` | Professor da aula                    | Sim         |
+| duration    | `number` | Duração da aula, em segundos     | Sim         |
+| finished    | `boolean` | Se o aluno terminou a aula     | Não         |
+| progress    | `number` | O quanto da aula já foi completada     | Não         |
+| onClick    | `() => void` | _Handler_ de clique    | Sim         |
+| avaliable    | `boolean` | Se a aula está disponível     | Sim         |
+| favorite    | `boolean` | Se a aula foi favoritada    | Não         |
+
+
+
+**Exemplo de uso**
+
+```
+import { LectureCard } from "@waveclass/wds-core";
+
+const MyComponent = () => {
+  return (
+    <LectureCard
+      lectureType="video"
+      title="Título"
+      thumbnail="url-da-imagem"
+      author="Nome do autor"
+      duration=605
+      pillVariant="success"
+      pillText="Texto"
+    />
+  );
+};
+```
+
+
+### Number Badge
+
+**Props**
+| Nome | Tipo | Descrição | Obrigatório |
+|--|--|--|--|
+| value | `number` | Número a ser exibido | Sim |
+
+**Exemplo de uso**
+
+    import { NumberBadge } from '@waveclass/wds-core';
+
+    const MyComponent = () => {
+        return (
+    	    <NumberBadge value={5} />
+        );
+    };
+   
+
+### Option Button
+
+**Props**
+| Nome | Tipo | Descrição | Obrigatório |
+|--|--|--|--|
+| onClick | `function => void` | _Handler_ de clique | Sim |
+| disabled | `boolean` | Se o botão está desabilitado | Não |
+| text | `string` | Texto do botão | Sim |
+| icon | `ReactNode` | Ícone do botão | Não |
+| customStyles | `CSSProperties` | Estilos customizados | Não |
+
+**Exemplo de uso**
+
+    import { OptionButton } from '@waveclass/wds-core';
+
+    const MyComponent = () => {
+        return (
+    	    <OptionButton onClick={() => alert('I was clicked!')} text='Click me' />
+        );
+    };
+
+
+### Pill
+
+**Props**
+
+| Nome    | Tipo     | Descrição                        | Obrigatório |
+| ------- | -------- | -------------------------------- | ----------- |
+| text    | `string` | Texto a ser exibido              | Sim         |
+| variant | `string` | Variante de cor de fundo e borda | Sim         |
+
+**Exemplo de uso**
+
+```
+import { Pill } from "@waveclass/wds-core";
+
+const MyComponent = () => {
+  return (
+  	<Pill variant="success" text="Texto"/>
+  );
+};
+```
+
+
+### Regular Button
+
+**Props**
+| Nome | Tipo | Descrição | Obrigatório |
+|--|--|--|--|
+| onClick | `function => void` | _Handler_ de clique | Sim |
+| disabled | `boolean` | Se o botão está desabilitado | Não |
+| type | `string` | Tipo do botão: 'button', 'submit' ou 'reset' | Não |
+| text | `string` | Texto do botão | Sim |
+| variant | `string` | Variante de estilo: vide **Storybook** | Sim |
+| icon | `ReactNode` | Ícone do botão | Não |
+| customStyles | `CSSProperties` | Estilos customizados | Não |
+
+**Exemplo de uso**
+
+    import { RegularButton } from '@waveclass/wds-core';
+
+    const MyComponent = () => {
+        return (
+    	    <RegularButton onClick={() => alert('I was clicked!')} text='Click me' variant='primary-contained' />
+        );
+    };
+    
 
 ### Search Input
 
@@ -327,22 +473,6 @@ Esta _utility function_ recebe como argumento um objeto do tipo `CSSProperties` 
         );
     };
 
-### Number Badge
-
-**Props**
-| Nome | Tipo | Descrição | Obrigatório |
-|--|--|--|--|
-| value | `number` | Número a ser exibido | Sim |
-
-**Exemplo de uso**
-
-    import { NumberBadge } from '@waveclass/wds-core';
-
-    const MyComponent = () => {
-        return (
-    	    <NumberBadge value={5} />
-        );
-    };
 
 ### Typography
 
@@ -362,3 +492,10 @@ Esta _utility function_ recebe como argumento um objeto do tipo `CSSProperties` 
     	    <Typography text='Some valueble text' variant='paragraph-bold' />
         );
     };
+
+
+
+
+
+
+
