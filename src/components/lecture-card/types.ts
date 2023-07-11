@@ -8,18 +8,17 @@ export interface LectureCardProps {
 	teacher: string;
 	duration: number;
 	finished?: boolean;
-	progress?: number;
 	onClick: () => void;
 	avaliable: boolean;
 	avaliableMessage?: string;
-	toggleFavorite: () => void;
+	toggleFavorite?: () => void;
 	favorite?: boolean;
 	remainingSeconds?: number;
 }
 
 type CardVariant = 'primary' | 'secondary';
 
-type Lecture = 'VIDEO' | 'AUD' | 'MAT' | 'TEXT';
+type Lecture = 'VIDEO' | 'AUD' | 'MAT' | 'TXT';
 
 export interface LectureCardStyleProps {
 	theme?: Theme;

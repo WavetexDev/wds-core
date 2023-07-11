@@ -11,6 +11,7 @@ import {
 	TfiBookmarkAlt,
 	TfiAgenda,
 	TfiTime,
+	TfiLock,
 } from 'react-icons/tfi';
 
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
@@ -45,7 +46,7 @@ export const LectureCard = ({
 			case 'MAT':
 				return <TfiBookmarkAlt size={24} />;
 
-			case 'TEXT':
+			case 'TXT':
 				return <TfiAgenda size={24} />;
 		}
 	}
@@ -81,14 +82,18 @@ export const LectureCard = ({
 							/>
 						</s.LectureTitle>
 
-						<s.Avaliable>
-							<Typography
-								variant="small-regular"
-								text={
-									avaliableMessage ?? ''
-								}
-							/>
-						</s.Avaliable>
+						{!avaliable && (
+							<s.Avaliable>
+								<TfiLock size={14} />
+								<Typography
+									variant="paragraph-bold"
+									text={
+										avaliableMessage ??
+										''
+									}
+								/>
+							</s.Avaliable>
+						)}
 
 						<s.LectureFooter>
 							<s.LectureFineDetails>
@@ -98,7 +103,7 @@ export const LectureCard = ({
 								/>
 
 								<s.LectureDuration>
-									<TfiTime size={12} />
+									<TfiTime size={14} />
 									<Typography
 										variant="paragraph-regular"
 										text={
@@ -108,20 +113,25 @@ export const LectureCard = ({
 								</s.LectureDuration>
 							</s.LectureFineDetails>
 
-							<s.FavoriteIconContainer
-								onClick={toggleFavorite}
-								isFavorite={
-									favorite ?? false
-								}
-							>
-								{favorite ? (
-									<AiFillStar size={24} />
-								) : (
-									<AiOutlineStar
-										size={24}
-									/>
+							{toggleFavorite !==
+								undefined && (
+									<s.FavoriteIconContainer
+										onClick={toggleFavorite}
+										isFavorite={
+											favorite ?? false
+										}
+									>
+										{favorite ? (
+											<AiFillStar
+												size={24}
+											/>
+										) : (
+											<AiOutlineStar
+												size={24}
+											/>
+										)}
+									</s.FavoriteIconContainer>
 								)}
-							</s.FavoriteIconContainer>
 						</s.LectureFooter>
 					</s.LectureDetails>
 
@@ -141,9 +151,9 @@ export const LectureCard = ({
 						) : remainingSeconds ? (
 							<Pill
 								variant="primary"
-								text={secondsToFriendlyString(
+								text={`Faltam ${secondsToFriendlyString(
 									remainingSeconds
-								)}
+								)}`}
 							/>
 						) : null}
 					</s.ImageContainer>

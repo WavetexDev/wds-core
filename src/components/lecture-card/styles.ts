@@ -44,17 +44,25 @@ export const ImageContainer = styled.section<LectureCardThumbnailProps>`
 	height: 100px;
 	padding: ${({ theme }) =>
 		theme[currentMode].spacing.sp6};
+	border-radius: ${({ theme }) =>
+		theme[currentMode].spacing.sp8};
 
 	color: ${({ theme }) =>
 		theme[currentMode].colors.white};
 
 	background: ${({ thumbnail, theme }) =>
 		thumbnail !== ''
-			? `url('${thumbnail}')`
+			? `linear-gradient(rgba(28, 18, 36, 0) 22.92%, rgb(28, 18, 36) 100%) 0% 0% / cover, url('${thumbnail}')`
 			: `${theme[currentMode].colors.secondary}`};
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+		transition: 0.4s ease;
+	}
 
 	svg {
 		position: absolute;
@@ -90,13 +98,22 @@ export const LectureTitle = styled.header<CardVariantProps>`
 		variant === 'primary'
 			? theme[currentMode].colors.black
 			: theme[currentMode].colors.white};
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+		transition: 0.4s ease;
+		text-decoration: underline;
+	}
 `;
 
 export const Avaliable = styled.span`
 	display: flex;
+	align-items: center;
+	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
 	justify-content: flex-end;
 	color: ${({ theme }) =>
-		theme[currentMode].colors.gray300};
+		theme[currentMode].colors.gray500};
 `;
 
 export const LectureFooter = styled.footer`
@@ -104,7 +121,7 @@ export const LectureFooter = styled.footer`
 	justify-content: space-between;
 	align-items: center;
 	color: ${({ theme }) =>
-		theme[currentMode].colors.gray300};
+		theme[currentMode].colors.gray500};
 `;
 
 export const LectureFineDetails = styled.span`
@@ -127,4 +144,10 @@ export const FavoriteIconContainer = styled.span<FavoriteProps>`
 		isFavorite
 			? theme[currentMode].colors.warning
 			: theme[currentMode].colors.gray300};
+	cursor: pointer;
+
+	&:hover {
+		opacity: 0.8;
+		transition: 0.4s ease;
+	}
 `;
