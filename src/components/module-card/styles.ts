@@ -1,25 +1,11 @@
 import { styled } from 'styled-components';
 
 import { getThemeMode } from '../../utils/get-theme-mode';
+import { convertHexToRgb } from '@/utils/convert-hex-to-rgba';
+
 import { ModuleCardStyleProps } from './types';
 
 const currentMode = getThemeMode();
-
-const convertHexToRgb = (
-	hex: string,
-	opacity: number
-): string => {
-	// Remove the '#' character if present
-	const cleanHex = hex.replace('#', '');
-
-	// Parse the hexadecimal values
-	const r = parseInt(cleanHex.substring(0, 2), 16);
-	const g = parseInt(cleanHex.substring(2, 4), 16);
-	const b = parseInt(cleanHex.substring(4, 6), 16);
-
-	// Construct and return the RGBA string
-	return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-};
 
 export const ModuleCardContainer = styled.article<ModuleCardStyleProps>`
 	background: ${({ theme }) =>
@@ -32,7 +18,7 @@ export const ModuleCardContainer = styled.article<ModuleCardStyleProps>`
 	border-color: ${({ theme, isComplete }) =>
 		isComplete
 			? `${theme[currentMode].colors.success}`
-			: `transparent`};
+			: `${theme[currentMode].colors.gray100}`};
 
 	display: flex;
 	flex-direction: column;
@@ -94,7 +80,7 @@ export const ModuleDurationDisplay = styled.span`
 	display: flex;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
 	color: ${({ theme }) =>
-		theme[currentMode].colors.gray300};
+		theme[currentMode].colors.gray500};
 `;
 
 export const ExpanderContainer = styled.section<ModuleCardStyleProps>`

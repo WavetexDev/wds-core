@@ -23,6 +23,7 @@ export const ModuleCard = ({
 	available,
 	availableMessage,
 	expanded,
+	toggleExpanded,
 }: ModuleCardProps): JSX.Element => {
 	return (
 		<>
@@ -65,13 +66,23 @@ export const ModuleCard = ({
 					</s.ModuleMainDetails>
 
 					<s.ExpanderContainer>
-						{available || !expanded ? (
+						{available ? (
 							<s.ExpanderIconContainer>
-								<TfiAngleDown size={16} />
-							</s.ExpanderIconContainer>
-						) : available || expanded ? (
-							<s.ExpanderIconContainer>
-								<TfiAngleUp size={16} />
+								{!expanded ? (
+									<TfiAngleDown
+										size={16}
+										onClick={
+											toggleExpanded
+										}
+									/>
+								) : (
+									<TfiAngleUp
+										size={16}
+										onClick={
+											toggleExpanded
+										}
+									/>
+								)}
 							</s.ExpanderIconContainer>
 						) : (
 							<s.ExpanderIconContainer>

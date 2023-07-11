@@ -3,9 +3,7 @@ import { Theme } from '@/theme';
 export interface ModuleCardProps {
 	name: string;
 	draft: boolean;
-	is_default: boolean;
-	isBonus: boolean;
-	expire: number;
+	isBonus?: boolean;
 	pos: number;
 	itemcount: number;
 	id: string;
@@ -15,7 +13,8 @@ export interface ModuleCardProps {
 	availableMessage: string;
 	percentProgress: number;
 	totalFinishedItems: number;
-	expanded: boolean
+	expanded: boolean;
+	toggleExpanded: () => void;
 }
 
 export interface ModuleCardStyleProps {
