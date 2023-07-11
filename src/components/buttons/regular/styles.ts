@@ -17,7 +17,7 @@ const getBGColor = (
 	) {
 		return 'transparent';
 	} else if (variant.includes('danger')) {
-		return '#FF0000';
+		return `${theme[currentTheme].colors.error}`;
 	} else if (variant.includes('primary')) {
 		return `${theme[currentTheme].colors.primary}`;
 	} else {
@@ -40,7 +40,7 @@ const getColor = (
 			variant.includes('text')) &&
 		variant.includes('danger')
 	) {
-		return '#FF0000';
+		return `${theme[currentTheme].colors.error}`;
 	} else {
 		return theme[currentTheme].colors.dynamicTextColor(
 			getBGColor(variant, theme)
@@ -55,7 +55,7 @@ const getBorderColor = (
 	if (variant.includes('primary')) {
 		return theme[currentTheme].colors.primary;
 	} else if (variant.includes('danger')) {
-		return '#FF0000';
+		return `${theme[currentTheme].colors.error}`;
 	} else {
 		return theme[currentTheme].colors.secondary;
 	}
