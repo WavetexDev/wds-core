@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import { getThemeMode } from '../../utils/get-theme-mode';
-import { convertHexToRgb } from '@/utils/convert-hex-to-rgba';
+import { convertHexToRgb } from '../../utils/convert-hex-to-rgba';
 
 import { ModuleCardStyleProps } from './types';
 
