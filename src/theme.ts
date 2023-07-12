@@ -7,9 +7,11 @@ export const theme = {
 			primary: getSchoolColors().primaryColor,
 			secondary: getSchoolColors().secondaryColor,
 			dynamicTextColor: (bgColor: string): string =>
-				isColorDark(bgColor) ? '#FFF' : '#000',
-			black: '#000',
-			white: '#FFF',
+				isColorDark(bgColor)
+					? '#FFFFFF'
+					: '#000000',
+			black: '#000000',
+			white: '#FFFFFF',
 			gray700: '#6E6E6E',
 			gray500: '#868686',
 			gray300: '#C4C4C4',
