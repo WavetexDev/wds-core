@@ -20,9 +20,9 @@ export const ProgressBarContainer = styled.div`
 `;
 
 export const ProgressBar = styled.span<ProgressBarStyleProps>`
+	min-width: 30px;
 	display: flex;
-	justify-content: ${({ percentProgress }) =>
-		percentProgress > 2 ? `flex-end` : `center`};
+	justify-content: flex-end;
 	padding-inline: ${({ theme }) => `
 		${theme[currentMode].spacing.sp12}
 		${theme[currentMode].spacing.sp10}`};
