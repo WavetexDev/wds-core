@@ -3,6 +3,9 @@ import { AvatarSize } from './types';
 import { Theme } from '../../theme';
 import { getThemeMode } from '../../utils/get-theme-mode';
 
+import { CSSProperties } from 'react';
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+
 const currentThemeMode = getThemeMode();
 
 const getWidth = (size: AvatarSize): number => {
@@ -58,6 +61,7 @@ export const Container = styled.span<{
 	size: AvatarSize;
 	img?: string;
 	theme?: Theme;
+	customStyles?: CSSProperties;
 }>`
 	display: block;
 	position: relative;
@@ -97,11 +101,15 @@ export const Container = styled.span<{
 			}
 		`;
 	}}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const OnlineBadge = styled.span<{
 	size: AvatarSize;
 	theme?: Theme;
+	customStyles?: CSSProperties;
 }>`
 	width: ${({ size }) => getWidth(size) * 0.2}px;
 	min-width: ${({ size }) => getWidth(size) * 0.2}px;
@@ -113,4 +121,7 @@ export const OnlineBadge = styled.span<{
 	position: absolute;
 	right: -4%;
 	top: 8%;
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

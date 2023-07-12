@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 import { getThemeMode } from '../../../utils/get-theme-mode';
-import { InputStylingProps } from '../types';
+import { InputStyleProps } from '../types';
+
+import { toStyledComponent } from '../../../utils/css-properties-to-styled-component';
 
 const currentMode = getThemeMode();
 
-export const InputContainer = styled.div<InputStylingProps>`
+export const InputContainer = styled.div<InputStyleProps>`
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
 	width: 100%;
 `;
 
-export const InputWrapper = styled.div<InputStylingProps>`
+export const InputWrapper = styled.div<InputStyleProps>`
 	width: 100%;
 	height: 40px;
 	background: ${({ theme }) =>
@@ -31,9 +33,12 @@ export const InputWrapper = styled.div<InputStylingProps>`
 		max-width: 18px;
 		max-height: 18px;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const Input = styled.input<InputStylingProps>`
+export const Input = styled.input<InputStyleProps>`
 	width: 100%;
 	border: 0;
 	outline: 0;
@@ -50,9 +55,12 @@ export const Input = styled.input<InputStylingProps>`
 					theme[currentMode].shadows.light},
 			inset 0px 0px 5px -1px ${({ theme }) => theme[currentMode].colors.gray500};
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const ErrorMessage = styled.span<InputStylingProps>`
+export const ErrorMessage = styled.span<InputStyleProps>`
 	color: ${({ theme }) =>
 		theme[currentMode].colors.error};
 `;

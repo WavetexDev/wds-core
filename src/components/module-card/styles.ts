@@ -4,6 +4,7 @@ import { getThemeMode } from '../../utils/get-theme-mode';
 import { convertHexToRgb } from '@/utils/convert-hex-to-rgba';
 
 import { ModuleCardStyleProps } from './types';
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
 
 const currentMode = getThemeMode();
 
@@ -28,9 +29,12 @@ export const ModuleCardContainer = styled.article<ModuleCardStyleProps>`
 		flex-direction: row;
 		justify-content: space-between;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const ModuleMainDetails = styled.main`
+export const ModuleMainDetails = styled.main<ModuleCardStyleProps>`
 	height: 100%;
 	min-width: 60%;
 	display: flex;
@@ -42,6 +46,9 @@ export const ModuleMainDetails = styled.main`
 		padding: ${({ theme }) =>
 			`${theme[currentMode].spacing.sp20} ${theme[currentMode].spacing.sp24}`};
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const ModulePositionContainer = styled.aside<ModuleCardStyleProps>`
@@ -61,6 +68,9 @@ export const ModulePositionContainer = styled.aside<ModuleCardStyleProps>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const ModuleDetailsContainer = styled.main<ModuleCardStyleProps>`
@@ -68,19 +78,25 @@ export const ModuleDetailsContainer = styled.main<ModuleCardStyleProps>`
 	display: flex;
 	flex-direction: column;
 	gap: 10%;
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const ModuleDetailsFooter = styled.footer<ModuleCardStyleProps>`
 	display: flex;
 	justify-content: space-between;
 	margin-top: auto;
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const ModuleDurationDisplay = styled.span`
+export const ModuleDurationDisplay = styled.span<ModuleCardStyleProps>`
 	display: flex;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
 	color: ${({ theme }) =>
 		theme[currentMode].colors.gray500};
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const ExpanderContainer = styled.section<ModuleCardStyleProps>`
@@ -97,9 +113,12 @@ export const ExpanderContainer = styled.section<ModuleCardStyleProps>`
 		padding: ${({ theme }) =>
 			`${theme[currentMode].spacing.sp32} ${theme[currentMode].spacing.sp32} ${theme[currentMode].spacing.sp10} 0`};
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const ExpanderIconContainer = styled.div`
+export const ExpanderIconContainer = styled.div<ModuleCardStyleProps>`
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -120,4 +139,7 @@ export const ExpanderIconContainer = styled.div`
 			opacity: 0.8;
 		}
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

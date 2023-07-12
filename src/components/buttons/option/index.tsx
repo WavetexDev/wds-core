@@ -9,12 +9,16 @@ import { OptionButtonProps } from './types';
 export const OptionButton = ({
 	text,
 	icon,
+	customStyles,
 	...props
 }: OptionButtonProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
-				<s.OptionButton {...props}>
+				<s.OptionButton
+					customStyles={customStyles}
+					{...props}
+				>
 					{icon}
 					<Typography
 						variant={'paragraph-bold'}

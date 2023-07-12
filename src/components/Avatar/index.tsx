@@ -17,7 +17,7 @@ export const Avatar = ({
 					size={size}
 					img={img}
 					title={name}
-					style={customStyles ?? {}}
+					customStyles={customStyles}
 				>
 					{img ? (
 						<img src={img} alt={name} />
@@ -26,7 +26,10 @@ export const Avatar = ({
 					)}
 
 					{online && (
-						<S.OnlineBadge size={size} />
+						<S.OnlineBadge
+							size={size}
+							customStyles={customStyles}
+						/>
 					)}
 				</S.Container>
 			</WaveclassTheme>

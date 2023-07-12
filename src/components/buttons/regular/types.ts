@@ -5,6 +5,7 @@ import { ButtonProps } from '../types';
 export interface RegularButtonStylingProps {
 	variant: Variant;
 	theme?: Theme;
+	customStyles?: CSSProperties;
 }
 
 type Variant =

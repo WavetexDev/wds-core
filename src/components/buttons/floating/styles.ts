@@ -4,6 +4,8 @@ import { FloatingButtonStylesProps } from './types';
 import { getThemeMode } from '../../../utils/get-theme-mode';
 import { Theme } from '../../../theme';
 
+import { toStyledComponent } from '../../../utils/css-properties-to-styled-component';
+
 const currentTheme = getThemeMode();
 
 const getBGColor = (
@@ -43,4 +45,7 @@ export const FloatingButton = styled.button<FloatingButtonStylesProps>`
 		cursor: not-allowed;
 		opacity: 0.4;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

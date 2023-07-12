@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { getThemeMode } from '../../utils/get-theme-mode';
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
 
 import {
 	CardVariantProps,
+	DefaultStyleProps,
 	FavoriteProps,
 	LectureCardThumbnailProps,
 } from './types';
@@ -32,6 +34,9 @@ export const CardContainer = styled.article<CardVariantProps>`
 	@media (min-width: 650px) {
 		flex-direction: row;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const ImageContainer = styled.section<LectureCardThumbnailProps>`
@@ -76,9 +81,12 @@ export const ImageContainer = styled.section<LectureCardThumbnailProps>`
 	@media (min-width: 650px) {
 		width: 180px;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const LectureDetails = styled.section`
+export const LectureDetails = styled.section<DefaultStyleProps>`
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -89,6 +97,9 @@ export const LectureDetails = styled.section`
 		width: calc(100% - 180px);
 		gap: 0;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const LectureTitle = styled.header<CardVariantProps>`
@@ -105,35 +116,50 @@ export const LectureTitle = styled.header<CardVariantProps>`
 		transition: 0.4s ease;
 		text-decoration: underline;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const Avaliable = styled.span`
+export const Avaliable = styled.span<DefaultStyleProps>`
 	display: flex;
 	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp8};
 	justify-content: flex-end;
 	color: ${({ theme }) =>
 		theme[currentMode].colors.gray500};
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const LectureFooter = styled.footer`
+export const LectureFooter = styled.footer<DefaultStyleProps>`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	color: ${({ theme }) =>
 		theme[currentMode].colors.gray500};
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const LectureFineDetails = styled.span`
+export const LectureFineDetails = styled.span<DefaultStyleProps>`
 	display: flex;
 	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp22};
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const LectureDuration = styled.span`
+export const LectureDuration = styled.span<DefaultStyleProps>`
 	display: flex;
 	align-items: center;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
 export const FavoriteIconContainer = styled.span<FavoriteProps>`
@@ -150,4 +176,7 @@ export const FavoriteIconContainer = styled.span<FavoriteProps>`
 		opacity: 0.8;
 		transition: 0.4s ease;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

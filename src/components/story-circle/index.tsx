@@ -10,6 +10,7 @@ export const StoryCircle = ({
 	name,
 	highlight,
 	onClick,
+	customStyles,
 }: StoryCircleProps): JSX.Element => {
 	return (
 		<>
@@ -17,6 +18,7 @@ export const StoryCircle = ({
 				<s.StoryCircleContainer
 					onClick={onClick}
 					highlight={highlight ?? false}
+					customStyles={customStyles}
 				>
 					<Avatar
 						size="md"

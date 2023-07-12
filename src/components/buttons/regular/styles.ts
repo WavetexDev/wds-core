@@ -5,6 +5,8 @@ import { getThemeMode } from '../../../utils/get-theme-mode';
 import { RegularButtonStylingProps } from './types';
 import { Theme } from '../../../theme';
 
+import { toStyledComponent } from '../../../utils/css-properties-to-styled-component';
+
 const currentTheme = getThemeMode();
 
 const getBGColor = (
@@ -93,4 +95,7 @@ export const RegularButton = styled.button<RegularButtonStylingProps>`
 		cursor: not-allowed;
 		opacity: 0.4;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

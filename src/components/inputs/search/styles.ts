@@ -1,16 +1,18 @@
 import { styled } from 'styled-components';
 import { getThemeMode } from '../../../utils/get-theme-mode';
-import { InputStylingProps } from '../types';
+import { InputStyleProps } from '../types';
+
+import { toStyledComponent } from '../../../utils/css-properties-to-styled-component';
 
 const currentMode = getThemeMode();
 
-export const SearchInputContainer = styled.div<InputStylingProps>`
+export const SearchInputContainer = styled.div<InputStyleProps>`
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
 `;
 
-export const SearchInputWrapper = styled.div<InputStylingProps>`
+export const SearchInputWrapper = styled.div<InputStyleProps>`
 	width: 100%;
 	height: 40px;
 	background: ${({ theme }) =>
@@ -30,9 +32,12 @@ export const SearchInputWrapper = styled.div<InputStylingProps>`
 		max-width: 18px;
 		max-height: 18px;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const SearchInput = styled.input<InputStylingProps>`
+export const SearchInput = styled.input<InputStyleProps>`
 	width: 100%;
 	border: 0;
 	outline: 0;
@@ -54,9 +59,12 @@ export const SearchInput = styled.input<InputStylingProps>`
 		background: ${({ theme }) =>
 			theme[currentMode].colors.gray100};
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
 
-export const ErrorMessage = styled.span<InputStylingProps>`
+export const ErrorMessage = styled.span<InputStyleProps>`
 	color: ${({ theme }) =>
 		theme[currentMode].colors.error};
 `;
