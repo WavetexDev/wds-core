@@ -14,6 +14,9 @@ const meta: Meta<typeof RegularButton> = {
 				'secondary-contained',
 				'secondary-ghost',
 				'secondary-text',
+				'danger-contained',
+				'danger-ghost',
+				'danger-text',
 			],
 		},
 		disabled: {
@@ -66,6 +69,27 @@ export const SecondaryGhost: Story = {
 export const SecondaryText: Story = {
 	args: {
 		variant: 'secondary-text',
+		text: 'Click me!',
+	},
+};
+
+export const DangerContained: Story = {
+	args: {
+		variant: 'danger-contained',
+		text: 'Click me!',
+	},
+};
+
+export const DangerGhost: Story = {
+	args: {
+		variant: 'danger-ghost',
+		text: 'Click me!',
+	},
+};
+
+export const DangerText: Story = {
+	args: {
+		variant: 'danger-text',
 		text: 'Click me!',
 	},
 };
