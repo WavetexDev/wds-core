@@ -21,6 +21,9 @@ export const RegularButton = ({
 					<Typography
 						variant={'paragraph-bold'}
 						text={text}
+						customStyles={{
+							textTransform: 'uppercase',
+						}}
 					/>
 				</s.RegularButton>
 			</WaveclassTheme>

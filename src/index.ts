@@ -1,4 +1,4 @@
-import { Avatar } from './components/Avatar';
+import { Avatar } from './components/avatar';
 import { NumberBadge } from './components/number-badge';
 import { FilterButton } from './components/buttons/filter';
 import { FloatingButton } from './components/buttons/floating';
