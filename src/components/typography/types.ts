@@ -16,6 +16,7 @@ type Variant =
 	| 'h6-bold'
 	| 'small-bold'
 	| 'paragraph-bold'
+	| 'label-bold'
 	| 'h1-regular'
 	| 'h2-regular'
 	| 'h3-regular'
@@ -24,6 +25,7 @@ type Variant =
 	| 'h6-regular'
 	| 'small-regular'
 	| 'paragraph-regular'
+	| 'label-regular'
 	| 'h1-italic'
 	| 'h2-italic'
 	| 'h3-italic'
@@ -31,7 +33,8 @@ type Variant =
 	| 'h5-italic'
 	| 'h6-italic'
 	| 'small-italic'
-	| 'paragraph-italic';
+	| 'paragraph-italic'
+	| 'label-italic';
 
 export interface TypographyStylesProps {
 	variant: Variant;
