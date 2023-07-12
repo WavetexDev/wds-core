@@ -18,6 +18,7 @@ export const Typography = styled.div<TypographyStylesProps>`
 		(tag === 'h6' && '12px') ||
 		(tag === 'small' && '10px') ||
 		(tag === 'p' && '12px') ||
+		(tag === 'label' && '12px') ||
 		'1rem'};
 
 	margin: 0 0 0 0;

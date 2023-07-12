@@ -6,9 +6,9 @@ const meta: Meta<typeof Typography> = {
 	component: Typography,
 	argTypes: {
 		customStyles: {
-			table: { disable: true }
-		}
-	}
+			table: { disable: true },
+		},
+	},
 };
 
 export default meta;
@@ -16,7 +16,7 @@ export default meta;
 type Story = StoryObj<typeof Typography>;
 
 export const H1Bold: Story = {
-	name: 'H1Bold',
+	name: 'H1 Bold',
 	args: {
 		variant: 'h1-bold',
 		text: 'Click me!',
@@ -24,7 +24,7 @@ export const H1Bold: Story = {
 };
 
 export const H2Bold: Story = {
-	name: 'H2Bold',
+	name: 'H2 Bold',
 	args: {
 		variant: 'h2-bold',
 		text: 'Click me!',
@@ -32,7 +32,7 @@ export const H2Bold: Story = {
 };
 
 export const H3Bold: Story = {
-	name: 'H3Bold',
+	name: 'H3 Bold',
 	args: {
 		variant: 'h3-bold',
 		text: 'Click me!',
@@ -40,7 +40,7 @@ export const H3Bold: Story = {
 };
 
 export const H4Bold: Story = {
-	name: 'H4Bold',
+	name: 'H4 Bold',
 	args: {
 		variant: 'h4-bold',
 		text: 'Click me!',
@@ -48,7 +48,7 @@ export const H4Bold: Story = {
 };
 
 export const H5Bold: Story = {
-	name: 'H5Bold',
+	name: 'H5 Bold',
 	args: {
 		variant: 'h5-bold',
 		text: 'Click me!',
@@ -56,7 +56,7 @@ export const H5Bold: Story = {
 };
 
 export const H6Bold: Story = {
-	name: 'H6Bold',
+	name: 'H6 Bold',
 	args: {
 		variant: 'h6-bold',
 		text: 'Click me!',
@@ -64,7 +64,7 @@ export const H6Bold: Story = {
 };
 
 export const SmallBold: Story = {
-	name: 'SmallBold',
+	name: 'Small Bold',
 	args: {
 		variant: 'small-bold',
 		text: 'Click me!',
@@ -72,15 +72,23 @@ export const SmallBold: Story = {
 };
 
 export const ParagraphBold: Story = {
-	name: 'ParagraphBold',
+	name: 'Paragraph Bold',
 	args: {
 		variant: 'paragraph-bold',
 		text: 'Click me!',
 	},
 };
 
+export const LabelBold: Story = {
+	name: 'Label  Bold',
+	args: {
+		variant: 'label-bold',
+		text: 'Click me!',
+	},
+};
+
 export const H1Regular: Story = {
-	name: 'H1Regular',
+	name: 'H1 Regular',
 	args: {
 		variant: 'h1-regular',
 		text: 'Click me!',
@@ -88,7 +96,7 @@ export const H1Regular: Story = {
 };
 
 export const H2Regular: Story = {
-	name: 'H2Regular',
+	name: 'H2 Regular',
 	args: {
 		variant: 'h2-regular',
 		text: 'Click me!',
@@ -96,7 +104,7 @@ export const H2Regular: Story = {
 };
 
 export const H3Regular: Story = {
-	name: 'H3Regular',
+	name: 'H3 Regular',
 	args: {
 		variant: 'h3-regular',
 		text: 'Click me!',
@@ -104,7 +112,7 @@ export const H3Regular: Story = {
 };
 
 export const H4Regular: Story = {
-	name: 'H4Regular',
+	name: 'H4 Regular',
 	args: {
 		variant: 'h4-regular',
 		text: 'Click me!',
@@ -112,7 +120,7 @@ export const H4Regular: Story = {
 };
 
 export const H5Regular: Story = {
-	name: 'H5Regular',
+	name: 'H5 Regular',
 	args: {
 		variant: 'h5-regular',
 		text: 'Click me!',
@@ -120,7 +128,7 @@ export const H5Regular: Story = {
 };
 
 export const H6Regular: Story = {
-	name: 'H6Regular',
+	name: 'H6 Regular',
 	args: {
 		variant: 'h6-regular',
 		text: 'Click me!',
@@ -128,7 +136,7 @@ export const H6Regular: Story = {
 };
 
 export const SmallRegular: Story = {
-	name: 'SmallRegular',
+	name: 'Small Regular',
 	args: {
 		variant: 'small-regular',
 		text: 'Click me!',
@@ -136,15 +144,23 @@ export const SmallRegular: Story = {
 };
 
 export const ParagraphRegular: Story = {
-	name: 'ParagraphRegular',
+	name: 'Paragraph Regular',
 	args: {
 		variant: 'paragraph-regular',
 		text: 'Click me!',
 	},
 };
 
+export const LabelRegular: Story = {
+	name: 'Label  Regular',
+	args: {
+		variant: 'label-regular',
+		text: 'Click me!',
+	},
+};
+
 export const H1Italic: Story = {
-	name: 'H1Italic',
+	name: 'H1 Italic',
 	args: {
 		variant: 'h1-italic',
 		text: 'Click me!',
@@ -152,7 +168,7 @@ export const H1Italic: Story = {
 };
 
 export const H2Italic: Story = {
-	name: 'H2Italic',
+	name: 'H2 Italic',
 	args: {
 		variant: 'h2-italic',
 		text: 'Click me!',
@@ -160,7 +176,7 @@ export const H2Italic: Story = {
 };
 
 export const H3Italic: Story = {
-	name: 'H3Italic',
+	name: 'H3 Italic',
 	args: {
 		variant: 'h3-italic',
 		text: 'Click me!',
@@ -168,7 +184,7 @@ export const H3Italic: Story = {
 };
 
 export const H4Italic: Story = {
-	name: 'H4Italic',
+	name: 'H4 Italic',
 	args: {
 		variant: 'h4-italic',
 		text: 'Click me!',
@@ -176,7 +192,7 @@ export const H4Italic: Story = {
 };
 
 export const H5Italic: Story = {
-	name: 'H5Italic',
+	name: 'H5 Italic',
 	args: {
 		variant: 'h5-italic',
 		text: 'Click me!',
@@ -184,7 +200,7 @@ export const H5Italic: Story = {
 };
 
 export const H6Italic: Story = {
-	name: 'H6Italic',
+	name: 'H6 Italic',
 	args: {
 		variant: 'h6-italic',
 		text: 'Click me!',
@@ -192,7 +208,7 @@ export const H6Italic: Story = {
 };
 
 export const SmallItalic: Story = {
-	name: 'SmallItalic',
+	name: 'Small Italic',
 	args: {
 		variant: 'small-italic',
 		text: 'Click me!',
@@ -200,9 +216,17 @@ export const SmallItalic: Story = {
 };
 
 export const ParagraphItalic: Story = {
-	name: 'ParagraphItalic',
+	name: 'Paragraph Italic',
 	args: {
 		variant: 'paragraph-italic',
+		text: 'Click me!',
+	},
+};
+
+export const LabelItalic: Story = {
+	name: 'Label  Italic',
+	args: {
+		variant: 'label-italic',
 		text: 'Click me!',
 	},
 };
