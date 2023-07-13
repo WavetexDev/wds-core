@@ -43,6 +43,77 @@ declare module '@waveclass/wds-core' {
 		icon?: any;
 		customStyles?: Record<string, string>;
 	}): JSX.Element;
+	export function LectureCard(props: {
+		variant?: 'primary' | 'secondary';
+		type: 'VIDEO' | 'AUD' | 'MAT' | 'TXT';
+		name: string;
+		thumbnail: string;
+		teacher: string;
+		duration: number;
+		finished?: boolean;
+		onClick: () => void;
+		avaliable: boolean;
+		avaliableMessage?: string;
+		toggleFavorite?: () => void;
+		favorite?: boolean;
+		remainingSeconds?: number;
+	}): JSX.Element;
+	export function GridItem(props: {
+		id?: string;
+		variant:
+			| 'row'
+			| 'col-1'
+			| 'col-2'
+			| 'col-3'
+			| 'col-4'
+			| 'col-5'
+			| 'col-6'
+			| 'col-7'
+			| 'col-8'
+			| 'col-9'
+			| 'col-10'
+			| 'col-11'
+			| 'col-12';
+		customStyles?: Record<string, any>;
+		children: any;
+	}): JSX.Element;
+	export function Modal(props: {
+		isShowing: boolean;
+		position: 'center' | 'right';
+		onClose: () => void;
+		children: React.ReactNode;
+		size?: 'sm' | 'md' | 'lg';
+		title?: string;
+		subtitle?: string;
+		confirmButton?: {
+			show?: boolean;
+			disabled?: boolean;
+			text?: string;
+			action?: () => void;
+		};
+		cancelButton?: {
+			show?: boolean;
+			disabled?: boolean;
+			text?: string;
+			action?: () => void;
+		};
+		dangerButton?: {
+			show?: boolean;
+			disabled?: boolean;
+			text?: string;
+			action?: () => void;
+		};
+		customStyles?: {
+			overlay?: Record<string, any>;
+			modal?: Record<string, any>;
+			title?: Record<string, any>;
+			subtitle?: Record<string, any>;
+			childrenContainer?: Record<string, any>;
+			confirmButton?: Record<string, any>;
+			cancelButton?: Record<string, any>;
+			dangerButton?: Record<string, any>;
+		};
+	}): JSX.Element;
 	export function SearchInput(props: {
 		onChange: (e: {
 			target: { value: string };

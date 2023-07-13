@@ -99,68 +99,68 @@ export const Modal: React.FC<Props> = ({
 					{(confirmButton.show ||
 						cancelButton.show ||
 						dangerButton.show) && (
-						<S.ButtonWrapper>
-							{cancelButton.show && (
-								<RegularButton
-									text={
-										cancelButton.text ??
-										'Cancelar'
-									}
-									variant="primary-ghost"
-									onClick={
-										cancelButton.action
-									}
-									disabled={
-										cancelButton.disabled
-									}
-									customStyles={{
-										...S.CancelButtonStyles,
-										...customStyles?.cancelButton,
-									}}
-								/>
-							)}
+							<S.ButtonWrapper>
+								{cancelButton.show && (
+									<RegularButton
+										text={
+											cancelButton.text ??
+											'Cancelar'
+										}
+										variant="primary-ghost"
+										onClick={
+											cancelButton.action
+										}
+										disabled={
+											cancelButton.disabled
+										}
+										customStyles={{
+											...S.CancelButtonStyles,
+											...customStyles?.cancelButton,
+										}}
+									/>
+								)}
 
-							{dangerButton.show && (
-								<RegularButton
-									text={
-										dangerButton.text ??
-										'Excluír'
-									}
-									variant="danger-contained"
-									onClick={
-										dangerButton.action
-									}
-									disabled={
-										dangerButton.disabled
-									}
-									customStyles={{
-										...S.ActionButtonStyles,
-										...customStyles?.dangerButton,
-									}}
-								/>
-							)}
+								{dangerButton.show && (
+									<RegularButton
+										text={
+											dangerButton.text ??
+											'Excluír'
+										}
+										variant="danger-contained"
+										onClick={
+											dangerButton.action
+										}
+										disabled={
+											dangerButton.disabled
+										}
+										customStyles={{
+											...S.ActionButtonStyles,
+											...customStyles?.dangerButton,
+										}}
+									/>
+								)}
 
-							{confirmButton.show && (
-								<RegularButton
-									text={
-										confirmButton.text ??
-										'OK'
-									}
-									variant="primary-contained"
-									onClick={
-										confirmButton.action
-									}
-									disabled={
-										confirmButton.disabled
-									}
-									customStyles={{
-										...S.ActionButtonStyles,
-										...customStyles?.confirmButton,
-									}}
-								/>
-							)}
-						</S.ButtonWrapper>
-					)}
+								{confirmButton.show && (
+									<RegularButton
+										text={
+											confirmButton.text ??
+											'OK'
+										}
+										variant="primary-contained"
+										onClick={
+											confirmButton.action
+										}
+										disabled={
+											confirmButton.disabled
+										}
+										customStyles={{
+											...S.ActionButtonStyles,
+											...customStyles?.confirmButton,
+										}}
+									/>
+								)}
+							</S.ButtonWrapper>
+						)}
 				</S.Modal>
 			</S.Overlay>
 		</WaveclassTheme>
