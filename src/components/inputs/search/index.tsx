@@ -29,13 +29,16 @@ export const SearchInput = ({
 				<s.SearchInputContainer>
 					<s.SearchInputWrapper>
 						{getDefaultIcon() ?? icon}
-						<s.SearchInput {...props} type='search' />
+						<s.SearchInput
+							{...props}
+							type="search"
+						/>
 					</s.SearchInputWrapper>
 
 					{showError && (
 						<Typography
 							variant={'small-regular'}
-							text={errorMessage}
+							text={errorMessage ?? ''}
 							customStyles={{
 								color: theme[currentTheme]
 									.colors.error,

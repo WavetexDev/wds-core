@@ -5,6 +5,7 @@ import { InputStylingProps } from '../types';
 const currentMode = getThemeMode();
 
 export const SearchInputContainer = styled.div<InputStylingProps>`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};
