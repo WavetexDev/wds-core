@@ -77,6 +77,40 @@ declare module '@waveclass/wds-core' {
 		customStyles?: Record<string, any>;
 		children: any;
 	}): JSX.Element;
+	export function ModuleCard(props: {
+		name: string;
+		draft: boolean;
+		isBonus?: boolean;
+		pos: number;
+		itemcount: number;
+		id: string;
+		totaltime: string;
+		available: boolean;
+		available_at: string;
+		availableMessage: string;
+		percentProgress: number;
+		totalFinishedItems: number;
+		expanded: boolean;
+		toggleExpanded: () => void;
+	}): JSX.Element;
+	export function Pill(props: {
+		variant:
+			| 'success'
+			| 'warning'
+			| 'error'
+			| 'info'
+			| 'success-outline'
+			| 'warning-outline'
+			| 'error-outline'
+			| 'info-outline'
+			| 'primary'
+			| 'secondary';
+		text: string;
+		toggleExpanded: () => void;
+	}): JSX.Element;
+	export function ProgressBar(props: {
+		percentProgress: number;
+	}): JSX.Element;
 	export function Modal(props: {
 		isShowing: boolean;
 		position: 'center' | 'right';
