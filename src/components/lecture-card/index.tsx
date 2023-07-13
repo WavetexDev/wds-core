@@ -115,29 +115,34 @@ export const LectureCard = ({
 
 							{toggleFavorite !==
 								undefined && (
-									<s.FavoriteIconContainer
-										onClick={toggleFavorite}
-										isFavorite={
-											favorite ?? false
-										}
-									>
-										{favorite ? (
-											<AiFillStar
-												size={24}
-											/>
-										) : (
-											<AiOutlineStar
-												size={24}
-											/>
-										)}
-									</s.FavoriteIconContainer>
-								)}
+								<s.FavoriteIconContainer
+									onClick={toggleFavorite}
+									isFavorite={
+										favorite ?? false
+									}
+								>
+									{favorite ? (
+										<AiFillStar
+											size={24}
+										/>
+									) : (
+										<AiOutlineStar
+											size={24}
+										/>
+									)}
+								</s.FavoriteIconContainer>
+							)}
 						</s.LectureFooter>
 					</s.LectureDetails>
 
 					<s.ImageContainer
 						onClick={handleOnClick}
 						thumbnail={thumbnail}
+						hasPill={
+							finished || remainingSeconds
+								? true
+								: false
+						}
 					>
 						{thumbnail !== ''
 							? ''
