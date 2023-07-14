@@ -34,6 +34,7 @@ export const LectureCard = ({
 	onClick,
 	favorite,
 	toggleFavorite,
+	customStyles,
 }: LectureCardProps): JSX.Element => {
 	function determineLectureTypeIcon() {
 		switch (type) {
@@ -69,11 +70,15 @@ export const LectureCard = ({
 			<WaveclassTheme>
 				<s.CardContainer
 					variant={variant ?? 'secondary'}
+					customStyles={customStyles}
 				>
-					<s.LectureDetails>
+					<s.LectureDetails
+						customStyles={customStyles}
+					>
 						<s.LectureTitle
 							onClick={handleOnClick}
 							variant={variant ?? 'secondary'}
+							customStyles={customStyles}
 						>
 							{lectureTypeIcon}
 							<Typography
@@ -83,7 +88,9 @@ export const LectureCard = ({
 						</s.LectureTitle>
 
 						{!avaliable && (
-							<s.Avaliable>
+							<s.Avaliable
+								customStyles={customStyles}
+							>
 								<TfiLock size={14} />
 								<Typography
 									variant="paragraph-bold"
@@ -95,14 +102,25 @@ export const LectureCard = ({
 							</s.Avaliable>
 						)}
 
-						<s.LectureFooter>
-							<s.LectureFineDetails>
+						<s.LectureFooter
+							customStyles={customStyles}
+						>
+							<s.LectureFineDetails
+								customStyles={customStyles}
+							>
 								<Typography
 									variant="paragraph-regular"
 									text={teacher}
+									customStyles={
+										customStyles
+									}
 								/>
 
-								<s.LectureDuration>
+								<s.LectureDuration
+									customStyles={
+										customStyles
+									}
+								>
 									<TfiTime size={14} />
 									<Typography
 										variant="paragraph-regular"
@@ -119,6 +137,9 @@ export const LectureCard = ({
 									onClick={toggleFavorite}
 									isFavorite={
 										favorite ?? false
+									}
+									customStyles={
+										customStyles
 									}
 								>
 									{favorite ? (
@@ -138,6 +159,7 @@ export const LectureCard = ({
 					<s.ImageContainer
 						onClick={handleOnClick}
 						thumbnail={thumbnail}
+						customStyles={customStyles}
 						hasPill={
 							finished || remainingSeconds
 								? true

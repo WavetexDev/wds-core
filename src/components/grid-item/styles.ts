@@ -3,11 +3,15 @@ import { Theme } from '../../theme';
 import { getThemeMode } from '../../utils/get-theme-mode';
 import { Variant } from './types';
 
+import { CSSProperties } from 'react';
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+
 const currentMode = getThemeMode();
 
 export const GridItem = styled.div<{
 	theme?: Theme;
 	variant: Variant;
+	customStyles?: CSSProperties;
 }>`
 	display: flex;
 	justify-content: flex-start;
@@ -29,4 +33,7 @@ export const GridItem = styled.div<{
 		(variant === 'col-12' && '99.6%') ||
 		(variant === 'row' && '100%') ||
 		'100%'};
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

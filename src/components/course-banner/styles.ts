@@ -2,6 +2,7 @@ import { styled } from 'styled-components';
 import { CourseBannerStyleProps } from './types';
 
 import { getThemeMode } from '../../utils/get-theme-mode';
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
 
 const currentMode = getThemeMode();
 
@@ -30,4 +31,7 @@ export const BannerContainer = styled.div<CourseBannerStyleProps>`
 			: `linear-gradient(180deg, #071834 0%, rgba(23, 54, 105, 0.79) 100%)`};
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

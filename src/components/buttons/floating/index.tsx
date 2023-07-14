@@ -7,6 +7,7 @@ import { FloatingButtonProps } from './types';
 export const FloatingButton = ({
 	variant,
 	icon,
+	customStyles,
 	...props
 }: FloatingButtonProps): JSX.Element => {
 	return (
@@ -14,6 +15,7 @@ export const FloatingButton = ({
 			<WaveclassTheme>
 				<s.FloatingButton
 					variant={variant}
+					customStyles={customStyles}
 					{...props}
 				>
 					{icon}

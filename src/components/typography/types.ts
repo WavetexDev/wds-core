@@ -42,5 +42,5 @@ export interface TypographyStylesProps {
 	tag: string;
 	as: string;
 	children: ReactNode;
-	style: CSSProperties;
+	customStyles?: CSSProperties;
 }

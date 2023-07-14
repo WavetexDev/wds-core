@@ -9,6 +9,7 @@ import { RegularButtonProps } from './types';
 export const RegularButton = ({
 	variant,
 	text,
+	customStyles,
 	...props
 }: RegularButtonProps): JSX.Element => {
 	return (
@@ -16,6 +17,7 @@ export const RegularButton = ({
 			<WaveclassTheme>
 				<s.RegularButton
 					variant={variant}
+					customStyles={customStyles}
 					{...props}
 				>
 					<Typography

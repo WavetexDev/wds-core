@@ -1,4 +1,4 @@
-import { Theme } from '@/theme';
+import { CSSProperties } from 'react';
 import { InputHTMLAttributes, ReactNode } from 'react';
 
 export interface InputProps
@@ -7,8 +7,9 @@ export interface InputProps
 	errorMessage?: string;
 	icon?: ReactNode;
 	hideDefaultIcon?: boolean;
+	customStyles?: CSSProperties;
 }
 
-export interface InputStylingProps {
-	theme?: Theme;
+export interface InputStyleProps {
+	customStyles?: CSSProperties;
 }

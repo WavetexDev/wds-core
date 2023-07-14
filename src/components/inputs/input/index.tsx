@@ -16,6 +16,7 @@ export const Input = ({
 	showError,
 	errorMessage,
 	hideDefaultIcon,
+	customStyles,
 	...props
 }: InputProps): JSX.Element => {
 	const getDefaultIcon = () => {
@@ -33,8 +34,12 @@ export const Input = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.InputContainer>
-					<s.InputWrapper>
+				<s.InputContainer
+					customStyles={customStyles}
+				>
+					<s.InputWrapper
+						customStyles={customStyles}
+					>
 						{getDefaultIcon() ?? icon}
 						<s.Input {...props} />
 					</s.InputWrapper>

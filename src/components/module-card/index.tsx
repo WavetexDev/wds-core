@@ -24,29 +24,43 @@ export const ModuleCard = ({
 	availableMessage,
 	expanded,
 	toggleExpanded,
+	customStyles,
 }: ModuleCardProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
 				<s.ModuleCardContainer
 					isComplete={percentProgress >= 100}
+					customStyles={customStyles}
 				>
-					<s.ModuleMainDetails>
-						<s.ModulePositionContainer>
+					<s.ModuleMainDetails
+						customStyles={customStyles}
+					>
+						<s.ModulePositionContainer
+							customStyles={customStyles}
+						>
 							<Typography
 								variant="h4-bold"
 								text={`${pos}`}
 							/>
 						</s.ModulePositionContainer>
 
-						<s.ModuleDetailsContainer>
+						<s.ModuleDetailsContainer
+							customStyles={customStyles}
+						>
 							<Typography
 								variant="h4-bold"
 								text={name}
 							/>
 
-							<s.ModuleDetailsFooter>
-								<s.ModuleDurationDisplay>
+							<s.ModuleDetailsFooter
+								customStyles={customStyles}
+							>
+								<s.ModuleDurationDisplay
+									customStyles={
+										customStyles
+									}
+								>
 									<TfiTime size={12} />
 									<Typography
 										variant="small-regular"
@@ -65,9 +79,13 @@ export const ModuleCard = ({
 						</s.ModuleDetailsContainer>
 					</s.ModuleMainDetails>
 
-					<s.ExpanderContainer>
+					<s.ExpanderContainer
+						customStyles={customStyles}
+					>
 						{available ? (
-							<s.ExpanderIconContainer>
+							<s.ExpanderIconContainer
+								customStyles={customStyles}
+							>
 								{!expanded ? (
 									<TfiAngleDown
 										size={16}
@@ -85,7 +103,9 @@ export const ModuleCard = ({
 								)}
 							</s.ExpanderIconContainer>
 						) : (
-							<s.ExpanderIconContainer>
+							<s.ExpanderIconContainer
+								customStyles={customStyles}
+							>
 								<TfiLock size={16} />
 								<Typography
 									variant="small-regular"

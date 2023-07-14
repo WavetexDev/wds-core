@@ -16,6 +16,7 @@ export const SearchInput = ({
 	icon,
 	showError,
 	errorMessage,
+	customStyles,
 	...props
 }: InputProps): JSX.Element => {
 	const getDefaultIcon = () => {
@@ -26,8 +27,12 @@ export const SearchInput = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.SearchInputContainer>
-					<s.SearchInputWrapper>
+				<s.SearchInputContainer
+					customStyles={customStyles}
+				>
+					<s.SearchInputWrapper
+						customStyles={customStyles}
+					>
 						{getDefaultIcon() ?? icon}
 						<s.SearchInput
 							{...props}

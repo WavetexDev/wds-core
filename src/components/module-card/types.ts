@@ -1,4 +1,5 @@
 import { Theme } from '@/theme';
+import { CSSProperties } from 'react';
 
 export interface ModuleCardProps {
 	name: string;
@@ -15,9 +16,11 @@ export interface ModuleCardProps {
 	totalFinishedItems: number;
 	expanded: boolean;
 	toggleExpanded: () => void;
+	customStyles: CSSProperties;
 }
 
 export interface ModuleCardStyleProps {
 	theme?: Theme;
 	isComplete?: boolean;
+	customStyles?: CSSProperties;
 }

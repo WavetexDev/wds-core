@@ -2,6 +2,8 @@ import { styled } from 'styled-components';
 import { getThemeMode } from '../../utils/get-theme-mode';
 import { StoryCircleStyleProps } from './types';
 
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+
 const currentMode = getThemeMode();
 
 export const StoryCircleContainer = styled.div<StoryCircleStyleProps>`
@@ -22,5 +24,8 @@ export const StoryCircleContainer = styled.div<StoryCircleStyleProps>`
 	img {
 		max-height: 95%;
 		border-radius: 100%;
+
+		${({ customStyles }) =>
+			customStyles && toStyledComponent(customStyles)}
 	}
 `;

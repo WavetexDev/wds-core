@@ -1,19 +1,26 @@
-import React from 'react'
-import * as s from './styles'
+import React from 'react';
+import * as s from './styles';
 
-import { Typography } from '../typography'
-import { WaveclassTheme } from '../../layout'
+import { Typography } from '../typography';
+import { WaveclassTheme } from '../../layout';
+import { NumberBadgeProps } from './types';
 
 export const NumberBadge = ({
-    value
+	value,
+	customStyles,
 }: NumberBadgeProps): JSX.Element => {
-    return (
-        <>
-            <WaveclassTheme>
-                <s.NumberBadgeContainer>
-                    <Typography variant={'small-regular'} text={value.toString()} />
-                </s.NumberBadgeContainer>
-            </WaveclassTheme>
-        </>
-    )
-}
+	return (
+		<>
+			<WaveclassTheme>
+				<s.NumberBadgeContainer
+					customStyles={customStyles}
+				>
+					<Typography
+						variant={'small-regular'}
+						text={value.toString()}
+					/>
+				</s.NumberBadgeContainer>
+			</WaveclassTheme>
+		</>
+	);
+};

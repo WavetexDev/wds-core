@@ -7,11 +7,15 @@ import { Typography } from '../typography';
 export const Pill = ({
 	variant,
 	text,
+	customStyles,
 }: PillProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
-				<s.PillContainer variant={variant}>
+				<s.PillContainer
+					customStyles={customStyles}
+					variant={variant}
+				>
 					<Typography
 						variant="small-bold"
 						text={text}

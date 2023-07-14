@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { TypographyStylesProps } from './types';
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
 
 export const Typography = styled.div<TypographyStylesProps>`
 	font-weight: ${({ variant }) =>
@@ -22,4 +23,7 @@ export const Typography = styled.div<TypographyStylesProps>`
 		'1rem'};
 
 	margin: 0 0 0 0;
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

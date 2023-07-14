@@ -4,6 +4,8 @@ import { PillStyleProps } from './types';
 import { getThemeMode } from '../../utils/get-theme-mode';
 import { Theme } from '../../theme';
 
+import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+
 const currentMode = getThemeMode();
 
 const getBGColor = (
@@ -68,4 +70,7 @@ export const PillContainer = styled.div<PillStyleProps>`
 		getColor(variant, theme)};
 	background-color: ${({ variant, theme }) =>
 		getBGColor(variant, theme)};
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

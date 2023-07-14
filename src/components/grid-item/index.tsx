@@ -16,7 +16,7 @@ export const GridItem = ({
 				<s.GridItem
 					id={id}
 					variant={variant}
-					style={customStyles ?? {}}
+					customStyles={customStyles}
 				>
 					{children}
 				</s.GridItem>

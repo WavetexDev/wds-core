@@ -2,10 +2,14 @@ import { styled } from 'styled-components';
 import { getThemeMode } from '../../../utils/get-theme-mode';
 import { Theme } from '../../../theme';
 
+import { CSSProperties } from 'react';
+import { toStyledComponent } from '../../../utils/css-properties-to-styled-component';
+
 const currentMode = getThemeMode();
 
 export const OptionButton = styled.button<{
 	theme?: Theme;
+	customStyles?: CSSProperties;
 }>`
 	width: 100%;
 	height: 30px;
@@ -34,4 +38,7 @@ export const OptionButton = styled.button<{
 		cursor: not-allowed;
 		opacity: 0.4;
 	}
+
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;

@@ -8,6 +8,7 @@ export const CourseBanner = ({
 	courseName,
 	bannerImageUrl,
 	courseId,
+	customStyles,
 	onClick,
 }: CourseBannerProps): JSX.Element => {
 	return (
@@ -16,6 +17,7 @@ export const CourseBanner = ({
 				<s.BannerContainer
 					onClick={() => onClick(courseId)}
 					banner={bannerImageUrl}
+					customStyles={customStyles}
 				>
 					<Typography
 						variant="h4-regular"

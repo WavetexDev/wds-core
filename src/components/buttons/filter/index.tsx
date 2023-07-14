@@ -9,12 +9,16 @@ import { FilterButtonProps } from './types';
 export const FilterButton = ({
 	text,
 	icon,
+	customStyles,
 	...props
 }: FilterButtonProps): JSX.Element => {
 	return (
 		<>
 			<WaveclassTheme>
-				<s.FilterButton {...props}>
+				<s.FilterButton
+					customStyles={customStyles}
+					{...props}
+				>
 					{icon}
 					<Typography
 						variant={'paragraph-bold'}

@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 import { Theme } from '../../theme';
 
 export interface LectureCardProps {
@@ -14,28 +15,29 @@ export interface LectureCardProps {
 	toggleFavorite?: () => void;
 	favorite?: boolean;
 	remainingSeconds?: number;
+	customStyles?: CSSProperties;
 }
 
 type CardVariant = 'primary' | 'secondary';
 
 type Lecture = 'VIDEO' | 'AUD' | 'MAT' | 'TXT';
 
-export interface LectureCardStyleProps {
+export interface DefaultStyleProps {
 	theme?: Theme;
+	customStyles?: CSSProperties;
 }
 
 export interface CardVariantProps
-	extends LectureCardStyleProps {
+	extends DefaultStyleProps {
 	variant: CardVariant;
 }
 
-export interface FavoriteProps
-	extends LectureCardStyleProps {
+export interface FavoriteProps extends DefaultStyleProps {
 	isFavorite?: boolean;
 }
 
 export interface LectureCardThumbnailProps
-	extends LectureCardStyleProps {
+	extends DefaultStyleProps {
 	thumbnail: string;
 	hasPill: boolean;
 }
