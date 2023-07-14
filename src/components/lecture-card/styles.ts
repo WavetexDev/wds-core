@@ -10,6 +10,7 @@ import {
 const currentMode = getThemeMode();
 
 export const CardContainer = styled.article<CardVariantProps>`
+	width: 100%;
 	display: flex;
 	flex-direction: column-reverse;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp16};
@@ -65,7 +66,8 @@ export const ImageContainer = styled.section<LectureCardThumbnailProps>`
 	}
 
 	svg {
-		position: absolute;
+		transform: ${({ hasPill, theme }) =>
+			hasPill ? `translate(0, 130%)` : null};
 	}
 
 	div {
