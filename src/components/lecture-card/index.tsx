@@ -160,6 +160,11 @@ export const LectureCard = ({
 						onClick={handleOnClick}
 						thumbnail={thumbnail}
 						customStyles={customStyles}
+						hasPill={
+							finished || remainingSeconds
+								? true
+								: false
+						}
 					>
 						{thumbnail !== ''
 							? ''

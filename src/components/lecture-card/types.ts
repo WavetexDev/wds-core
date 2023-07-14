@@ -39,4 +39,5 @@ export interface FavoriteProps extends DefaultStyleProps {
 export interface LectureCardThumbnailProps
 	extends DefaultStyleProps {
 	thumbnail: string;
+	hasPill: boolean;
 }

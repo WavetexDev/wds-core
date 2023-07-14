@@ -1,6 +1,6 @@
 {
 	"name": "@waveclass/wds-core",
-	"version": "0.0.43",
+	"version": "0.0.44",
 	"description": "Waveclass Design System core components",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -66,8 +66,5 @@
 		">0.2%",
 		"not dead",
 		"not op_mini all"
-	],
-	"dependencies": {
-		"@waveclass/wds-core": "^0.0.43"
-	}
+	]
 }

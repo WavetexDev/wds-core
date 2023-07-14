@@ -7,6 +7,7 @@ import { toStyledComponent } from '../../../utils/css-properties-to-styled-compo
 const currentMode = getThemeMode();
 
 export const SearchInputContainer = styled.div<InputStyleProps>`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: ${({ theme }) => theme[currentMode].spacing.sp4};

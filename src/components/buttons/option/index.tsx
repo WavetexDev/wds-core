@@ -23,6 +23,9 @@ export const OptionButton = ({
 					<Typography
 						variant={'paragraph-bold'}
 						text={text}
+						customStyles={{
+							textTransform: 'uppercase',
+						}}
 					/>
 				</s.OptionButton>
 			</WaveclassTheme>

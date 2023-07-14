@@ -6,12 +6,12 @@ const meta: Meta<typeof LectureCard> = {
 	component: LectureCard,
 	argTypes: {
 		toggleFavorite: {
-			table: { disable: true }
+			table: { disable: true },
 		},
 		onClick: {
-			table: { disable: true }
+			table: { disable: true },
 		},
-	}
+	},
 };
 
 export default meta;
@@ -26,7 +26,7 @@ export const primaryLectureCard: Story = {
 		teacher: 'Ana Tex',
 		duration: 605,
 		toggleFavorite: () => alert('Favorite was clicked'),
-		onClick: () => alert('Lecture Card was click'),
+		onClick: () => alert('Lecture Card was clicked'),
 		variant: 'primary',
 		avaliable: true,
 	},
@@ -75,7 +75,7 @@ export const inProgressLectureCard: Story = {
 		onClick: () => alert('Lecture Card was click'),
 		variant: 'secondary',
 		avaliable: true,
-		remainingSeconds: 300
+		remainingSeconds: 300,
 	},
 };
 
@@ -91,7 +91,7 @@ export const unavailableLectureCard: Story = {
 		onClick: () => alert('Lecture Card was click'),
 		variant: 'secondary',
 		avaliable: false,
-		avaliableMessage: 'Disponível em XX/XX/XXXX'
+		avaliableMessage: 'Disponível em XX/XX/XXXX',
 	},
 };
 

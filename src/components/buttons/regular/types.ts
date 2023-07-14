@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import { Theme } from '../../../theme';
 import { ButtonProps } from '../types';
 
