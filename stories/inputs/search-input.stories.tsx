@@ -7,27 +7,27 @@ const meta: Meta<typeof SearchInput> = {
 	component: SearchInput,
 	argTypes: {
 		icon: {
-			table: { disable: true }
+			table: { disable: true },
 		},
 		required: {
-			table: { disable: true }
+			table: { disable: true },
 		},
 		type: {
-			table: { disable: true }
+			table: { disable: true },
 		},
 		disabled: {
 			control: {
-				type: 'boolean'
-			}
-		}
-	}
+				type: 'boolean',
+			},
+		},
+	},
 };
 
 export default meta;
 
 type Story = StoryObj<typeof SearchInput>;
 
-export const standart: Story = {
+export const standard: Story = {
 	args: {
 		showError: false,
 		errorMessage: '',

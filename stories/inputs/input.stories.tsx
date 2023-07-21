@@ -9,30 +9,35 @@ const meta: Meta<typeof Input> = {
 	component: Input,
 	argTypes: {
 		icon: {
-			table: { disable: true }
+			table: { disable: true },
 		},
 		required: {
-			table: { disable: true }
+			table: { disable: true },
 		},
 		type: {
-			options: ['text', 'email', 'number', 'password'],
+			options: [
+				'text',
+				'email',
+				'number',
+				'password',
+			],
 			control: {
-				type: 'select'
-			}
+				type: 'select',
+			},
 		},
 		disabled: {
 			control: {
-				type: 'boolean'
-			}
-		}
-	}
+				type: 'boolean',
+			},
+		},
+	},
 };
 
 export default meta;
 
 type Story = StoryObj<typeof Input>;
 
-export const standart: Story = {
+export const standard: Story = {
 	args: {
 		icon: <TfiUser size={18} />,
 		showError: false,

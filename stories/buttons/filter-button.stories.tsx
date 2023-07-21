@@ -12,19 +12,19 @@ const meta: Meta<typeof FilterButton> = {
 			control: { type: 'boolean' },
 		},
 		onClick: {
-			table: { disable: true }
+			table: { disable: true },
 		},
 		icon: {
-			table: { disable: true }
+			table: { disable: true },
 		},
-	}
+	},
 };
 
 export default meta;
 
 type Story = StoryObj<typeof FilterButton>;
 
-export const standart: Story = {
+export const standard: Story = {
 	args: {
 		text: 'Click me!',
 		icon: <TfiUser size={18} />,
