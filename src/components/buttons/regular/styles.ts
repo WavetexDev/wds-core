@@ -22,8 +22,14 @@ const getBGColor = (
 		return `${theme[currentTheme].colors.error}`;
 	} else if (variant.includes('primary')) {
 		return `${theme[currentTheme].colors.primary}`;
-	} else {
+	} else if (variant.includes('secondary')) {
 		return `${theme[currentTheme].colors.secondary}`;
+	} else if (variant.includes('success')) {
+		return `${theme[currentTheme].colors.success}`;
+	} else if (variant.includes('warning')) {
+		return `${theme[currentTheme].colors.warning}`;
+	} else {
+		return `${theme[currentTheme].colors.white}`;
 	}
 };
 

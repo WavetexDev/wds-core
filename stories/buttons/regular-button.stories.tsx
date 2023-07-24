@@ -93,3 +93,19 @@ export const DangerText: Story = {
 		text: 'Click me!',
 	},
 };
+
+export const SuccessContained: Story = {
+	name: 'Success',
+	args: {
+		variant: 'success-contained',
+		text: 'Click me!',
+	},
+};
+
+export const WarningContained: Story = {
+	name: 'Warning',
+	args: {
+		variant: 'warning-contained',
+		text: 'Click me!',
+	},
+};
