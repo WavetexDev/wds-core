@@ -9,6 +9,13 @@ const meta: Meta<typeof Avatar> = {
 			options: ['sm', 'md', 'lg', 'xl'],
 			control: { type: 'radio' },
 		},
+
+		img: {
+			table: { disable: true },
+		},
+		customStyles: {
+			table: { disable: true },
+		},
 	},
 };
 

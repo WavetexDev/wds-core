@@ -4,6 +4,14 @@ import { GridItem } from '../../src/components/grid-item';
 const meta: Meta<typeof GridItem> = {
 	title: 'Grid Item',
 	component: GridItem,
+	argTypes: {
+		customStyles: {
+			table: { disable: true },
+		},
+		id: {
+			table: { disable: true },
+		},
+	},
 };
 
 export default meta;

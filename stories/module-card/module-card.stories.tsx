@@ -13,17 +13,7 @@ const meta: Meta<typeof ModuleCard> = {
 				disable: true,
 			},
 		},
-		is_default: {
-			table: {
-				disable: true,
-			},
-		},
 		isBonus: {
-			table: {
-				disable: true,
-			},
-		},
-		expire: {
 			table: {
 				disable: true,
 			},
@@ -48,7 +38,12 @@ const meta: Meta<typeof ModuleCard> = {
 				disable: true,
 			},
 		},
-		items: {
+		toggleExpanded: {
+			table: {
+				disable: true,
+			},
+		},
+		customStyles: {
 			table: {
 				disable: true,
 			},
@@ -60,7 +55,7 @@ export default meta;
 
 type Story = StoryObj<typeof ModuleCard>;
 
-export const moduleCard: Story = {
+export const standard: Story = {
 	args: {
 		name: 'Nome',
 		pos: 1,

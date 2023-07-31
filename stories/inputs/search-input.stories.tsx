@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { SearchInput } from '../../src';
 
 const meta: Meta<typeof SearchInput> = {
-	title: 'Search Input',
+	title: 'Inputs/Search Input',
 	component: SearchInput,
 	argTypes: {
 		icon: {
@@ -14,6 +14,11 @@ const meta: Meta<typeof SearchInput> = {
 		},
 		type: {
 			table: { disable: true },
+		},
+		customStyles: {
+			table: {
+				disable: true,
+			},
 		},
 		disabled: {
 			control: {

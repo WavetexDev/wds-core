@@ -4,6 +4,13 @@ import { Pill } from '../../src/components/pill';
 const meta: Meta<typeof Pill> = {
 	title: 'Pill',
 	component: Pill,
+	argTypes: {
+		customStyles: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 };
 
 export default meta;

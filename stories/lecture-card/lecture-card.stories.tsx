@@ -11,6 +11,12 @@ const meta: Meta<typeof LectureCard> = {
 		onClick: {
 			table: { disable: true },
 		},
+		customStyles: {
+			table: { disable: true },
+		},
+		thumbnail: {
+			table: { disable: true },
+		},
 	},
 };
 
@@ -92,6 +98,20 @@ export const unavailableLectureCard: Story = {
 		variant: 'secondary',
 		avaliable: false,
 		avaliableMessage: 'Disponível em XX/XX/XXXX',
+	},
+};
+
+export const videoLectureCard: Story = {
+	args: {
+		type: 'VIDEO',
+		name: 'Postando depoimentos em áudios nos stories',
+		thumbnail: '',
+		teacher: 'Ana Tex',
+		duration: 605,
+		toggleFavorite: () => alert('Favorite was clicked'),
+		onClick: () => alert('Lecture Card was click'),
+		variant: 'secondary',
+		avaliable: true,
 	},
 };
 

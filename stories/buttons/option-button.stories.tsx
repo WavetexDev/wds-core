@@ -5,7 +5,7 @@ import { OptionButton } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof OptionButton> = {
-	title: 'Option Button',
+	title: 'Buttons/Option Button',
 	component: OptionButton,
 	argTypes: {
 		disabled: {
@@ -16,6 +16,11 @@ const meta: Meta<typeof OptionButton> = {
 		},
 		icon: {
 			table: { disable: true },
+		},
+		customStyles: {
+			table: {
+				disable: true,
+			},
 		},
 	},
 };

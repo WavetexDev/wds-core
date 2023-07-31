@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RegularButton } from '../../src';
 
 const meta: Meta<typeof RegularButton> = {
-	title: 'Regular Button',
+	title: 'Buttons/Regular Button',
 	component: RegularButton,
 	argTypes: {
 		variant: {
@@ -24,6 +24,11 @@ const meta: Meta<typeof RegularButton> = {
 		},
 		onClick: {
 			table: { disable: true },
+		},
+		customStyles: {
+			table: {
+				disable: true,
+			},
 		},
 	},
 };

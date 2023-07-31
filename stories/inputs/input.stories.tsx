@@ -5,7 +5,7 @@ import { Input } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof Input> = {
-	title: 'Input',
+	title: 'Inputs/Input',
 	component: Input,
 	argTypes: {
 		icon: {
@@ -13,6 +13,11 @@ const meta: Meta<typeof Input> = {
 		},
 		required: {
 			table: { disable: true },
+		},
+		customStyles: {
+			table: {
+				disable: true,
+			},
 		},
 		type: {
 			options: [

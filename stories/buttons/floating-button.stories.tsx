@@ -5,20 +5,22 @@ import { FloatingButton } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof FloatingButton> = {
-	title: 'Floating Button',
+	title: 'Buttons/Floating Button',
 	component: FloatingButton,
 	argTypes: {
 		disabled: {
 			control: { type: 'boolean' },
-		},
-		text: {
-			table: { disable: true },
 		},
 		onClick: {
 			table: { disable: true },
 		},
 		icon: {
 			table: { disable: true },
+		},
+		customStyles: {
+			table: {
+				disable: true,
+			},
 		},
 	},
 };

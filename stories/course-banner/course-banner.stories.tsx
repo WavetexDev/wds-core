@@ -8,6 +8,15 @@ const meta: Meta<typeof CourseBanner> = {
 		bannerImageUrl: {
 			table: { disable: true },
 		},
+		courseId: {
+			table: { disable: true },
+		},
+		customStyles: {
+			table: { disable: true },
+		},
+		onClick: {
+			table: { disable: true },
+		},
 	},
 };
 

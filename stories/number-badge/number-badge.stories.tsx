@@ -8,6 +8,11 @@ const meta: Meta<typeof NumberBadge> = {
 		value: {
 			control: { type: 'number' },
 		},
+		customStyles: {
+			table: {
+				disable: true,
+			},
+		},
 	},
 };
 

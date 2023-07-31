@@ -4,6 +4,21 @@ import { StoryCircle } from '../../src/components/story-circle';
 const meta: Meta<typeof StoryCircle> = {
 	title: 'Story Circle',
 	component: StoryCircle,
+	argTypes: {
+		img: {
+			table: { disable: true },
+		},
+
+		onClick: {
+			table: { disable: true },
+		},
+
+		customStyles: {
+			table: {
+				disable: true,
+			},
+		},
+	},
 };
 
 export default meta;

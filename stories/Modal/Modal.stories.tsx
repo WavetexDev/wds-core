@@ -11,6 +11,26 @@ const meta: Meta<typeof Modal> = {
 		onClose: () => alert('fechando...'),
 		title: 'Título',
 	},
+	argTypes: {
+		onClose: {
+			table: { disable: true },
+		},
+		children: {
+			table: { disable: true },
+		},
+		confirmButton: {
+			table: { disable: true },
+		},
+		cancelButton: {
+			table: { disable: true },
+		},
+		dangerButton: {
+			table: { disable: true },
+		},
+		customStyles: {
+			table: { disable: true },
+		},
+	},
 };
 
 export default meta;

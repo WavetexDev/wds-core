@@ -5,7 +5,7 @@ import { FilterButton } from '../../src';
 import { TfiUser } from 'react-icons/tfi';
 
 const meta: Meta<typeof FilterButton> = {
-	title: 'Filter Button',
+	title: 'Buttons/Filter Button',
 	component: FilterButton,
 	argTypes: {
 		disabled: {
@@ -16,6 +16,11 @@ const meta: Meta<typeof FilterButton> = {
 		},
 		icon: {
 			table: { disable: true },
+		},
+		customStyles: {
+			table: {
+				disable: true,
+			},
 		},
 	},
 };
