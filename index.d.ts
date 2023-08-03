@@ -247,8 +247,6 @@ declare module '@waveclass/wds-core' {
 	export const theme: {
 		light: {
 			colors: {
-				primary: string;
-				secondary: string;
 				dynamicTextColor: (
 					bgColor: string
 				) => string;
@@ -308,8 +306,6 @@ declare module '@waveclass/wds-core' {
 		};
 		dark: {
 			colors: {
-				primary: string;
-				secondary: string;
 				dynamicTextColor: (
 					bgColor: string
 				) => string;
