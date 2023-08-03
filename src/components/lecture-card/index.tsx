@@ -26,7 +26,7 @@ export const LectureCard = ({
 	name,
 	thumbnail,
 	teacher,
-	duration,
+	durationInSeconds,
 	avaliable,
 	avaliableMessage,
 	finished,
@@ -121,7 +121,9 @@ export const LectureCard = ({
 									<TfiTime size={14} />
 									<Typography
 										variant="paragraph-regular"
-										text={duration}
+										text={secondsToFriendlyString(
+											durationInSeconds
+										)}
 									/>
 								</s.LectureDuration>
 							</s.LectureFineDetails>
