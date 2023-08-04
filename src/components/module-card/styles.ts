@@ -5,8 +5,10 @@ import { convertHexToRgb } from '../../utils/convert-hex-to-rgba';
 
 import { ModuleCardStyleProps } from './types';
 import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+import { getSchoolColors } from '../../utils/get-school-colors';
 
 const currentMode = getThemeMode();
+const schoolColors = getSchoolColors();
 
 export const ModuleCardContainer = styled.article<ModuleCardStyleProps>`
 	background: ${({ theme }) =>
@@ -56,14 +58,10 @@ export const ModulePositionContainer = styled.aside<ModuleCardStyleProps>`
 	min-height: 50px;
 	max-width: 50px;
 	max-height: 50px;
-	color: ${({ theme }) =>
-		theme[currentMode].colors.primary};
+	color: ${({ theme }) => schoolColors.primaryColor};
 	background: ${({ theme }) =>
-		convertHexToRgb(
-			theme[currentMode].colors.primary,
-			0.2
-		)};
-	border-radius: 100%; // Creates a circle
+		convertHexToRgb(schoolColors.primaryColor, 0.2)};
+	border-radius: 100%;
 
 	display: flex;
 	align-items: center;

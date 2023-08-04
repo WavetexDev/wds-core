@@ -1,9 +1,21 @@
 export const getSchoolColors = (): SchoolColors => {
 	return {
-		buttonColor: '#F91064',
-		primaryColor: '#F91064',
-		secondaryColor: '#001334',
-		secondaryLogo: '',
+		buttonColor:
+			localStorage.getItem(
+				'waveclass_personalized_button_color'
+			) ?? '#F91064',
+		primaryColor:
+			localStorage.getItem(
+				'waveclass_personalized_primary_color'
+			) ?? '#F91064',
+		secondaryColor:
+			localStorage.getItem(
+				'waveclass_personalized_secondary_color'
+			) ?? '#001334',
+		secondaryLogo:
+			localStorage.getItem(
+				'waveclass_personalized_secondary_logo'
+			) ?? '',
 	};
 };
 

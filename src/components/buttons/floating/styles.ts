@@ -5,8 +5,10 @@ import { getThemeMode } from '../../../utils/get-theme-mode';
 import { Theme } from '../../../theme';
 
 import { toStyledComponent } from '../../../utils/css-properties-to-styled-component';
+import { getSchoolColors } from '../../../utils/get-school-colors';
 
 const currentTheme = getThemeMode();
+const schoolColors = getSchoolColors();
 
 const getBGColor = (
 	variant: string,
@@ -16,8 +18,8 @@ const getBGColor = (
 		variant.includes('text')
 		? `transparent`
 		: variant.includes('primary')
-		? `${theme[currentTheme].colors.primary}`
-		: `${theme[currentTheme].colors.secondary}`;
+		? `${schoolColors.primaryColor}`
+		: `${schoolColors.secondaryColor}`;
 };
 
 export const FloatingButton = styled.button<FloatingButtonStylesProps>`

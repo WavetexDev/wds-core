@@ -5,8 +5,10 @@ import { getThemeMode } from '../../utils/get-theme-mode';
 import { Theme } from '../../theme';
 
 import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+import { getSchoolColors } from '../../utils/get-school-colors';
 
 const currentMode = getThemeMode();
+const schoolColors = getSchoolColors();
 
 const getBGColor = (
 	variant: string,
@@ -23,9 +25,9 @@ const getBGColor = (
 		case 'info':
 			return theme[currentMode].colors.info;
 		case 'primary':
-			return theme[currentMode].colors.primary;
+			return schoolColors.primaryColor;
 		case 'secondary':
-			return theme[currentMode].colors.secondary;
+			return schoolColors.secondaryColor;
 
 		default:
 			return theme[currentMode].colors.white;
