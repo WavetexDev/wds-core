@@ -15,6 +15,19 @@ const preview: Preview = {
 		docs: {
 			theme: themes.dark,
 		},
+		backgrounds: {
+			default: 'dark',
+			values: [
+				{
+					name: 'dark',
+					value: '#202121',
+				},
+				{
+					name: 'light',
+					value: '#ffffff',
+				},
+			],
+		},
 	},
 };
 

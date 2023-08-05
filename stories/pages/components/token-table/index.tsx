@@ -5,9 +5,22 @@ import { theme } from '../../../../src/theme';
 
 const currentMode = getThemeMode();
 
-const spacings = theme[currentMode].spacing;
+interface TokensTableProps {
+	token: 'spacing' | 'fontSizes' | 'shadows';
+}
 
-export function TokenTable() {
+export function TokenTable({ token }: TokensTableProps) {
+	console.log(token);
+
+	const tokensToMap =
+		token === 'spacing'
+			? theme[currentMode].spacing
+			: token === 'fontSizes'
+			? theme[currentMode].fontSizes
+			: theme[currentMode].shadows;
+
+	console.log(tokensToMap);
+
 	return (
 		<table className="tokens-grid">
 			<thead>
@@ -30,7 +43,7 @@ export function TokenTable() {
 			</thead>
 
 			<tbody>
-				{Object.entries(spacings).map(
+				{Object.entries(tokensToMap).map(
 					([key, value]) => {
 						return (
 							<tr key={key}>
