@@ -1,4 +1,6 @@
 export function isColorDark(color: string): boolean {
+	if (!color) return false;
+
 	// Remove any leading '#' character from the color
 	const cleanedColor = color.replace('#', '');
 
