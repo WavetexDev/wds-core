@@ -26,7 +26,7 @@ export const LectureCard = ({
 	name,
 	thumbnail,
 	teacher,
-	duration,
+	durationInSeconds,
 	avaliable,
 	avaliableMessage,
 	finished,
@@ -59,9 +59,6 @@ export const LectureCard = ({
 			return;
 		}
 	}
-
-	const formattedClassDuration =
-		secondsToFriendlyString(duration);
 
 	const lectureTypeIcon = determineLectureTypeIcon();
 
@@ -124,9 +121,9 @@ export const LectureCard = ({
 									<TfiTime size={14} />
 									<Typography
 										variant="paragraph-regular"
-										text={
-											formattedClassDuration
-										}
+										text={secondsToFriendlyString(
+											durationInSeconds
+										)}
 									/>
 								</s.LectureDuration>
 							</s.LectureFineDetails>

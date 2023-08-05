@@ -7,7 +7,8 @@ export interface LectureCardProps {
 	name: string;
 	thumbnail: string;
 	teacher: string;
-	duration: number;
+	duration: string;
+	durationInSeconds: number;
 	finished?: boolean;
 	onClick: () => void;
 	avaliable: boolean;
