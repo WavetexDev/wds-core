@@ -19,7 +19,12 @@ declare module '@waveclass/wds-core' {
 			| 'primary-text'
 			| 'secondary-contained'
 			| 'secondary-ghost'
-			| 'secondary-text';
+			| 'secondary-text'
+			| 'danger-contained'
+			| 'danger-ghost'
+			| 'danger-text'
+			| 'success-contained'
+			| 'warning-contained';
 		customStyles?: Record<string, string>;
 	}): JSX.Element;
 	export function FilterButton(props: {
@@ -218,6 +223,7 @@ declare module '@waveclass/wds-core' {
 			| 'h6-bold'
 			| 'small-bold'
 			| 'paragraph-bold'
+			| 'label-bold'
 			| 'h1-regular'
 			| 'h2-regular'
 			| 'h3-regular'
@@ -226,6 +232,7 @@ declare module '@waveclass/wds-core' {
 			| 'h6-regular'
 			| 'small-regular'
 			| 'paragraph-regular'
+			| 'label-regular'
 			| 'h1-italic'
 			| 'h2-italic'
 			| 'h3-italic'
@@ -233,7 +240,8 @@ declare module '@waveclass/wds-core' {
 			| 'h5-italic'
 			| 'h6-italic'
 			| 'small-italic'
-			| 'paragraph-italic';
+			| 'paragraph-italic'
+			| 'label-italic';
 		customStyles?: Record<string, string>;
 	}): JSX.Element;
 	export function isColorDark(color: string): boolean;
