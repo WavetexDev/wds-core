@@ -1,6 +1,6 @@
 import React from 'react';
 import { CourseBannerProps } from './types';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
 import { Typography } from '../typography';
 
@@ -14,7 +14,7 @@ export const CourseBanner = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.BannerContainer
+				<S.BannerContainer
 					onClick={() => onClick(courseId)}
 					banner={bannerImageUrl}
 					customStyles={customStyles}
@@ -23,7 +23,7 @@ export const CourseBanner = ({
 						variant="h4-regular"
 						text={courseName}
 					/>
-				</s.BannerContainer>
+				</S.BannerContainer>
 			</WaveclassTheme>
 		</>
 	);

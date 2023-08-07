@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../../layout';
 
 import { Typography } from '../../typography';
@@ -15,7 +15,7 @@ export const RegularButton = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.RegularButton
+				<S.RegularButton
 					variant={variant}
 					customStyles={customStyles}
 					{...props}
@@ -27,7 +27,7 @@ export const RegularButton = ({
 							textTransform: 'uppercase',
 						}}
 					/>
-				</s.RegularButton>
+				</S.RegularButton>
 			</WaveclassTheme>
 		</>
 	);

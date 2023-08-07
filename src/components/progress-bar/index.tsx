@@ -1,7 +1,7 @@
 import React from 'react';
 import { ProgressBarProps } from './types';
 
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
 import { Typography } from '../typography';
 
@@ -12,10 +12,10 @@ export const ProgressBar = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.ProgressBarContainer
+				<S.ProgressBarContainer
 					customStyles={customStyles}
 				>
-					<s.ProgressBar
+					<S.ProgressBar
 						customStyles={customStyles}
 						percentProgress={percentProgress}
 					>
@@ -23,8 +23,8 @@ export const ProgressBar = ({
 							variant="small-bold"
 							text={`${percentProgress}%`}
 						/>
-					</s.ProgressBar>
-				</s.ProgressBarContainer>
+					</S.ProgressBar>
+				</S.ProgressBarContainer>
 			</WaveclassTheme>
 		</>
 	);

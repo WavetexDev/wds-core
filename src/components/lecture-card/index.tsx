@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
 import { Typography } from '../typography';
 
@@ -65,14 +65,14 @@ export const LectureCard = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.CardContainer
+				<S.CardContainer
 					variant={variant ?? 'secondary'}
 					customStyles={customStyles}
 				>
-					<s.LectureDetails
+					<S.LectureDetails
 						customStyles={customStyles}
 					>
-						<s.LectureTitle
+						<S.LectureTitle
 							onClick={handleOnClick}
 							variant={variant ?? 'secondary'}
 							customStyles={customStyles}
@@ -82,10 +82,10 @@ export const LectureCard = ({
 								variant="h4-bold"
 								text={name}
 							/>
-						</s.LectureTitle>
+						</S.LectureTitle>
 
 						{!avaliable && (
-							<s.Avaliable
+							<S.Avaliable
 								customStyles={customStyles}
 							>
 								<TfiLock size={14} />
@@ -96,13 +96,13 @@ export const LectureCard = ({
 										''
 									}
 								/>
-							</s.Avaliable>
+							</S.Avaliable>
 						)}
 
-						<s.LectureFooter
+						<S.LectureFooter
 							customStyles={customStyles}
 						>
-							<s.LectureFineDetails
+							<S.LectureFineDetails
 								customStyles={customStyles}
 							>
 								<Typography
@@ -113,7 +113,7 @@ export const LectureCard = ({
 									}
 								/>
 
-								<s.LectureDuration
+								<S.LectureDuration
 									customStyles={
 										customStyles
 									}
@@ -125,12 +125,12 @@ export const LectureCard = ({
 											durationInSeconds
 										)}
 									/>
-								</s.LectureDuration>
-							</s.LectureFineDetails>
+								</S.LectureDuration>
+							</S.LectureFineDetails>
 
 							{toggleFavorite !==
 								undefined && (
-								<s.FavoriteIconContainer
+								<S.FavoriteIconContainer
 									onClick={toggleFavorite}
 									isFavorite={
 										favorite ?? false
@@ -148,12 +148,12 @@ export const LectureCard = ({
 											size={24}
 										/>
 									)}
-								</s.FavoriteIconContainer>
+								</S.FavoriteIconContainer>
 							)}
-						</s.LectureFooter>
-					</s.LectureDetails>
+						</S.LectureFooter>
+					</S.LectureDetails>
 
-					<s.ImageContainer
+					<S.ImageContainer
 						onClick={handleOnClick}
 						thumbnail={thumbnail}
 						customStyles={customStyles}
@@ -180,8 +180,8 @@ export const LectureCard = ({
 								)}`}
 							/>
 						) : null}
-					</s.ImageContainer>
-				</s.CardContainer>
+					</S.ImageContainer>
+				</S.CardContainer>
 			</WaveclassTheme>
 		</>
 	);

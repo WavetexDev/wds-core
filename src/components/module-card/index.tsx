@@ -3,7 +3,7 @@ import React from 'react';
 import { WaveclassTheme } from '../../layout';
 import { ModuleCardProps } from './types';
 
-import * as s from './styles';
+import * as S from './styles';
 import { Typography } from '../typography';
 
 import {
@@ -29,23 +29,23 @@ export const ModuleCard = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.ModuleCardContainer
+				<S.ModuleCardContainer
 					isComplete={percentProgress >= 100}
 					customStyles={customStyles}
 				>
-					<s.ModuleMainDetails
+					<S.ModuleMainDetails
 						customStyles={customStyles}
 					>
-						<s.ModulePositionContainer
+						<S.ModulePositionContainer
 							customStyles={customStyles}
 						>
 							<Typography
 								variant="h4-bold"
 								text={`${pos}`}
 							/>
-						</s.ModulePositionContainer>
+						</S.ModulePositionContainer>
 
-						<s.ModuleDetailsContainer
+						<S.ModuleDetailsContainer
 							customStyles={customStyles}
 						>
 							<Typography
@@ -53,10 +53,10 @@ export const ModuleCard = ({
 								text={name}
 							/>
 
-							<s.ModuleDetailsFooter
+							<S.ModuleDetailsFooter
 								customStyles={customStyles}
 							>
-								<s.ModuleDurationDisplay
+								<S.ModuleDurationDisplay
 									customStyles={
 										customStyles
 									}
@@ -66,7 +66,7 @@ export const ModuleCard = ({
 										variant="small-regular"
 										text={totaltime}
 									/>
-								</s.ModuleDurationDisplay>
+								</S.ModuleDurationDisplay>
 
 								<GridItem variant="col-8">
 									<ProgressBar
@@ -75,15 +75,15 @@ export const ModuleCard = ({
 										}
 									/>
 								</GridItem>
-							</s.ModuleDetailsFooter>
-						</s.ModuleDetailsContainer>
-					</s.ModuleMainDetails>
+							</S.ModuleDetailsFooter>
+						</S.ModuleDetailsContainer>
+					</S.ModuleMainDetails>
 
-					<s.ExpanderContainer
+					<S.ExpanderContainer
 						customStyles={customStyles}
 					>
 						{available ? (
-							<s.ExpanderIconContainer
+							<S.ExpanderIconContainer
 								customStyles={customStyles}
 							>
 								{!expanded ? (
@@ -101,9 +101,9 @@ export const ModuleCard = ({
 										}
 									/>
 								)}
-							</s.ExpanderIconContainer>
+							</S.ExpanderIconContainer>
 						) : (
-							<s.ExpanderIconContainer
+							<S.ExpanderIconContainer
 								customStyles={customStyles}
 							>
 								<TfiLock size={16} />
@@ -111,10 +111,10 @@ export const ModuleCard = ({
 									variant="small-regular"
 									text={availableMessage}
 								/>
-							</s.ExpanderIconContainer>
+							</S.ExpanderIconContainer>
 						)}
-					</s.ExpanderContainer>
-				</s.ModuleCardContainer>
+					</S.ExpanderContainer>
+				</S.ModuleCardContainer>
 			</WaveclassTheme>
 		</>
 	);
