@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { WaveclassTheme } from '../../layout';
+import {
+	ScaleUpCenterAnimation,
+	WaveclassTheme,
+} from '../../layout';
 import { ModuleCardProps } from './types';
 
 import * as s from './styles';
@@ -28,94 +31,106 @@ export const ModuleCard = ({
 }: ModuleCardProps): JSX.Element => {
 	return (
 		<>
-			<WaveclassTheme>
-				<s.ModuleCardContainer
-					isComplete={percentProgress >= 100}
-					customStyles={customStyles}
-				>
-					<s.ModuleMainDetails
+			<ScaleUpCenterAnimation>
+				<WaveclassTheme>
+					<s.ModuleCardContainer
+						isComplete={percentProgress >= 100}
 						customStyles={customStyles}
 					>
-						<s.ModulePositionContainer
+						<s.ModuleMainDetails
 							customStyles={customStyles}
 						>
-							<Typography
-								variant="h4-bold"
-								text={`${pos}`}
-							/>
-						</s.ModulePositionContainer>
-
-						<s.ModuleDetailsContainer
-							customStyles={customStyles}
-						>
-							<Typography
-								variant="h4-bold"
-								text={name}
-							/>
-
-							<s.ModuleDetailsFooter
+							<s.ModulePositionContainer
 								customStyles={customStyles}
 							>
-								<s.ModuleDurationDisplay
+								<Typography
+									variant="h4-bold"
+									text={`${pos}`}
+								/>
+							</s.ModulePositionContainer>
+
+							<s.ModuleDetailsContainer
+								customStyles={customStyles}
+							>
+								<Typography
+									variant="h4-bold"
+									text={name}
+								/>
+
+								<s.ModuleDetailsFooter
 									customStyles={
 										customStyles
 									}
 								>
-									<TfiTime size={12} />
+									<s.ModuleDurationDisplay
+										customStyles={
+											customStyles
+										}
+									>
+										<TfiTime
+											size={12}
+										/>
+										<Typography
+											variant="small-regular"
+											text={totaltime}
+										/>
+									</s.ModuleDurationDisplay>
+
+									<GridItem variant="col-8">
+										<ProgressBar
+											percentProgress={
+												percentProgress
+											}
+										/>
+									</GridItem>
+								</s.ModuleDetailsFooter>
+							</s.ModuleDetailsContainer>
+						</s.ModuleMainDetails>
+
+						<s.ExpanderContainer
+							customStyles={customStyles}
+						>
+							{available ? (
+								<s.ExpanderIconContainer
+									customStyles={
+										customStyles
+									}
+								>
+									{!expanded ? (
+										<TfiAngleDown
+											size={16}
+											onClick={
+												toggleExpanded
+											}
+										/>
+									) : (
+										<TfiAngleUp
+											size={16}
+											onClick={
+												toggleExpanded
+											}
+										/>
+									)}
+								</s.ExpanderIconContainer>
+							) : (
+								<s.ExpanderIconContainer
+									customStyles={
+										customStyles
+									}
+								>
+									<TfiLock size={16} />
 									<Typography
 										variant="small-regular"
-										text={totaltime}
-									/>
-								</s.ModuleDurationDisplay>
-
-								<GridItem variant="col-8">
-									<ProgressBar
-										percentProgress={
-											percentProgress
+										text={
+											availableMessage
 										}
 									/>
-								</GridItem>
-							</s.ModuleDetailsFooter>
-						</s.ModuleDetailsContainer>
-					</s.ModuleMainDetails>
-
-					<s.ExpanderContainer
-						customStyles={customStyles}
-					>
-						{available ? (
-							<s.ExpanderIconContainer
-								customStyles={customStyles}
-							>
-								{!expanded ? (
-									<TfiAngleDown
-										size={16}
-										onClick={
-											toggleExpanded
-										}
-									/>
-								) : (
-									<TfiAngleUp
-										size={16}
-										onClick={
-											toggleExpanded
-										}
-									/>
-								)}
-							</s.ExpanderIconContainer>
-						) : (
-							<s.ExpanderIconContainer
-								customStyles={customStyles}
-							>
-								<TfiLock size={16} />
-								<Typography
-									variant="small-regular"
-									text={availableMessage}
-								/>
-							</s.ExpanderIconContainer>
-						)}
-					</s.ExpanderContainer>
-				</s.ModuleCardContainer>
-			</WaveclassTheme>
+								</s.ExpanderIconContainer>
+							)}
+						</s.ExpanderContainer>
+					</s.ModuleCardContainer>
+				</WaveclassTheme>
+			</ScaleUpCenterAnimation>
 		</>
 	);
 };

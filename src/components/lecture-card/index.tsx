@@ -1,6 +1,9 @@
 import React from 'react';
 import * as s from './styles';
-import { WaveclassTheme } from '../../layout';
+import {
+	ScaleUpCenterAnimation,
+	WaveclassTheme,
+} from '../../layout';
 import { Typography } from '../typography';
 
 import { LectureCardProps } from './types';
@@ -64,125 +67,138 @@ export const LectureCard = ({
 
 	return (
 		<>
-			<WaveclassTheme>
-				<s.CardContainer
-					variant={variant ?? 'secondary'}
-					customStyles={customStyles}
-				>
-					<s.LectureDetails
+			<ScaleUpCenterAnimation>
+				<WaveclassTheme>
+					<s.CardContainer
+						variant={variant ?? 'secondary'}
 						customStyles={customStyles}
 					>
-						<s.LectureTitle
-							onClick={handleOnClick}
-							variant={variant ?? 'secondary'}
+						<s.LectureDetails
 							customStyles={customStyles}
 						>
-							{lectureTypeIcon}
-							<Typography
-								variant="h4-bold"
-								text={name}
-							/>
-						</s.LectureTitle>
-
-						{!avaliable && (
-							<s.Avaliable
+							<s.LectureTitle
+								onClick={handleOnClick}
+								variant={
+									variant ?? 'secondary'
+								}
 								customStyles={customStyles}
 							>
-								<TfiLock size={14} />
+								{lectureTypeIcon}
 								<Typography
-									variant="paragraph-bold"
-									text={
-										avaliableMessage ??
-										''
-									}
+									variant="h4-bold"
+									text={name}
 								/>
-							</s.Avaliable>
-						)}
+							</s.LectureTitle>
 
-						<s.LectureFooter
-							customStyles={customStyles}
-						>
-							<s.LectureFineDetails
-								customStyles={customStyles}
-							>
-								<Typography
-									variant="paragraph-regular"
-									text={teacher}
-									customStyles={
-										customStyles
-									}
-								/>
-
-								<s.LectureDuration
+							{!avaliable && (
+								<s.Avaliable
 									customStyles={
 										customStyles
 									}
 								>
-									<TfiTime size={14} />
+									<TfiLock size={14} />
+									<Typography
+										variant="paragraph-bold"
+										text={
+											avaliableMessage ??
+											''
+										}
+									/>
+								</s.Avaliable>
+							)}
+
+							<s.LectureFooter
+								customStyles={customStyles}
+							>
+								<s.LectureFineDetails
+									customStyles={
+										customStyles
+									}
+								>
 									<Typography
 										variant="paragraph-regular"
-										text={secondsToFriendlyString(
-											durationInSeconds
-										)}
+										text={teacher}
+										customStyles={
+											customStyles
+										}
 									/>
-								</s.LectureDuration>
-							</s.LectureFineDetails>
 
-							{toggleFavorite !==
-								undefined && (
-								<s.FavoriteIconContainer
-									onClick={toggleFavorite}
-									isFavorite={
-										favorite ?? false
-									}
-									customStyles={
-										customStyles
-									}
-								>
-									{favorite ? (
-										<AiFillStar
-											size={24}
+									<s.LectureDuration
+										customStyles={
+											customStyles
+										}
+									>
+										<TfiTime
+											size={14}
 										/>
-									) : (
-										<AiOutlineStar
-											size={24}
+										<Typography
+											variant="paragraph-regular"
+											text={secondsToFriendlyString(
+												durationInSeconds
+											)}
 										/>
-									)}
-								</s.FavoriteIconContainer>
-							)}
-						</s.LectureFooter>
-					</s.LectureDetails>
+									</s.LectureDuration>
+								</s.LectureFineDetails>
 
-					<s.ImageContainer
-						onClick={handleOnClick}
-						thumbnail={thumbnail}
-						customStyles={customStyles}
-						hasPill={
-							finished || remainingSeconds
-								? true
-								: false
-						}
-					>
-						{thumbnail !== ''
-							? ''
-							: lectureTypeIcon}
+								{toggleFavorite !==
+									undefined && (
+									<s.FavoriteIconContainer
+										onClick={
+											toggleFavorite
+										}
+										isFavorite={
+											favorite ??
+											false
+										}
+										customStyles={
+											customStyles
+										}
+									>
+										{favorite ? (
+											<AiFillStar
+												size={24}
+											/>
+										) : (
+											<AiOutlineStar
+												size={24}
+											/>
+										)}
+									</s.FavoriteIconContainer>
+								)}
+							</s.LectureFooter>
+						</s.LectureDetails>
 
-						{finished ? (
-							<Pill
-								variant="success"
-								text="Concluído"
-							/>
-						) : remainingSeconds ? (
-							<Pill
-								variant="primary"
-								text={`Faltam ${secondsToFriendlyString(
-									remainingSeconds
-								)}`}
-							/>
-						) : null}
-					</s.ImageContainer>
-				</s.CardContainer>
-			</WaveclassTheme>
+						<s.ImageContainer
+							onClick={handleOnClick}
+							thumbnail={thumbnail}
+							customStyles={customStyles}
+							hasPill={
+								finished || remainingSeconds
+									? true
+									: false
+							}
+						>
+							{thumbnail !== ''
+								? ''
+								: lectureTypeIcon}
+
+							{finished ? (
+								<Pill
+									variant="success"
+									text="Concluído"
+								/>
+							) : remainingSeconds ? (
+								<Pill
+									variant="primary"
+									text={`Faltam ${secondsToFriendlyString(
+										remainingSeconds
+									)}`}
+								/>
+							) : null}
+						</s.ImageContainer>
+					</s.CardContainer>
+				</WaveclassTheme>
+			</ScaleUpCenterAnimation>
 		</>
 	);
 };

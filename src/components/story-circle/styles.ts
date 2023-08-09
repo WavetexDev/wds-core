@@ -13,19 +13,15 @@ export const StoryCircleContainer = styled.div<StoryCircleStyleProps>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 100%; // Full circle
 	background: ${() =>
 		`linear-gradient(259deg, ${schoolColors.primaryColor} 4.50%, ${schoolColors.secondaryColor} 100%)`};
-	border-radius: 100%;
 	box-shadow: ${({ highlight }) =>
 		highlight
-			? `0px 0px 6px 2px ${schoolColors.primaryColor}`
-			: 0};
+			? `0px 0px 6px 1px ${schoolColors.primaryColor}`
+			: 'unset'};
+	cursor: pointer;
 
-	img {
-		max-height: 95%;
-		border-radius: 100%;
-
-		${({ customStyles }) =>
-			customStyles && toStyledComponent(customStyles)}
-	}
+	${({ customStyles }) =>
+		customStyles && toStyledComponent(customStyles)}
 `;
