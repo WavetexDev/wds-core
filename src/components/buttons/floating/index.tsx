@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../../layout';
 
 import { FloatingButtonProps } from './types';
@@ -13,13 +13,13 @@ export const FloatingButton = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.FloatingButton
+				<S.FloatingButton
 					variant={variant}
 					customStyles={customStyles}
 					{...props}
 				>
 					{icon}
-				</s.FloatingButton>
+				</S.FloatingButton>
 			</WaveclassTheme>
 		</>
 	);

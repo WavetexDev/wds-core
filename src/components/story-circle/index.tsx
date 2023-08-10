@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
 
 import { StoryCircleProps } from './types';
@@ -15,7 +15,7 @@ export const StoryCircle = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.StoryCircleContainer
+				<S.StoryCircleContainer
 					onClick={onClick}
 					highlight={highlight ?? false}
 					customStyles={customStyles}
@@ -30,7 +30,7 @@ export const StoryCircle = ({
 							height: '55px',
 						}}
 					/>
-				</s.StoryCircleContainer>
+				</S.StoryCircleContainer>
 			</WaveclassTheme>
 		</>
 	);

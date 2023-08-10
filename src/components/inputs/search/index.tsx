@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../../layout';
 
 import { InputProps } from '../types';
@@ -27,18 +27,18 @@ export const SearchInput = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.SearchInputContainer
+				<S.SearchInputContainer
 					customStyles={customStyles}
 				>
-					<s.SearchInputWrapper
+					<S.SearchInputWrapper
 						customStyles={customStyles}
 					>
 						{getDefaultIcon() ?? icon}
-						<s.SearchInput
+						<S.SearchInput
 							{...props}
 							type="search"
 						/>
-					</s.SearchInputWrapper>
+					</S.SearchInputWrapper>
 
 					{showError && (
 						<Typography
@@ -50,7 +50,7 @@ export const SearchInput = ({
 							}}
 						/>
 					)}
-				</s.SearchInputContainer>
+				</S.SearchInputContainer>
 			</WaveclassTheme>
 		</>
 	);

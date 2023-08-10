@@ -1,7 +1,7 @@
 import React from 'react';
 import { WaveclassTheme } from '../../layout';
 import { PillProps } from './types';
-import * as s from './styles';
+import * as S from './styles';
 import { Typography } from '../typography';
 
 export const Pill = ({
@@ -12,7 +12,7 @@ export const Pill = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.PillContainer
+				<S.PillContainer
 					customStyles={customStyles}
 					variant={variant}
 				>
@@ -20,7 +20,7 @@ export const Pill = ({
 						variant="small-bold"
 						text={text}
 					/>
-				</s.PillContainer>
+				</S.PillContainer>
 			</WaveclassTheme>
 		</>
 	);

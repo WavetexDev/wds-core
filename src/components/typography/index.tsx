@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../layout';
 import { TypographyProps } from './types';
 
@@ -15,14 +15,14 @@ export const Typography = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.Typography
+				<S.Typography
 					variant={variant}
 					tag={tagVariant}
 					as={tagVariant}
 					customStyles={customStyles}
 				>
 					{text}
-				</s.Typography>
+				</S.Typography>
 			</WaveclassTheme>
 		</>
 	);
