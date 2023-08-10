@@ -1,5 +1,5 @@
 import React from 'react';
-import * as s from './styles';
+import * as S from './styles';
 import { WaveclassTheme } from '../../../layout';
 
 import { InputProps } from '../types';
@@ -34,15 +34,15 @@ export const Input = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.InputContainer
+				<S.InputContainer
 					customStyles={customStyles}
 				>
-					<s.InputWrapper
+					<S.InputWrapper
 						customStyles={customStyles}
 					>
 						{getDefaultIcon() ?? icon}
-						<s.Input {...props} />
-					</s.InputWrapper>
+						<S.Input {...props} />
+					</S.InputWrapper>
 
 					{showError && (
 						<Typography
@@ -54,7 +54,7 @@ export const Input = ({
 							}}
 						/>
 					)}
-				</s.InputContainer>
+				</S.InputContainer>
 			</WaveclassTheme>
 		</>
 	);

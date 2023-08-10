@@ -1,11 +1,8 @@
-import { getSchoolColors } from './utils/get-school-colors';
 import { isColorDark } from './utils/check-color-brigthness';
 
 export const theme = {
 	light: {
 		colors: {
-			primary: getSchoolColors().primaryColor,
-			secondary: getSchoolColors().secondaryColor,
 			dynamicTextColor: (bgColor: string): string =>
 				isColorDark(bgColor)
 					? '#FFFFFF'
@@ -66,8 +63,6 @@ export const theme = {
 	},
 	dark: {
 		colors: {
-			primary: getSchoolColors().primaryColor,
-			secondary: getSchoolColors().secondaryColor,
 			dynamicTextColor: (bgColor: string): string =>
 				isColorDark(bgColor) ? '#FFF' : '#000',
 			black: '#000',
@@ -128,8 +123,6 @@ export const theme = {
 
 interface ThemeOptions {
 	colors: {
-		primary: string;
-		secondary: string;
 		dynamicTextColor: (bgColor: string) => string;
 		black: string;
 		white: string;

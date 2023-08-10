@@ -2,7 +2,7 @@ import React from 'react';
 import { GridItemProps } from './types';
 import { WaveclassTheme } from '../../layout';
 
-import * as s from './styles';
+import * as S from './styles';
 
 export const GridItem = ({
 	variant,
@@ -13,13 +13,13 @@ export const GridItem = ({
 	return (
 		<>
 			<WaveclassTheme>
-				<s.GridItem
+				<S.GridItem
 					id={id}
 					variant={variant}
 					customStyles={customStyles}
 				>
 					{children}
-				</s.GridItem>
+				</S.GridItem>
 			</WaveclassTheme>
 		</>
 	);

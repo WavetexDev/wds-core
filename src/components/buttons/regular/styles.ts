@@ -6,8 +6,10 @@ import { RegularButtonStylingProps } from './types';
 import { Theme } from '../../../theme';
 
 import { toStyledComponent } from '../../../utils/css-properties-to-styled-component';
+import { getSchoolColors } from '../../../utils/get-school-colors';
 
 const currentTheme = getThemeMode();
+const schoolColors = getSchoolColors();
 
 const getBGColor = (
 	variant: string,
@@ -21,9 +23,9 @@ const getBGColor = (
 	} else if (variant.includes('danger')) {
 		return `${theme[currentTheme].colors.error}`;
 	} else if (variant.includes('primary')) {
-		return `${theme[currentTheme].colors.primary}`;
+		return `${schoolColors.primaryColor}`;
 	} else if (variant.includes('secondary')) {
-		return `${theme[currentTheme].colors.secondary}`;
+		return `${schoolColors.secondaryColor}`;
 	} else if (variant.includes('success')) {
 		return `${theme[currentTheme].colors.success}`;
 	} else if (variant.includes('warning')) {
@@ -61,11 +63,11 @@ const getBorderColor = (
 	theme: Theme
 ): string => {
 	if (variant.includes('primary')) {
-		return theme[currentTheme].colors.primary;
+		return schoolColors.primaryColor;
 	} else if (variant.includes('danger')) {
 		return `${theme[currentTheme].colors.error}`;
 	} else {
-		return theme[currentTheme].colors.secondary;
+		return schoolColors.secondaryColor;
 	}
 };
 

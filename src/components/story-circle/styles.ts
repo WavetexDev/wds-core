@@ -1,10 +1,10 @@
 import { styled } from 'styled-components';
-import { getThemeMode } from '../../utils/get-theme-mode';
 import { StoryCircleStyleProps } from './types';
 
 import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+import { getSchoolColors } from '../../utils/get-school-colors';
 
-const currentMode = getThemeMode();
+const schoolColors = getSchoolColors();
 
 export const StoryCircleContainer = styled.div<StoryCircleStyleProps>`
 	width: 60px;
@@ -13,12 +13,12 @@ export const StoryCircleContainer = styled.div<StoryCircleStyleProps>`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: ${({ theme }) =>
-		`linear-gradient(259deg, ${theme[currentMode].colors.primary} 4.50%, ${theme[currentMode].colors.secondary} 100%)`};
+	background: ${() =>
+		`linear-gradient(259deg, ${schoolColors.primaryColor} 4.50%, ${schoolColors.secondaryColor} 100%)`};
 	border-radius: 100%;
-	box-shadow: ${({ theme, highlight }) =>
+	box-shadow: ${({ highlight }) =>
 		highlight
-			? `0px 0px 6px 2px ${theme[currentMode].colors.primary}`
+			? `0px 0px 6px 2px ${schoolColors.primaryColor}`
 			: 0};
 
 	img {

@@ -1,6 +1,6 @@
 {
 	"name": "@waveclass/wds-core",
-	"version": "0.0.45",
+	"version": "0.0.47",
 	"description": "Waveclass Design System core components",
 	"main": "./dist/index.js",
 	"types": "./dist/index.d.ts",
@@ -31,13 +31,18 @@
 		"@babel/preset-env": "^7.22.4",
 		"@babel/preset-react": "^7.22.3",
 		"@babel/preset-typescript": "^7.21.5",
-		"@storybook/addon-essentials": "^7.0.23",
-		"@storybook/addon-interactions": "^7.0.23",
-		"@storybook/addon-links": "^7.0.23",
-		"@storybook/blocks": "^7.0.23",
-		"@storybook/react": "^7.0.23",
-		"@storybook/react-webpack5": "^7.0.23",
+		"@storybook/addon-a11y": "^7.2.1",
+		"@storybook/addon-docs": "^7.2.1",
+		"@storybook/addon-essentials": "^7.2.1",
+		"@storybook/addon-interactions": "^7.2.1",
+		"@storybook/addon-links": "^7.2.1",
+		"@storybook/addon-mdx-gfm": "7.2.1",
+		"@storybook/addons": "^7.2.1",
+		"@storybook/blocks": "^7.2.1",
+		"@storybook/react": "^7.2.1",
+		"@storybook/react-webpack5": "^7.2.1",
 		"@storybook/testing-library": "^0.2.0",
+		"@storybook/theming": "^7.2.1",
 		"@types/react": "^18.0.37",
 		"@types/react-date-range": "^1.4.4",
 		"@types/react-dom": "^18.0.11",
@@ -47,7 +52,7 @@
 		"eslint-config-next": "13.4.4",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-prettier": "^4.2.1",
-		"eslint-plugin-storybook": "^0.6.12",
+		"eslint-plugin-storybook": "^0.6.13",
 		"gulp": "^4.0.2",
 		"gulp-copy": "^4.0.1",
 		"gulp-sourcemaps": "^3.0.0",
@@ -58,7 +63,8 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-icons": "^4.9.0",
-		"storybook": "^7.0.23",
+		"storybook": "^7.2.1",
+		"storybook-dark-mode": "^3.0.1",
 		"styled-components": "6.0.0-rc.3",
 		"ts-loader": "^9.4.3",
 		"typescript": "^5.0.2"
@@ -71,5 +77,6 @@
 	"dependencies": {
 		"date-fns": "^2.30.0",
 		"react-date-range": "^1.4.0"
+		"polished": "^4.2.2"
 	}
 }

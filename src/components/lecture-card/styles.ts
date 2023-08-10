@@ -8,8 +8,10 @@ import {
 	FavoriteProps,
 	LectureCardThumbnailProps,
 } from './types';
+import { getSchoolColors } from '../../utils/get-school-colors';
 
 const currentMode = getThemeMode();
+const schoolColors = getSchoolColors();
 
 export const CardContainer = styled.article<CardVariantProps>`
 	width: 100%;
@@ -59,7 +61,7 @@ export const ImageContainer = styled.section<LectureCardThumbnailProps>`
 	background: ${({ thumbnail, theme }) =>
 		thumbnail !== ''
 			? `linear-gradient(rgba(28, 18, 36, 0) 22.92%, rgb(28, 18, 36) 100%) 0% 0% / cover, url('${thumbnail}')`
-			: `${theme[currentMode].colors.secondary}`};
+			: `${schoolColors.secondaryColor}`};
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

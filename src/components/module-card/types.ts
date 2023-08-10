@@ -16,7 +16,7 @@ export interface ModuleCardProps {
 	totalFinishedItems: number;
 	expanded: boolean;
 	toggleExpanded: () => void;
-	customStyles: CSSProperties;
+	customStyles?: CSSProperties;
 }
 
 export interface ModuleCardStyleProps {

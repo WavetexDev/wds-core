@@ -5,8 +5,10 @@ import { getThemeMode } from '../../utils/get-theme-mode';
 
 import { CSSProperties } from 'react';
 import { toStyledComponent } from '../../utils/css-properties-to-styled-component';
+import { getSchoolColors } from '../../utils/get-school-colors';
 
 const currentThemeMode = getThemeMode();
+const schoolColors = getSchoolColors();
 
 const getWidth = (size: AvatarSize): number => {
 	switch (size) {
@@ -67,9 +69,7 @@ export const Container = styled.span<{
 	position: relative;
 	background-color: ${({ theme }) =>
 		theme[currentThemeMode].colors.gray100};
-	border: 2px solid
-		${({ theme }) =>
-			theme[currentThemeMode].colors.primary};
+	border: 2px solid ${() => schoolColors.secondaryColor};
 	width: ${({ size }) => getWidth(size)}px;
 	min-width: ${({ size }) => getWidth(size)}px;
 	height: ${({ size }) => getHeight(size)}px;
