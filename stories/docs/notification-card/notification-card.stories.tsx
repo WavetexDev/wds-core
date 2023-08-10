@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { NotificationCard } from '../../src/components/notification-card';
+import { NotificationCard } from '../../../src/components/notification-card';
 
 const meta: Meta<typeof NotificationCard> = {
-	title: 'Notification Card',
+	title: 'Components/User data/Notification Card',
 	component: NotificationCard,
 	argTypes: {
 		created_at: {
@@ -31,6 +31,7 @@ export const standard: Story = {
 		created_at: new Date(),
 	},
 };
+
 export const notRead: Story = {
 	args: {
 		title: 'Nova mensagem do suporte',

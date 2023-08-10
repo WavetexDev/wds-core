@@ -8,7 +8,7 @@ import { toStyledComponent } from '../../utils/css-properties-to-styled-componen
 
 const currentMode = getThemeMode();
 
-export const CardContainer = styled.div<{
+export const LectureNotesCardContainer = styled.div<{
 	theme?: Theme;
 	customStyles?: CSSProperties;
 }>`
@@ -17,12 +17,11 @@ export const CardContainer = styled.div<{
 
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 
 	background-color: ${({ theme }) =>
 		theme[currentMode].colors.white};
 	padding: ${({ theme }) =>
-		`${theme[currentMode].spacing.sp10} ${theme[currentMode].spacing.sp18}`};
+		`${theme[currentMode].spacing.sp20} ${theme[currentMode].spacing.sp22}`};
 	border: ${({ theme }) =>
 		`1px solid ${theme[currentMode].colors.gray100}`};
 	border-radius: ${({ theme }) =>

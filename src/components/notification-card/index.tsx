@@ -32,6 +32,8 @@ export function NotificationCard({
 				<GridItem
 					variant="row"
 					customStyles={{
+						background:
+							theme[currentMode].colors.white,
 						padding:
 							theme[currentMode].spacing.sp16,
 						border: `1px solid ${
